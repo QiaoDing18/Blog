@@ -1,0 +1,273 @@
+<!DOCTYPE HTML>
+<html class="no-js" lang="zh-CN">
+<!--
+//                            _ooOoo_
+//                           o8888888o
+//                           88" . "88
+//                           (| -_- |)
+//                            O\ = /O
+//                        ____/`---'\____
+//                      .   ' \\| |// `.
+//                       / \\||| : |||// \
+//                     / _||||| -:- |||||- \
+//                       | | \\\ - /// | |
+//                     | \_| ''\---/'' | |
+//                      \ .-\__ `-` ___/-. /
+//                   ___`. .' /--.--\ `. . __
+//                ."" '< `.___\_<|>_/___.' >'"".
+//               | | : `- \`.;`\ _ /`;.`/ - ` : | |
+//                 \ \ `-. \_ __\ /__ _/ .-` / /
+//         ======`-.____`-.___\_____/___.-`____.-'======
+//                            `=---='
+//                 拦截插件累计拦截逗比攻击"1381438"次！
+//         .............................................
+//                  佛祖保佑             永无BUG
+//          佛曰:
+//                  写字楼里写字间，写字间里程序员；
+//                  程序人员写程序，又拿程序换酒钱。
+//                  酒醒只在网上坐，酒醉还来网下眠；
+//                  酒醉酒醒日复日，网上网下年复年。
+//                  但愿老死电脑间，不愿鞠躬老板前；
+//                  奔驰宝马贵者趣，公交自行程序员。
+//                  别人笑我忒疯癫，我笑自己命太贱；
+//                  不见满街漂亮妹，哪个归得程序员？
+-->
+<head>
+    <!--[if lte IE 9]>
+<meta http-equiv="refresh" content="0;url=https://qiaoding18.github.io/warn.html">
+<![endif]-->
+<meta charset="utf-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+<meta http-equiv="mobile-agent" content="format=html5; url=https://qiaoding18.github.io">
+<meta name="author" content="乔丁">
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/SimpleStyle.min.css">
+
+<link rel="shortcut icon" href="/images/favicon.png">
+
+
+<title>浏览器多进程和js单线程（硬件加速） - QiaoDing Blog</title>
+
+<meta name="keywords" content="">
+
+<meta name="description " content="">
+</head>
+<body>
+<div id="nav">
+    <nav class="nav-menu">
+        <a class="site-name current" href="/" title="丁">丁</a>
+        <a class="site-index current" href="/"><i class="fa fa-home"></i><span> 主页</span></a>
+        <a href="/archives" title="Archives"><i class="fa fa-archives"></i><span> 归档</span></a>
+        <a href="/tags" title="Tags"><i class="fa fa-tags"></i><span> 标签</span></a>
+        <!-- custom single page of menus -->
+        
+        
+        <a href="/help" title="帮助">
+            <i class="fa fa-question-circle"></i>
+            <span>帮助</span>
+        </a>
+        
+    </nav>
+</div>
+
+<div class="nav-user">
+    <a class="btn-search" href="#"><i class="fa fa-search"></i></a>
+    <a class="btn-read-mode" href="#"><i class="fa fa-sun-o"></i></a>
+    <a class="btn-sns-qr" href="javascript:"><i class="fa fa-telegram"></i></a>
+</div>
+
+<div id="wrapper" class="clearfix">
+    <div id="body">
+        <div class="main" id="main">
+            <div id="cover">
+    <div class="cover-img"></div>
+    <div class="cover-info">
+        
+        <h1 class="cover-siteName">乔丁啊</h1>
+        <h3 class="cover-siteTitle">一个前端小学生</h3>
+        <p class="cover-siteDesc">在这写写博客啥了的</p>
+        <div class="cover-sns">
+            
+            <div class="btn btn-github">
+                <a href="https://github.com/QiaoDing18/" target="_blank" title="github" ref="friend">
+                    <i class="fa fa-github"></i>
+                </a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+            <div class="page-title">
+    <ul>
+        <li><a href="/">最新</a></li>
+
+
+        
+            
+                <li class="">
+                    <a href="/categories/web" data-name="前端">前端</a>
+                </li>
+            
+                <li class="">
+                    <a href="/categories/net" data-name="计算机网络">计算机网络</a>
+                </li>
+            
+                <li class="">
+                    <a href="/categories/chat" data-name="闲聊">闲聊</a>
+                </li>
+            
+        
+        <li class="page-search">
+    <form id="search" class="search-form">
+        <label for="s" class="sr-only">Input Search key Words Here</label>
+        <input class="search-field" type="text" name="s" class="text" placeholder="搜索啦" />
+        <button type="submit" class="search-form-submit" title="Search"><i class="fa fa-search"></i></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="输入要搜的内容啦"/>
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+</li>
+
+    </ul>
+</div>
+<div class="main-inner">
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <div class="post-header">
+            <div class="post-author clearfix">
+                <a class="avatar fleft" href="" target="_blank">
+                    <img width="48" src="/images/favicon.png" alt="avatar"/>
+                </a>
+                <p><span class="label">作者</span>
+                    <a href="" target="_blank">乔丁</a>
+                    <span title="最后编辑于2018-04-27">2018-04-27</span>
+                </p>
+                <p>【前端小学生】</p>
+            </div>
+            <h2 class="post-title">浏览器多进程和JS单线程（硬件加速）</h2>
+            <div class="post-meta">
+                本文总共5746个字 | 您是第<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>位看到它们的小伙伴
+            </div>
+        </div>
+        <div class="post-content markdown-body">
+            <h1 id="进程和线程区别"><a href="#进程和线程区别" class="headerlink" title="进程和线程区别"></a>进程和线程区别</h1><p><em>进程</em>：进程是cpu资源分配的最小单位（是能拥有资源和独立运行的最小单位）<br><em>线程</em>：线程是cpu调度的最小单位（线程是建立在进程的基础上的一次程序运行单位，一个进程中可以有多个线程）</p>
+<h1 id="浏览器是多进程的"><a href="#浏览器是多进程的" class="headerlink" title="浏览器是多进程的"></a>浏览器是多进程的</h1><p>1、浏览器是多进程的<br>2、浏览器之所以能够运行，是因为系统给他的进程分配了资源（cpu、内存）<br>3、每次打开一个Tab页，就相当于创建了一个独立的浏览器进程</p>
+<h2 id="浏览器有哪些进程"><a href="#浏览器有哪些进程" class="headerlink" title="浏览器有哪些进程"></a>浏览器有哪些进程</h2><p>1、浏览器进程：浏览器的主进程（负责协调、主控），只有一个，作用：<br>    （1）负责浏览器界面显示，与用户交互。如前进后退<br>    （2）负责各个页面的管理，创建和销毁其他进程<br>    （3）绘制到用户界面上<br>    （4）网络资源的管理，下载等<br>2、第三方插件进程：每种类型的插件对应一个进程，仅当使用该插件时才创建<br>3、GPU进程：最多一个，用于3D绘制等<br>4、浏览器渲染进程：每个页面一个进程，互不影响。主要控制页面渲染，脚本执行，事件处理等</p>
+<h2 id="浏览器多进程优势"><a href="#浏览器多进程优势" class="headerlink" title="浏览器多进程优势"></a>浏览器多进程优势</h2><p>如果浏览器是单线程，如果某个Tab页崩溃了，就影响了整个浏览器，体检就很差。如果是单线程，插件崩溃了也会影响整个浏览器</p>
+<h2 id="浏览器内核！important"><a href="#浏览器内核！important" class="headerlink" title="浏览器内核！important"></a>浏览器内核！important</h2><p>主要常驻线程：<br><strong>1、GUI渲染线程</strong><br>    （1）负责渲染浏览器界面，解析HTML，CSS，构建DOM树和渲染对象树，布局和绘制等<br>    （2）当界面需要重绘或由于某种操作引发回流时，该线程就会执行<br>    （3）注意，GUI渲染线程与JS引擎线程是互斥的，<strong>当引擎执行时GUI线程会被挂起（相当于被冻结了），GUI更新会被保存在一个队列中等到JS引擎空闲时立即被执行</strong><br><strong>2、JS引擎线程</strong><br>    （1）也成为JS内核，负责处理JS脚本程序，JS引擎负责解析JS脚本，运行代码<br>    （2）JS引擎一直等待着任务队列中任务的到来，然后加以处理，一个Tab页（即是一个渲染进程）中无论什么时候都只有一个JS线程在运行JS程序<br>    （3）<em>GUI渲染线程和JS引擎线程是互斥的</em>，<strong>所以如果JS执行的时间过长，这样就会造成页面的渲染不连贯，导致页面渲染加载阻塞</strong><br><strong>3、事件触发线程</strong><br>    （1）归属于浏览器而不是JS引擎，用来控制事件循环（注意是浏览器另开的线程协助）<br>    （2）当JS引擎执行代码块如setTimeout时（也可能是来自浏览器内核的其他线程，如鼠标点击，AJAX异步请求等），会将对应人物添加到事件线程中<br>    （3）当对应的事件符合触发条件被触发时，该线程会把事件添加到待处理队列的队尾，等待JS引擎的处理<br>    （4）由于JS是单线程，所以这些待处理队列中的事件都得排队等待JS引擎处理（JS引擎空闲时候才会去执行）<br><strong>4、定时触发线程</strong><br>    （1）传说中的setInterval和setTimeout所在的线程<br>    （2）浏览器定时计数器并不是由JS引擎计数的，（因为JS引擎是单线程的，如果处于阻塞线程状态就会影响计时器的准确性）<br>    （3）因此通过单线程来计时并触发定时（计时完毕后，添加到事件队列中，等待JS引擎空闲后执行）<br>    （4）W3C规定setTimeout有最小时间间隔4ms<br><strong>5、异步http请求线程</strong><br>    （1）XHR在连接后是通过浏览器新开一个线程请求<br>    （2）将检测到状态变更时，如果设置有回调函数，异步线程就产生状态变更事件，将这个回调函数再放入事件队列中。再由JS引擎执行</p>
+<h2 id="关于JS单线程和事件（任务）队列"><a href="#关于JS单线程和事件（任务）队列" class="headerlink" title="关于JS单线程和事件（任务）队列"></a>关于JS单线程和事件（任务）队列</h2><p>任务两种：同步、异步<br><em>同步任务</em>：在主线程上排队执行的任务，只有前一个任务执行完毕，才能执行后一个任务<br><em>异步任务</em>：不进入主线程、而进入“任务队列”的任务，只有“任务队列”通知主线程，某个异步任务可以执行了，该任务才会进入主线程执行</p>
+<p>异步执行机制：<br>1、所有同步任务都在主线程上执行，形成一个执行栈<br>2、主线程之外，还存在一个任务队列。只要异步任务有了运行结果，就在任务队列之中放置一个事件<br>3、一旦执行栈中的所有同步任务执行完毕，系统就会读取“任务队列”，看看里面有哪些事件。那些对应的异步任务，于是结束等待状态，进入执行栈，开始执行。<br>4、主线程不断重复上面操作</p>
+<p><em>event loop</em><br>主线程从“任务队列”中读取事件，这个过程是循环不断的，所以整个的这种运行机制又称为Event Loop（事件循环）</p>
+<p>主线程运行的时候，产生堆和栈，栈中的代码调用各种外部API，它们在“任务队列”中加入各种事件（click,load,done）。只要栈中的代码执行完毕，主线程就会去读取“任务队列”，依次执行那些事件所对应的回调函数。</p>
+<p><em>定时器</em><br>除了放置异步任务的事件，“任务队列”还可以放置定时器事件，即指定某些代码在多少时间之后执行。<br><em>定时器中回调执行的代码永远在其他代码执行之后，因为他被放到了事件队列中，只有主线程执行完之后才会执行“任务队列”中的回调函数</em><br>总之，setTimeout(fn,0)的含义是，指定某个任务在主线程最早可得的空闲时间执行，也就是说，尽可能早得执行。它在”任务队列”的尾部添加一个事件，因此要等到同步任务和”任务队列”现有的事件都处理完，才会得到执行。</p>
+<p><em>Node的 Event Loop</em><br>Node提供了process.nextTick和setImmediate<br><em>process.nextTick</em>方法可以在当前“执行栈”的尾部————下一次Event Loop（主线程读取“任务队列”）之前————触发回调函数。也就是说，它指定的任务总是发生在所有异步任务之前。他总比时间队列里快，比setTimeout永远快<br><em>setImmediate</em>方法则是在当前“任务队列”的尾部添加事件，也就是说，它指定的任务总是在下一次Event Loop时执行。和setTimeout(fn, 0)很像<br><em>process.nextTick和setImmediate的一个重要区别</em><br><strong>多个process.nextTick语句总是在当前”执行栈”一次执行完，多个setImmediate可能则需要多次loop才能执行完。</strong></p>
+<p>实上，这正是Node.js 10.0版添加setImmediate方法的原因，否则像下面这样的递归调用process.nextTick，将会没完没了，主线程根本不会去读取”事件队列”！<br>process.nextTick(function foo() {<br>  process.nextTick(foo);<br>});</p>
+<h2 id="浏览器控制进程和浏览器内核的通信"><a href="#浏览器控制进程和浏览器内核的通信" class="headerlink" title="浏览器控制进程和浏览器内核的通信"></a>浏览器控制进程和浏览器内核的通信</h2><p>上面扯了事件队列，再回到浏览器里</p>
+<p>浏览器两个进程：一个主控进程，一个打开Tab页的渲染进程</p>
+<p>1、控制进程收到用户请求，首先需要获取页面的内容，随后将该任务通过接口传给渲染进程<br>2、渲染进程的渲染接口收到消息，简单解释后，交给渲染线程，然后开始渲染<br>    （1）渲染线程开始渲染，加载网页并渲染页面。其中需要控制进程获取资源和需呀GPU进程来帮助渲染<br>    （2）会有JS线程操作DOM，这样造成重排重绘<br>    （3）最后渲染进程将结果传给控制进程<br>3、控制进程接收到结果并将结果绘制</p>
+<h1 id="整理一下之间的关系"><a href="#整理一下之间的关系" class="headerlink" title="整理一下之间的关系"></a>整理一下之间的关系</h1><h2 id="GUI渲染线程与JS引擎线程互斥"><a href="#GUI渲染线程与JS引擎线程互斥" class="headerlink" title="GUI渲染线程与JS引擎线程互斥"></a>GUI渲染线程与JS引擎线程互斥</h2><p>由于JS是可操作DOM的，如果在修改这些元素属性同时渲染界面，<em>或者说JS线程和UI线程同时运行，那么渲染线程前后获得的元素数据可能不一致了</em><br>因为为了防止渲染出现不可预估的结果，浏览器设置GUI渲染线程与JS引擎为互斥关系，当JS引擎执行时GUI线程会被挂起，GUI更新则会被保存在一个队列中等到JS引擎线程空闲时立即被执行</p>
+<h2 id="JS阻塞页面加载"><a href="#JS阻塞页面加载" class="headerlink" title="JS阻塞页面加载"></a>JS阻塞页面加载</h2><p>从上可见，JS如果执行时间过长就会阻塞页面<br>假如JS引擎正在进行巨量的计算，此时就算GUI有更新，也会被保存在队列中，等到JS引擎空闲后执行，然后，由于巨量计算，所以JS引擎很可能很久很久后才能空闲，自然会感觉到巨卡<br>所以，要尽量避免JS执行时间过长，这样就会造成页面的渲染不连贯，导致页面渲染加载阻塞的感觉</p>
+<p>可以使用webWorker去进行巨量计算，关于webWorker<br>1、创建Worker时，JS引擎向浏览器申请开一个子线程（子线程是浏览器开的，完全受主线程控制，而且不能操作DOM）<br>2、JS引擎线程与worker线程间通过特定的方式通信（postMessage API，需要通过序列化对象与线程交互特定的数据）</p>
+<p>所以，如果有非常耗时的工作，请单独开一个Worker线程，这样里面不管如何翻天覆地都不会影响JS引擎主线程， 只待计算出结果后，将结果通信给主线程即可，perfect!</p>
+<h1 id="再梳理一下渲染流程"><a href="#再梳理一下渲染流程" class="headerlink" title="再梳理一下渲染流程"></a>再梳理一下渲染流程</h1><p>1、解析html构建DOM树<br>2、解析css构建render树（将css代码解析成树形的数据结构，然后结合DOM合并成render树）<br>3、布局render树（Layout\reflow），负责各元素尺寸、位置的计算<br>4、绘制render树（paint），绘制页面像素信息<br>5、浏览器会将各层的信息发送给GPU，GPU会将各层合成（composite），显示在屏幕上</p>
+<h2 id="load事件与DOMContentLoaded事件的先后"><a href="#load事件与DOMContentLoaded事件的先后" class="headerlink" title="load事件与DOMContentLoaded事件的先后"></a>load事件与DOMContentLoaded事件的先后</h2><p>1、当 DOMContentLoaded 事件触发时，仅当DOM加载完成，不包括样式表，图片。 (譬如如果有async加载的脚本就不一定完成)</p>
+<p>2、当 onload 事件触发时，页面上所有的DOM，样式表，脚本，图片都已经加载完成了。 （渲染完毕了）</p>
+<h2 id="css加载是否会阻塞dom树渲染？"><a href="#css加载是否会阻塞dom树渲染？" class="headerlink" title="css加载是否会阻塞dom树渲染？"></a>css加载是否会阻塞dom树渲染？</h2><p>1、头部引入css<br>css是单独的下载线程异步现在的<br>    （1）css加载不会阻塞DOM树解析（异步加载时DOM照常构建）<br>    （2）但会阻塞render树渲染（渲染时需等css加载完毕，因为render树需要css信息）</p>
+<p>因为你加载css的时候，可能会修改下面DOM节点的样式， 如果css加载不阻塞render树渲染的话，那么当css加载完之后， render树可能又得重新重绘或者回流了，这就造成了一些没有必要的损耗。 <strong>所以干脆就先把DOM树的结构先解析完</strong>，把可以做的工作做完，<strong>然后等你css加载完之后， 在根据最终的样式来渲染render树，这种做法性能方面确实会比较好一点</strong>。</p>
+<h2 id="EventLoop"><a href="#EventLoop" class="headerlink" title="EventLoop"></a>EventLoop</h2><p>几个线程：<br>1、JS引擎线程<br>2、事件触发线程<br>3、定时器触发线程</p>
+<p>几个概念：<br>1、JS分为同步任务和异步任务<br>2、同步任务都在主线程上执行，形成一个执行栈<br>3、主线程之外，事件触发器线程管理着一个任务队列，只要异步任务有了运行结果，就在任务队列中放置一个事件<br>4、一旦执行栈中所有的同步任务执行完毕（此时JS引擎空闲），系统就会读取任务队列，将可运行的异步任务添加到可执行栈中，开始执行</p>
+<h2 id="定时器线程"><a href="#定时器线程" class="headerlink" title="定时器线程"></a>定时器线程</h2><p>有单独的定时器线程<br>定时器线程是将事件于多少时延后放入事件队列，主线程没任务后会在EventLoop机制的情况下去执行事件队列中的定时器的回调函数<br>setInerval有累计效应，如果setInterval再次添加到队列之前其他的事件还么执行完，就会导致定时器代码连续运行好几次，而之间没有时间间隔。就算正常运行，多个setInterval的代码执行时间可能会比与其的小（因为代码执行需要一定时间）</p>
+<p>而且把浏览器最小化显示等操作时，setInterval并不是不执行程序， 它会把setInterval的回调函数放在队列中，等浏览器窗口再次打开时，一瞬间全部执行时</p>
+<h2 id="Promise和事件循环机制"><a href="#Promise和事件循环机制" class="headerlink" title="Promise和事件循环机制"></a>Promise和事件循环机制</h2><p>Promise会先比setTimeout执行<br>有两种新的任务类型：macrotask和microtask<br><em>macrotask</em>：宏任务（task）。每次执行栈执行的代码就是一个宏任务（包括每次从事件队列中获取一个事件回调并放到执行栈中执行）<br>    （1）每个task会从头到尾将这个任务执行完毕，不会执行其他<br>    （2）浏览器为了能够使得JS内部task与DOM任务能够有序的执行，会在一个task执行结束后，在下一个task执行开始前，对页面进行重新渲染（task-&gt;渲染-&gt;task-&gt;…）<br><em>microtask</em>：微任务（jobs）。当前task执行结束后立即执行的任务<br>    （1）也就是说，在当前task任务后，下一个task之前，在渲染之前<br>    （2）所以它的响应速度相比setTimeout（setTimeout是task）会更快，因为无需等渲染<br>    （3）也就是说，在某一个macrotask执行完后，就会将在它执行期间产生的所有microtask都执行完毕（在渲染前）</p>
+<p><em>分别很么样的场景会形成macrotask和microtask呢？</em><br>macrotask：主代码块，setTimeout，setInterval等（可以看到，事件队列中的每一个事件都是一个macrotask）</p>
+<p>microtask：Promise，process.nextTick等<br>补充：在node环境下，<em>process.nextTick的优先级高于Promise</em>，也就是可以简单理解为：在宏任务结束后会先执行微任务队列中的nextTickQueue部分，然后才会执行微任务中的Promise部分。<br>另外，setImmediate则是规定：<em>在下一次Event Loop（宏任务）时触发（所以它是属于优先级较高的宏任务）</em>， （Node.js文档中称，setImmediate指定的回调函数，总是排在setTimeout前面）， 所以setImmediate如果嵌套的话，是需要经过多个Loop才能完成的， 而不会像process.nextTick一样没完没了。</p>
+<p>macrotask中的事件都是放在一个事件队列中的，而这个队列由事件触发线程维护</p>
+<p>microtask中的所有微任务都是添加到微任务队列（Job Queues）中，等待当前macrotask执行完毕后执行，而这个队列由JS引擎线程维护</p>
+<p><strong>机制总结</strong><br>1、执行一个宏任务（栈中没有就从事件队列中获取）<br>2、执行过程中如果遇到微任务，就将他添加到微任务的任务队列中<br>3、宏任务执行完毕后，立即执行当前微任务队列中的所有微任务（依次执行）<br>4、当前宏任务执行完毕，开始检查渲染，然后GUI线程接管渲染<br>5、渲染完毕后，JS线程继续接管，开始下一个宏任务（从事件队列中获取）</p>
+
+        </div>
+        <div class="post-tool">
+            <a class="btn-thumbs-up" href="javascript:void(0);" data-cid="52" title="95">
+                <i class="fa fa-thumbs-up" aria-hidden="true"></i> 打赏
+            </a>
+        </div>
+        
+        <div class="post-tags">Tags：
+            
+            <a href="/tags/chat/">闲聊</a>
+            
+        </div>
+        
+    </article>
+    
+    <p>本文代表个人观点，内容仅供参考。若有不恰当之处，望不吝赐教！么么哒~</p>
+    
+    
+</div>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        </div><!-- end #main-->
+    </div><!-- end #body -->
+    <footer class="footer">
+    <div class="footer-inner">
+        <p>
+            <a href="/about"  title="About">About</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <!-- 自定义链接 -->
+            <a href="/help" title="help" >帮助中心</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="http://www.tjoe18.cn/join/" title="个人链接">个人链接</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="https://xiyoumobile.com/" title="3G实验室">3G实验室</a>
+        </p>
+        <p>
+            本站点采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>，已建立<a href="/timeline" id="siteBuildingTime"></a>天<br/>
+            ©2017 QiaoDing
+        </p>
+        
+
+    </div>
+</footer>
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+<script src="/js/InsightSearch.js"></script>
+<script src="/js/SimpleCore.js"></script>
+
+</div>
+<div class="fixed-btn">
+    <a class="btn-gotop" href="javascript:"> <i class="fa fa-angle-up"></i></a>
+</div>
+<script>
+    $(function () {
+        SimpleCore.init({
+            buildingTime: '06/21/1997',
+            current: $('.post-tags').length > 0 ? 'post' : 'archive',
+            snsQRCode: '/images/sns-qrcode.png',
+            donateImg: '/images/donate-qr.png',
+        });
+    });
+</script>
+</body>
+</html>

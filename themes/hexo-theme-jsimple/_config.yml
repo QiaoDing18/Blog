@@ -1,0 +1,74 @@
+# site name
+siteName: 乔丁啊
+shortName: 丁
+
+
+# full https model which means #Content-Security-Policy = upgrade-insecure-requests# in meat tag
+fullHttps: false
+
+# favicon
+favicon: /images/favicon.png
+# unique avatar
+avatarShow: false
+avatarImage: /images/favicon.png
+
+# Home page sort type: -1: newer first，1: older first.
+homePageSortType: -1
+# Home page article shown number)
+homeArticleShown: 20
+
+
+# your site build time or domain buy time
+siteBuildingTime: 06/21/1997
+
+
+# Top navigate menu name
+## Notice:
+## Name order decide show index.The name also called category alias,so you must set category alias before start server.
+## BTW,'category_map' and 'tag_map' field in site '_config.yml' file must one to one correspondence with menus below.
+menu:
+   前端: web
+   计算机网络: net
+   闲聊: chat
+tags: [前端, 计算机网络, 闲聊]
+
+# Left menu of single pages settings
+## Notice: faName is FontAwesome style name
+leftPagesMenu:
+- uri: help
+  title: 帮助
+  faName: fa-question-circle
+
+
+# cover info config
+coverTitle: 一个前端小学生
+coverDescription: 在这写写博客啥了的
+
+# sns url
+sns:
+  github: https://github.com/QiaoDing18/
+
+# your article copyright or content declare
+postDeclare: 本文代表个人观点，内容仅供参考。若有不恰当之处，望不吝赐教！么么哒~
+
+# Git-pages server info
+pageServerName: Coding
+pageServerUrl: https://github.com/QiaoDing18/
+
+
+# Gitment
+# Introduction: https://imsun.net/posts/gitment-introduction/
+gitment:
+  enable: false
+  githubID:
+  repo:
+  ClientID:
+  ClientSecret:
+  lazy: true
+
+## Comments settings.You can choose only ONE to display.
+# disqus shortName,
+disqus_shortname:
+
+# Analytics
+tentcentAnalyticsId:

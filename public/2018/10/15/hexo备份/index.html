@@ -49,11 +49,11 @@
 <link rel="shortcut icon" href="/images/favicon.png">
 
 
-<title>分类 - chet - QiaoDing Blog</title>
+<title>ajax - QiaoDing Blog</title>
 
 <meta name="keywords" content="">
 
-<meta name="description " content="">
+<meta name="description " content="hexo备份问题小结">
 </head>
 <body>
 <div id="nav">
@@ -102,21 +102,23 @@
 </div>
             <div class="page-title">
     <ul>
-        <li class="">
-            <a href="/" data-name="最近文章">最近</a>
-        </li>
+        <li><a href="/">最新</a></li>
+
+
         
-        <li class="">
-            <a href="/categories/web" data-name="前端">前端</a>
-        </li>
-        
-        <li class="">
-            <a href="/categories/net" data-name="计算机网络">计算机网络</a>
-        </li>
-        
-        <li class="">
-            <a href="/categories/chat" data-name="闲聊">闲聊</a>
-        </li>
+            
+                <li class="">
+                    <a href="/categories/web" data-name="前端">前端</a>
+                </li>
+            
+                <li class="">
+                    <a href="/categories/net" data-name="计算机网络">计算机网络</a>
+                </li>
+            
+                <li class="">
+                    <a href="/categories/chat" data-name="闲聊">闲聊</a>
+                </li>
+            
         
         <li class="page-search">
     <form id="search" class="search-form">
@@ -157,82 +159,53 @@
     </ul>
 </div>
 <div class="main-inner">
-    
-    
-    
-<article class="post">
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <div class="post-header">
+            <div class="post-author clearfix">
+                <a class="avatar fleft" href="" target="_blank">
+                    <img width="48" src="/images/favicon.png" alt="avatar"/>
+                </a>
+                <p><span class="label">作者</span>
+                    <a href="" target="_blank">乔丁</a>
+                    <span title="最后编辑于2018-10-15">2018-10-15</span>
+                </p>
+                <p>【前端小学生】</p>
+            </div>
+            <h2 class="post-title">Ajax</h2>
+            <div class="post-meta">
+                本文总共741个字 | 您是第<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>位看到它们的小伙伴
+            </div>
+        </div>
+        <div class="post-content markdown-body">
+            <h2 id="balabala"><a href="#balabala" class="headerlink" title="balabala"></a>balabala</h2><p>hexo作为搭建博客十分美观方便，主要问题就是如何同步源码多端写作。这里总结了一下网上的一些方案并实践了一下。</p>
+<h2 id="方案一（我觉得不错的方案）"><a href="#方案一（我觉得不错的方案）" class="headerlink" title="方案一（我觉得不错的方案）"></a>方案一（我觉得不错的方案）</h2><p>好处：用其他git仓库保存，配置最简<br><br>核心：hexo-git-backup <br><br>先贴上它的git地址：<a href="https://github.com/coneycode/hexo-git-backup" target="_blank" rel="noopener">https://github.com/coneycode/hexo-git-backup</a></p>
+<p>安装说明里面有。我遇到的问题是fatal: ‘github’ does not appear to be a git repository。解决办法在issue里面有：<a href="https://github.com/coneycode/hexo-git-backup/issues/8" target="_blank" rel="noopener">https://github.com/coneycode/hexo-git-backup/issues/8</a></p>
+<p>多提一嘴，在选择开源库的时候多看几眼很重要，比如issue多少，作者解答情况还有更新的版本问题。</p>
+<h2 id="方案二"><a href="#方案二" class="headerlink" title="方案二"></a>方案二</h2><p>在原仓库里开一个备份分支<br><br>master分支是用来放编译后静态网页代码的，那就在开一个备份分支。<br>1、把备份分支作为默认分支<br><br>2、clone到本地，_config.yml，themes/，source，scffolds/，package.json，.gitignore复制到你克隆下来的仓库文件夹<br><br>3、注意要将主题中的.git删掉，要不然推不上去<br><br>4、检查执行git命令的分支是不是备份分支，然后直接add、commit、push<br><br>5、不影响hexo d</p>
+<p>首先，一个仓库里两个项目这种想法的确很逆天。其次，命令一堆有点烦，不过可以写个脚本执行</p>
+<h2 id="方案三"><a href="#方案三" class="headerlink" title="方案三"></a>方案三</h2><p><a href="https://www.jianshu.com/p/53f37196f6e7" target="_blank" rel="noopener">https://www.jianshu.com/p/53f37196f6e7</a><br>这里算是以上两种结合，且有一个自动跑的脚本，不用一堆命令。<br><br>但也有问题，多端时也需要配置相关环境。</p>
+<h2 id="In-a-Word"><a href="#In-a-Word" class="headerlink" title="In a Word"></a>In a Word</h2><p>看过不如试过，试过不如自己搞一个</p>
 
-    
-
-    <!-- 有配图默认渲染第一张 -->
-    <div class="post-cover">
-        <a href="/2018/10/15/hexo备份/" target="_blank" title="Ajax"
-           style="background-image:url(http://p7wm7amg2.bkt.clouddn.com/hexo.jpg)"></a>
-    </div>
-    
-    <div class="post-header">
-        <div class="post-meta">
-            <a href="" target="_blank">
-                <strong>乔丁</strong>
+        </div>
+        <div class="post-tool">
+            <a class="btn-thumbs-up" href="javascript:void(0);" data-cid="52" title="95">
+                <i class="fa fa-thumbs-up" aria-hidden="true"></i> 打赏
             </a>
-            <em>·</em>2018-10-15
         </div>
-        <a class="post-title" href="/2018/10/15/hexo备份/" target="_blank" title="Ajax">Ajax</a>
-        <div class="post-meta">
-            <a href="/tags" target="_blank"><i class="fa fa-tags"></i></a>
+        
+        <div class="post-tags">Tags：
             
-                <em>·</em>
-                <a href="https://qiaoding18.github.io/tags/chat/" target="_blank">闲聊</a>
+            <a href="/tags/chat/">闲聊</a>
             
         </div>
-    </div>
-    <div class="post-desc">
-        hexo备份问题小结
-    </div>
-</article>
-
-
-
+        
+    </article>
     
+    <p>本文代表个人观点，内容仅供参考。若有不恰当之处，望不吝赐教！么么哒~</p>
     
-<article class="post">
-
-    
-
-    <!-- 有配图默认渲染第一张 -->
-    <div class="post-cover">
-        <a href="/2018/10/14/安排/" target="_blank" title="安排"
-           style="background-image:url(http://p0.meituan.net/xianfu/508467c6250a747b69ad5a2eba1d7e7b38468.png)"></a>
-    </div>
-    
-    <div class="post-header">
-        <div class="post-meta">
-            <a href="" target="_blank">
-                <strong>乔丁</strong>
-            </a>
-            <em>·</em>2018-10-14
-        </div>
-        <a class="post-title" href="/2018/10/14/安排/" target="_blank" title="安排">安排</a>
-        <div class="post-meta">
-            <a href="/tags" target="_blank"><i class="fa fa-tags"></i></a>
-            
-                <em>·</em>
-                <a href="https://qiaoding18.github.io/tags/chat/" target="_blank">闲聊</a>
-            
-        </div>
-    </div>
-    <div class="post-desc">
-        安排
-    </div>
-</article>
-
-
-
     
 </div>
-<!-- 分页开始 -->
-
-
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
         </div><!-- end #main-->
     </div><!-- end #body -->
     <footer class="footer">

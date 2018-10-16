@@ -1,0 +1,259 @@
+<!DOCTYPE HTML>
+<html class="no-js" lang="zh-CN">
+<!--
+//                            _ooOoo_
+//                           o8888888o
+//                           88" . "88
+//                           (| -_- |)
+//                            O\ = /O
+//                        ____/`---'\____
+//                      .   ' \\| |// `.
+//                       / \\||| : |||// \
+//                     / _||||| -:- |||||- \
+//                       | | \\\ - /// | |
+//                     | \_| ''\---/'' | |
+//                      \ .-\__ `-` ___/-. /
+//                   ___`. .' /--.--\ `. . __
+//                ."" '< `.___\_<|>_/___.' >'"".
+//               | | : `- \`.;`\ _ /`;.`/ - ` : | |
+//                 \ \ `-. \_ __\ /__ _/ .-` / /
+//         ======`-.____`-.___\_____/___.-`____.-'======
+//                            `=---='
+//                 拦截插件累计拦截逗比攻击"1381438"次！
+//         .............................................
+//                  佛祖保佑             永无BUG
+//          佛曰:
+//                  写字楼里写字间，写字间里程序员；
+//                  程序人员写程序，又拿程序换酒钱。
+//                  酒醒只在网上坐，酒醉还来网下眠；
+//                  酒醉酒醒日复日，网上网下年复年。
+//                  但愿老死电脑间，不愿鞠躬老板前；
+//                  奔驰宝马贵者趣，公交自行程序员。
+//                  别人笑我忒疯癫，我笑自己命太贱；
+//                  不见满街漂亮妹，哪个归得程序员？
+-->
+<head>
+    <!--[if lte IE 9]>
+<meta http-equiv="refresh" content="0;url=https://qiaoding18.github.io/warn.html">
+<![endif]-->
+<meta charset="utf-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+<meta http-equiv="mobile-agent" content="format=html5; url=https://qiaoding18.github.io">
+<meta name="author" content="乔丁">
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/SimpleStyle.min.css">
+
+<link rel="shortcut icon" href="/images/favicon.png">
+
+
+<title>校招面试qa - QiaoDing Blog</title>
+
+<meta name="keywords" content="">
+
+<meta name="description " content="面经啥了的">
+</head>
+<body>
+<div id="nav">
+    <nav class="nav-menu">
+        <a class="site-name current" href="/" title="丁">丁</a>
+        <a class="site-index current" href="/"><i class="fa fa-home"></i><span> 主页</span></a>
+        <a href="/archives" title="归档"><i class="fa fa-archives"></i><span> 归档</span></a>
+        <a href="/tags" title="标签"><i class="fa fa-tags"></i><span> 标签</span></a>
+        <!-- custom single page of menus -->
+        
+        
+        <a href="/help" title="帮助">
+            <i class="fa fa-question-circle"></i>
+            <span>帮助</span>
+        </a>
+        
+    </nav>
+</div>
+
+<div class="nav-user">
+    <a class="btn-search" href="#"><i class="fa fa-search"></i></a>
+    <a class="btn-read-mode" href="#"><i class="fa fa-sun-o"></i></a>
+    <a class="btn-sns-qr" href="javascript:"><i class="fa fa-telegram"></i></a>
+</div>
+
+<div id="wrapper" class="clearfix">
+    <div id="body">
+        <div class="main" id="main">
+            <div id="cover">
+    <div class="cover-img"></div>
+    <div class="cover-info">
+        
+        <h1 class="cover-siteName">乔丁啊</h1>
+        <h3 class="cover-siteTitle">一个前端小学生</h3>
+        <p class="cover-siteDesc">在这写写博客啥了的</p>
+        <div class="cover-sns">
+            
+            <div class="btn btn-github">
+                <a href="https://github.com/QiaoDing18/" target="_blank" title="github" ref="friend">
+                    <i class="fa fa-github"></i>
+                </a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+            <div class="page-title">
+    <ul>
+        <li><a href="/">最新</a></li>
+
+
+        
+            
+                <li class="">
+                    <a href="/categories/web" data-name="前端">前端</a>
+                </li>
+            
+                <li class="">
+                    <a href="/categories/net" data-name="计算机网络">计算机网络</a>
+                </li>
+            
+                <li class="">
+                    <a href="/categories/chat" data-name="闲聊">闲聊</a>
+                </li>
+            
+        
+        <li class="page-search">
+    <form id="search" class="search-form">
+        <label for="s" class="sr-only">请输入关键字</label>
+        <input class="search-field" type="text" name="s" class="text" placeholder="搜索啦" />
+        <button type="submit" class="search-form-submit" title="搜索"><i class="fa fa-search"></i></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="输入要搜的内容啦"/>
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(无标题)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+</li>
+
+    </ul>
+</div>
+<div class="main-inner">
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <div class="post-header">
+            <div class="post-author clearfix">
+                <a class="avatar fleft" href="" target="_blank">
+                    <img width="48" src="/images/favicon.png" alt="avatar"/>
+                </a>
+                <p><span class="label">作者</span>
+                    <a href="" target="_blank">乔丁</a>
+                    <span title="最后编辑于2018-10-16">2018-10-16</span>
+                </p>
+                <p>【前端小学生】</p>
+            </div>
+            <h2 class="post-title">校招面试QA</h2>
+            <div class="post-meta">
+                本文总共1428个字 | 您是第<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>位看到它们的小伙伴
+            </div>
+        </div>
+        <div class="post-content markdown-body">
+            <h3 id="Q1：什么时候开始准备"><a href="#Q1：什么时候开始准备" class="headerlink" title="Q1：什么时候开始准备"></a>Q1：什么时候开始准备</h3><h3 id="A1："><a href="#A1：" class="headerlink" title="A1："></a>A1：</h3><pre><code>春招面试时间一般为大三下学期的三月、四月，秋招时间为大四上学期的九月、十月。在学习了相关基础后，大二开始到大三上学期结束的一年多时间里是大家完成项目、参加比赛的主要时间。最重要的是，要在这段时间里通过实践填满自己的简历。
+
+在大三结束时就可以开始准备春招，这时候复习的重点是基础知识。春招以实习生招聘为主，在缺少公司业务经历的情况下，大多数面试官的面试重点是方向相关基础、计算机基础知识、数据结构算法等。
+当然如果春招不满意的话也不用过于着急。在五月后开始继续深入复习，这时复习需要有自己的偏重。如准备自己项目中亮眼的地方、更为扎实的基础知识等。总之要有自己的“过人之处”、“加分项”。
+</code></pre><h3 id="Q2：投简历的注意事项"><a href="#Q2：投简历的注意事项" class="headerlink" title="Q2：投简历的注意事项"></a>Q2：投简历的注意事项</h3><h3 id="A2："><a href="#A2：" class="headerlink" title="A2："></a>A2：</h3><pre><code>春招以实习工作为主，简历中需要有能够体现出自己可以承担一个实习生任务的能力。如丰富的项目经验、较深的技术栈等。同时在简历的基本信息中也可以提到自己可以实习的时间、每周到岗天数等，如果可以有较为稳定的实习时间部门主管和HR肯定会优先考虑。
+
+秋招时的重点是实习经历。可以较为详细的介绍自己实习时做的事情，如做的一些优化、封装的公共组件等。在筛选简历时，部门主管会看重你为公司做出的贡献，增加简历通过筛选的概率。
+</code></pre><h3 id="Q3：笔试面试经验"><a href="#Q3：笔试面试经验" class="headerlink" title="Q3：笔试面试经验"></a>Q3：笔试面试经验</h3><h3 id="A3："><a href="#A3：" class="headerlink" title="A3："></a>A3：</h3><pre><code>笔试主要考查基础知识及编码能力。一般题型为选择、编程、简答等。在选择、简答部分尽量花费较少时间，重点完成编程部分。很多面试官会在面试时再次问到笔试的编程题，所以要尽可能的优化完善代码。
+
+面试作为找工作的重点需要注意的点很多。
+
+要准备好自己的项目介绍，用尽可能少的项目背景介绍带入到技术重点介绍里。向面试官详细的介绍自己在项目中遇到的困难及解决方法。这些可以体现出你解决问题的能力及学习能力。
+
+要避免答非所问。如面试官很多时候希望听到一些技术关键词，如果了解相关知识可以先优先说出这些关键词，然后再结合项目经验及自己的理解。讲出关键词让面试官知道你学习过这方面的知识，再加上你的理解可以加很多分，也能节省时间让面试官更多的了解你的技术水平。
+
+遇到不会不了解的问题尽量避免说“我不会”。闻道有先后，难免有自己不了解的地方，大多数面试官都不会去刁难你，但也有压力面的情况。对于不会不了解的问题可以让面试官留出时间再思考一下，结合自己知识大胆猜，当然基础知识除外。举个栗子，面试官问，怎样避免运营商在你的HTML页面里插入广告。第一反应我又没遇到过我咋知道嘞，如果直接反馈自己不了解的情况也会影响到自己面试的状态，不如大胆猜一下。HTML被放入了广告有可能是安全问题，询问面试官是不是类似于xss攻击。面试官：no，你讲一下xss吧。balabala... 面试官再给出提示，运营商有可能拿到请求及响应。答：拿到请求响应，那可以通过https加密一下呗？面试官：https可以，不过成本有些高，你讲一下https吧。balabala... 面试官：这个问题ojbk，我们敲几道算法... 
+
+算法卡住了不要慌。算法难免会卡住，如果卡住了，总结目前自己的思路，找出目前代码的问题，然后把正在沏茶看赵丽颖逗猫的面试官赶紧叫来。给他讲一下现在的思路和问题，面试官一般都会听完你的分析后给你指出关键错误。面试官：你这里换个递归条件处理一下。思考状：这里条件balabala...面试官：分析差不多了，继续完善一下代码吧，稍等一会后面有HR通知。
+</code></pre><hr>
+<p>祝大家都拿到自己心仪的offer哦~</p>
+
+        </div>
+        <div class="post-tool">
+            <a class="btn-thumbs-up" href="javascript:void(0);" data-cid="52" title="95">
+                <i class="fa fa-thumbs-up" aria-hidden="true"></i> 打赏
+            </a>
+        </div>
+        
+        <div class="post-tags">标签：
+            
+            <a href="/tags/chat/">闲聊</a>
+            
+        </div>
+        
+    </article>
+    
+    <p>本文代表个人观点，内容仅供参考。若有不恰当之处，望不吝赐教！么么哒~</p>
+    
+    
+</div>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        </div><!-- end #main-->
+    </div><!-- end #body -->
+    <footer class="footer">
+    <div class="footer-inner">
+        <p>
+            <a href="/about"  title="关于本站">关于本站</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <!-- 自定义链接 -->
+            <a href="/help" title="help" >帮助中心</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="http://www.tjoe18.cn/join/" title="个人链接">个人链接</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="https://xiyoumobile.com/" title="3G实验室">3G实验室</a>
+        </p>
+        <p>
+            本站点采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>，已建立<a href="/timeline" id="siteBuildingTime"></a>天<br/>
+            ©2017 QiaoDing
+        </p>
+        
+
+    </div>
+</footer>
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+<script src="/js/InsightSearch.js"></script>
+<script src="/js/SimpleCore.js"></script>
+
+</div>
+<div class="fixed-btn">
+    <a class="btn-gotop" href="javascript:"> <i class="fa fa-angle-up"></i></a>
+</div>
+<script>
+    $(function () {
+        SimpleCore.init({
+            buildingTime: '06/21/1997',
+            current: $('.post-tags').length > 0 ? 'post' : 'archive',
+            snsQRCode: '/images/sns-qrcode.png',
+            donateImg: '/images/donate-qr.png',
+        });
+    });
+</script>
+</body>
+</html>

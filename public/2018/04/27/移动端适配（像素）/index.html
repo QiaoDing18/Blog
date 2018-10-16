@@ -1,0 +1,263 @@
+<!DOCTYPE HTML>
+<html class="no-js" lang="zh-CN">
+<!--
+//                            _ooOoo_
+//                           o8888888o
+//                           88" . "88
+//                           (| -_- |)
+//                            O\ = /O
+//                        ____/`---'\____
+//                      .   ' \\| |// `.
+//                       / \\||| : |||// \
+//                     / _||||| -:- |||||- \
+//                       | | \\\ - /// | |
+//                     | \_| ''\---/'' | |
+//                      \ .-\__ `-` ___/-. /
+//                   ___`. .' /--.--\ `. . __
+//                ."" '< `.___\_<|>_/___.' >'"".
+//               | | : `- \`.;`\ _ /`;.`/ - ` : | |
+//                 \ \ `-. \_ __\ /__ _/ .-` / /
+//         ======`-.____`-.___\_____/___.-`____.-'======
+//                            `=---='
+//                 拦截插件累计拦截逗比攻击"1381438"次！
+//         .............................................
+//                  佛祖保佑             永无BUG
+//          佛曰:
+//                  写字楼里写字间，写字间里程序员；
+//                  程序人员写程序，又拿程序换酒钱。
+//                  酒醒只在网上坐，酒醉还来网下眠；
+//                  酒醉酒醒日复日，网上网下年复年。
+//                  但愿老死电脑间，不愿鞠躬老板前；
+//                  奔驰宝马贵者趣，公交自行程序员。
+//                  别人笑我忒疯癫，我笑自己命太贱；
+//                  不见满街漂亮妹，哪个归得程序员？
+-->
+<head>
+    <!--[if lte IE 9]>
+<meta http-equiv="refresh" content="0;url=https://qiaoding18.github.io/warn.html">
+<![endif]-->
+<meta charset="utf-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+<meta http-equiv="mobile-agent" content="format=html5; url=https://qiaoding18.github.io">
+<meta name="author" content="乔丁">
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/SimpleStyle.min.css">
+
+<link rel="shortcut icon" href="/images/favicon.png">
+
+
+<title>移动端适配（像素） - QiaoDing Blog</title>
+
+<meta name="keywords" content="">
+
+<meta name="description " content="">
+</head>
+<body>
+<div id="nav">
+    <nav class="nav-menu">
+        <a class="site-name current" href="/" title="丁">丁</a>
+        <a class="site-index current" href="/"><i class="fa fa-home"></i><span> 主页</span></a>
+        <a href="/archives" title="归档"><i class="fa fa-archives"></i><span> 归档</span></a>
+        <a href="/tags" title="标签"><i class="fa fa-tags"></i><span> 标签</span></a>
+        <!-- custom single page of menus -->
+        
+        
+        <a href="/help" title="帮助">
+            <i class="fa fa-question-circle"></i>
+            <span>帮助</span>
+        </a>
+        
+    </nav>
+</div>
+
+<div class="nav-user">
+    <a class="btn-search" href="#"><i class="fa fa-search"></i></a>
+    <a class="btn-read-mode" href="#"><i class="fa fa-sun-o"></i></a>
+    <a class="btn-sns-qr" href="javascript:"><i class="fa fa-telegram"></i></a>
+</div>
+
+<div id="wrapper" class="clearfix">
+    <div id="body">
+        <div class="main" id="main">
+            <div id="cover">
+    <div class="cover-img"></div>
+    <div class="cover-info">
+        
+        <h1 class="cover-siteName">乔丁啊</h1>
+        <h3 class="cover-siteTitle">一个前端小学生</h3>
+        <p class="cover-siteDesc">在这写写博客啥了的</p>
+        <div class="cover-sns">
+            
+            <div class="btn btn-github">
+                <a href="https://github.com/QiaoDing18/" target="_blank" title="github" ref="friend">
+                    <i class="fa fa-github"></i>
+                </a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+            <div class="page-title">
+    <ul>
+        <li><a href="/">最新</a></li>
+
+
+        
+            
+                <li class="">
+                    <a href="/categories/web" data-name="前端">前端</a>
+                </li>
+            
+                <li class="">
+                    <a href="/categories/net" data-name="计算机网络">计算机网络</a>
+                </li>
+            
+                <li class="">
+                    <a href="/categories/chat" data-name="闲聊">闲聊</a>
+                </li>
+            
+        
+        <li class="page-search">
+    <form id="search" class="search-form">
+        <label for="s" class="sr-only">请输入关键字</label>
+        <input class="search-field" type="text" name="s" class="text" placeholder="搜索啦" />
+        <button type="submit" class="search-form-submit" title="搜索"><i class="fa fa-search"></i></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="输入要搜的内容啦"/>
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(无标题)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+</li>
+
+    </ul>
+</div>
+<div class="main-inner">
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <div class="post-header">
+            <div class="post-author clearfix">
+                <a class="avatar fleft" href="" target="_blank">
+                    <img width="48" src="/images/favicon.png" alt="avatar"/>
+                </a>
+                <p><span class="label">作者</span>
+                    <a href="" target="_blank">乔丁</a>
+                    <span title="最后编辑于2018-04-27">2018-04-27</span>
+                </p>
+                <p>【前端小学生】</p>
+            </div>
+            <h2 class="post-title">移动端适配（像素）</h2>
+            <div class="post-meta">
+                本文总共2505个字 | 您是第<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>位看到它们的小伙伴
+            </div>
+        </div>
+        <div class="post-content markdown-body">
+            <h2 id="像素和DPR"><a href="#像素和DPR" class="headerlink" title="像素和DPR"></a>像素和DPR</h2><h3 id="像素"><a href="#像素" class="headerlink" title="像素"></a>像素</h3><p>像素分为两种：<br>1、<strong>设备像素</strong>：设备屏幕的物理像素，任何设备的物理像素的数量都是固定的。<br>2、<strong>css像素</strong>：又称为逻辑像素，是为web开发者创造的，在css和JavaScript中使用的一个抽象层。</p>
+<blockquote>
+<p>每一个css声明和几乎所有的JavaScript属性都使用css像素，因此实际上从来用不上设备像素，唯一例外的是screen.width/height<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">// css设置的是逻辑像素</span><br><span class="line"><span class="selector-tag">width</span>: 300<span class="selector-tag">px</span>;</span><br><span class="line"><span class="selector-tag">font-size</span>: 16<span class="selector-tag">px</span>;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h3 id="放缩"><a href="#放缩" class="headerlink" title="放缩"></a>放缩</h3><blockquote>
+<p>PC端，css一个像素对应电脑屏幕的一个物理像素，有特殊情况比如电脑放缩，浏览器放缩</p>
+</blockquote>
+<blockquote>
+<p>PE端，由于屏幕尺寸的限制，放缩是经常性的操作</p>
+</blockquote>
+<p>设备像素是深蓝色，css像素是半透明<br>左图，缩小时，一个设备像素覆盖了多个css像素<br>右图，放大时，一个css像素覆盖了多个设备像素</p>
+<p>无论我们进行缩小还是放大操作，元素设置的css像素是始终不变的，而一个css像素对应多少个设备像素是根据当前的缩放比例来决定的。</p>
+<h3 id="设备像素比DPR"><a href="#设备像素比DPR" class="headerlink" title="设备像素比DPR"></a>设备像素比DPR</h3><p>DPR设备像素比 = 设备像素 / css像素（某一方向上）<br>如今设备的PPI（像素密度很高）屏幕分辨率提高了，屏幕尺寸没有变换，会导致在同样大小的屏幕中，像素更多，导致DPR增加。普通屏幕下的图片在这种高分屏中会导致图片模糊。</p>
+<p>实际上，此时的CSS像素对应着以后要提到的理想视口，其对应的javascript属性是<strong>screen.width/screen.height</strong></p>
+<p>而对于设备像素比DPR也有对应的javascript属性<strong>window.devicePixelRatio</strong></p>
+<p>以iphone5为例，iphone5的CSS像素为320px*568px，DPR是2，所以其设备像素为640px*1136px</p>
+<p>般都不会用到处理css border-width:0.5px;的问题，所以为认为目前dpr需要处理的问题是retina屏幕下高清图片的显示问题，一般设置即可：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta name=<span class="string">"viewport"</span> content=<span class="string">"width=devide-width,initial-scale=1,maximum-scale=1, minimum-scale=1,user-scalable=no"</span>&gt;</span><br></pre></td></tr></table></figure></p>
+<h2 id="viewport"><a href="#viewport" class="headerlink" title="viewport"></a>viewport</h2><h3 id="由来"><a href="#由来" class="headerlink" title="由来"></a>由来</h3><p>由于手机屏幕相对桌面显示器要小很多，传统网页上的设计在手机上的体验会很糟糕，阅读性非常差。<br>为了让手机也能获得良好的网页浏览体验，Apple 在移动版 Safari 中定义了 viewport meta 标签(如果没记错最早提出的话)，用于创建一个虚拟窗口（layout viewport），这个虚拟窗口的分辨率接近于桌面显示器，Apple 将其定义为980px。然后将虚拟窗口映射到移动设备的屏幕上，按比例缩放并重新渲染网页。</p>
+<h3 id="关于"><a href="#关于" class="headerlink" title="关于"></a>关于</h3><p>viewport的功能是用来约束你网站中最顶级包含块元素（containing block）\<html>的。实际上等于浏览器窗口</html></p>
+<h3 id="划分"><a href="#划分" class="headerlink" title="划分"></a>划分</h3><h4 id="虚拟窗口（layout-viewport）"><a href="#虚拟窗口（layout-viewport）" class="headerlink" title="虚拟窗口（layout viewport）"></a>虚拟窗口（layout viewport）</h4><p>移动浏览器默认情况下把viewport设置为一个比较宽的值（防止太窄而在可视区域中显示错乱），该默认的 viewport 称为 layout viewport<br>宽度可通过 JS 获取(基本所有设备都支持)<br>document.documentElement.clientWidth<br>document.documentElement.clientHeight</p>
+<h4 id="视觉窗口（visual-viewport）"><a href="#视觉窗口（visual-viewport）" class="headerlink" title="视觉窗口（visual viewport）"></a>视觉窗口（visual viewport）</h4><p>浏览器可视区域大小。可理解为手机物理屏幕。<br>宽度可通过 JS 获取(不支持Android2, Opera Mini, UC8)<br>window.innerWidth<br>window.innerHeight</p>
+<h3 id="ideal-viewport"><a href="#ideal-viewport" class="headerlink" title="ideal viewport"></a>ideal viewport</h3><p>这个viewport能将设备上的页面设置能最理想的尺寸。因此，每种设备的ideal viewport的尺寸是不一样的。<br>一个完美适配移动设备的 viewport。理想状态是不需要用户缩放和横向滚动条就能正常查看，显示的文字大小合适，不区分分辨率，屏幕密度等。</p>
+<p>UI的设计稿就应该按照css像素（如ipohone6应该给375px的设计稿）给，这样我们我们量出来直接写不就刚好。但是！！！我们忽略了一个问题！那就是，我们在移动端中会使用rem方案，来做不同设备间的适配，可以实现同一份代码在不同的设备上展示的效果都是合适的。而rem实际上就是做了物理像素和css像素之间的转换。我们先来po一下代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">　　<span class="function"><span class="keyword">function</span> <span class="title">changeRootFont</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">　　　  <span class="keyword">var</span> designWidth = <span class="number">750</span>, rem2px = <span class="number">100</span>;</span><br><span class="line">　　　  <span class="built_in">document</span>.documentElement.style.fontsize = </span><br><span class="line">　　　  ((<span class="built_in">window</span>.innerWidth / designWidth) * rem2px) + <span class="string">'px'</span>;</span><br><span class="line">　　　  <span class="comment">//iphone6: (375 / 750) * 100 + 'px';</span></span><br><span class="line">　　&#125;</span><br><span class="line">　　changeRootFont();</span><br><span class="line">　　<span class="built_in">window</span>.addEventListener(<span class="string">'resize'</span>, changeRootFont,<span class="literal">false</span>);</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure></p>
+<p>可以看到，我们通过动态的获取设备独立像素，然后除以设计稿的宽度，然后赋给根字体的fontsize，以致来动态改变跟字体大小，做到自适应。但至于为什么要乘100，首先375 / 750是0.5，浏览器默认最小字体为12px，所以我们需要放大一些，而100又很好算，我们只需要将设计稿量出来的长度（px），小数点向左移2位，单位变成rem就好了。<br>　　rem相当于为我们做了物理像素与css像素之间的转换。所以设计稿直接给物理像素的就好了。当然，直接给css像素的，我们也可以直接量多少写多少，也能完美适配，但是！这个完美适配只对于一个设备！或者是一类，一类css像素就是375px的设备，显然，这不合适。</p>
+
+        </div>
+        <div class="post-tool">
+            <a class="btn-thumbs-up" href="javascript:void(0);" data-cid="52" title="95">
+                <i class="fa fa-thumbs-up" aria-hidden="true"></i> 打赏
+            </a>
+        </div>
+        
+        <div class="post-tags">标签：
+            
+            <a href="/tags/web/">前端</a>
+            
+        </div>
+        
+    </article>
+    
+    <p>本文代表个人观点，内容仅供参考。若有不恰当之处，望不吝赐教！么么哒~</p>
+    
+    
+</div>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        </div><!-- end #main-->
+    </div><!-- end #body -->
+    <footer class="footer">
+    <div class="footer-inner">
+        <p>
+            <a href="/about"  title="关于本站">关于本站</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <!-- 自定义链接 -->
+            <a href="/help" title="help" >帮助中心</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="http://www.tjoe18.cn/join/" title="个人链接">个人链接</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="https://xiyoumobile.com/" title="3G实验室">3G实验室</a>
+        </p>
+        <p>
+            本站点采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>，已建立<a href="/timeline" id="siteBuildingTime"></a>天<br/>
+            ©2017 QiaoDing
+        </p>
+        
+
+    </div>
+</footer>
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+<script src="/js/InsightSearch.js"></script>
+<script src="/js/SimpleCore.js"></script>
+
+</div>
+<div class="fixed-btn">
+    <a class="btn-gotop" href="javascript:"> <i class="fa fa-angle-up"></i></a>
+</div>
+<script>
+    $(function () {
+        SimpleCore.init({
+            buildingTime: '06/21/1997',
+            current: $('.post-tags').length > 0 ? 'post' : 'archive',
+            snsQRCode: '/images/sns-qrcode.png',
+            donateImg: '/images/donate-qr.png',
+        });
+    });
+</script>
+</body>
+</html>

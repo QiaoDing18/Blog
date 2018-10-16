@@ -1,0 +1,254 @@
+<!DOCTYPE HTML>
+<html class="no-js" lang="zh-CN">
+<!--
+//                            _ooOoo_
+//                           o8888888o
+//                           88" . "88
+//                           (| -_- |)
+//                            O\ = /O
+//                        ____/`---'\____
+//                      .   ' \\| |// `.
+//                       / \\||| : |||// \
+//                     / _||||| -:- |||||- \
+//                       | | \\\ - /// | |
+//                     | \_| ''\---/'' | |
+//                      \ .-\__ `-` ___/-. /
+//                   ___`. .' /--.--\ `. . __
+//                ."" '< `.___\_<|>_/___.' >'"".
+//               | | : `- \`.;`\ _ /`;.`/ - ` : | |
+//                 \ \ `-. \_ __\ /__ _/ .-` / /
+//         ======`-.____`-.___\_____/___.-`____.-'======
+//                            `=---='
+//                 拦截插件累计拦截逗比攻击"1381438"次！
+//         .............................................
+//                  佛祖保佑             永无BUG
+//          佛曰:
+//                  写字楼里写字间，写字间里程序员；
+//                  程序人员写程序，又拿程序换酒钱。
+//                  酒醒只在网上坐，酒醉还来网下眠；
+//                  酒醉酒醒日复日，网上网下年复年。
+//                  但愿老死电脑间，不愿鞠躬老板前；
+//                  奔驰宝马贵者趣，公交自行程序员。
+//                  别人笑我忒疯癫，我笑自己命太贱；
+//                  不见满街漂亮妹，哪个归得程序员？
+-->
+<head>
+    <!--[if lte IE 9]>
+<meta http-equiv="refresh" content="0;url=https://qiaoding18.github.io/warn.html">
+<![endif]-->
+<meta charset="utf-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+<meta http-equiv="mobile-agent" content="format=html5; url=https://qiaoding18.github.io">
+<meta name="author" content="乔丁">
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/SimpleStyle.min.css">
+
+<link rel="shortcut icon" href="/images/favicon.png">
+
+
+<title>vue的slot内容分发 - QiaoDing Blog</title>
+
+<meta name="keywords" content="">
+
+<meta name="description " content="官网上关于slot解释的很生硬">
+</head>
+<body>
+<div id="nav">
+    <nav class="nav-menu">
+        <a class="site-name current" href="/" title="丁">丁</a>
+        <a class="site-index current" href="/"><i class="fa fa-home"></i><span> 主页</span></a>
+        <a href="/archives" title="归档"><i class="fa fa-archives"></i><span> 归档</span></a>
+        <a href="/tags" title="标签"><i class="fa fa-tags"></i><span> 标签</span></a>
+        <!-- custom single page of menus -->
+        
+        
+        <a href="/help" title="帮助">
+            <i class="fa fa-question-circle"></i>
+            <span>帮助</span>
+        </a>
+        
+    </nav>
+</div>
+
+<div class="nav-user">
+    <a class="btn-search" href="#"><i class="fa fa-search"></i></a>
+    <a class="btn-read-mode" href="#"><i class="fa fa-sun-o"></i></a>
+    <a class="btn-sns-qr" href="javascript:"><i class="fa fa-telegram"></i></a>
+</div>
+
+<div id="wrapper" class="clearfix">
+    <div id="body">
+        <div class="main" id="main">
+            <div id="cover">
+    <div class="cover-img"></div>
+    <div class="cover-info">
+        
+        <h1 class="cover-siteName">乔丁啊</h1>
+        <h3 class="cover-siteTitle">一个前端小学生</h3>
+        <p class="cover-siteDesc">在这写写博客啥了的</p>
+        <div class="cover-sns">
+            
+            <div class="btn btn-github">
+                <a href="https://github.com/QiaoDing18/" target="_blank" title="github" ref="friend">
+                    <i class="fa fa-github"></i>
+                </a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+            <div class="page-title">
+    <ul>
+        <li><a href="/">最新</a></li>
+
+
+        
+            
+                <li class="">
+                    <a href="/categories/web" data-name="前端">前端</a>
+                </li>
+            
+                <li class="">
+                    <a href="/categories/net" data-name="计算机网络">计算机网络</a>
+                </li>
+            
+                <li class="">
+                    <a href="/categories/chat" data-name="闲聊">闲聊</a>
+                </li>
+            
+        
+        <li class="page-search">
+    <form id="search" class="search-form">
+        <label for="s" class="sr-only">请输入关键字</label>
+        <input class="search-field" type="text" name="s" class="text" placeholder="搜索啦" />
+        <button type="submit" class="search-form-submit" title="搜索"><i class="fa fa-search"></i></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="输入要搜的内容啦"/>
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(无标题)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+</li>
+
+    </ul>
+</div>
+<div class="main-inner">
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <div class="post-header">
+            <div class="post-author clearfix">
+                <a class="avatar fleft" href="" target="_blank">
+                    <img width="48" src="/images/favicon.png" alt="avatar"/>
+                </a>
+                <p><span class="label">作者</span>
+                    <a href="" target="_blank">乔丁</a>
+                    <span title="最后编辑于2018-05-23">2018-05-23</span>
+                </p>
+                <p>【前端小学生】</p>
+            </div>
+            <h2 class="post-title">Vue的slot内容分发</h2>
+            <div class="post-meta">
+                本文总共6094个字 | 您是第<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>位看到它们的小伙伴
+            </div>
+        </div>
+        <div class="post-content markdown-body">
+            <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>假如父组件需要在字组件内放一些DOM，那么这些DOM是显示、不显示、在哪显示、如何显示，就是由slot分发负责</p>
+<h2 id="默认情况下"><a href="#默认情况下" class="headerlink" title="默认情况下"></a>默认情况下</h2><p>父组件在子组件内直接写的的内容，是不显示的<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="name">children</span>&gt;</span>  </span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span>3g666<span class="tag">&lt;/<span class="name">span</span>&gt;</span>  </span><br><span class="line">        <span class="comment">&lt;!--上面这行不会显示--&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;/<span class="name">children</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined">  </span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;  </span></span><br><span class="line"><span class="javascript">        el: <span class="string">'#app'</span>,  </span></span><br><span class="line"><span class="undefined">        components: &#123;  </span></span><br><span class="line"><span class="javascript">            children: &#123;    <span class="comment">//这个无返回值，不会继续派发  </span></span></span><br><span class="line"><span class="xml">                template: "<span class="tag">&lt;<span class="name">button</span>&gt;</span>为了明确作用范围，所以使用button标签<span class="tag">&lt;/<span class="name">button</span>&gt;</span>"  </span></span><br><span class="line"><span class="undefined">            &#125;  </span></span><br><span class="line"><span class="undefined">        &#125;  </span></span><br><span class="line"><span class="undefined">    &#125;);  </span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>显示一个button，不包含span标签里面的内容</p>
+<h2 id="单个slot"><a href="#单个slot" class="headerlink" title="单个slot"></a>单个slot</h2><p>简单来说，只使用这个标签，可以将父组件放在子组件的内容，放到让他显示的地方<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="name">children</span>&gt;</span>  </span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span>3g666<span class="tag">&lt;/<span class="name">span</span>&gt;</span>  </span><br><span class="line">        <span class="comment">&lt;!--上面这行不会显示--&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;/<span class="name">children</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined">  </span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;  </span></span><br><span class="line"><span class="javascript">        el: <span class="string">'#app'</span>,  </span></span><br><span class="line"><span class="undefined">        components: &#123;  </span></span><br><span class="line"><span class="javascript">            children: &#123;    <span class="comment">//这个无返回值，不会继续派发  </span></span></span><br><span class="line"><span class="xml">                template: "<span class="tag">&lt;<span class="name">button</span>&gt;</span><span class="tag">&lt;<span class="name">slot</span>&gt;</span><span class="tag">&lt;/<span class="name">slot</span>&gt;</span>为了明确作用范围，所以使用button标签<span class="tag">&lt;/<span class="name">button</span>&gt;</span>"  </span></span><br><span class="line"><span class="undefined">            &#125;  </span></span><br><span class="line"><span class="undefined">        &#125;  </span></span><br><span class="line"><span class="undefined">    &#125;);  </span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>这样的结果就是<br>&lt; button&gt;&lt; span&gt;12345&lt; / span&gt;为了明确作用范围，所以使用button标签&lt; / button&gt;<br>即父组件放在字组件里的内容，插到了子组件的&lt; slot&gt;&lt; / slot&gt;位置<br>注意，即便有多个标签，会一起被插入，相当于用父组件放在子组件里的标签，替换了&lt; slot&gt;&lt; / slot&gt;这个标签</p>
+<h2 id="具名slot"><a href="#具名slot" class="headerlink" title="具名slot"></a>具名slot</h2><p>将放在子组件里的不同html标签放在不同的位置<br>父组件在要分发的标签里添加slot=’name名’属性<br>子组件在对应分发的位置的slot标签里，添加name=’name名’属性<br>然后就会将对应的标签放在对应的位置<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="name">children</span>&gt;</span>  </span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span> <span class="attr">slot</span>=<span class="string">"first"</span>&gt;</span>12345<span class="tag">&lt;/<span class="name">span</span>&gt;</span>  </span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span> <span class="attr">slot</span>=<span class="string">"second"</span>&gt;</span>56789<span class="tag">&lt;/<span class="name">span</span>&gt;</span>  </span><br><span class="line">        <span class="comment">&lt;!--上面这行不会显示--&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;/<span class="name">children</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined">  </span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;  </span></span><br><span class="line"><span class="javascript">        el: <span class="string">'#app'</span>,  </span></span><br><span class="line"><span class="undefined">        components: &#123;  </span></span><br><span class="line"><span class="javascript">            children: &#123;    <span class="comment">//这个无返回值，不会继续派发  </span></span></span><br><span class="line"><span class="xml">                template: "<span class="tag">&lt;<span class="name">button</span>&gt;</span><span class="tag">&lt;<span class="name">slot</span> <span class="attr">name</span>=<span class="string">'first'</span>&gt;</span><span class="tag">&lt;/<span class="name">slot</span>&gt;</span>为了明确作用范围，<span class="tag">&lt;<span class="name">slot</span> <span class="attr">name</span>=<span class="string">'second'</span>&gt;</span><span class="tag">&lt;/<span class="name">slot</span>&gt;</span>所以使用button标签<span class="tag">&lt;/<span class="name">button</span>&gt;</span>"  </span></span><br><span class="line"><span class="undefined">            &#125;  </span></span><br><span class="line"><span class="undefined">        &#125;  </span></span><br><span class="line"><span class="undefined">    &#125;);  </span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>显示结果：<br>&lt; button&gt;<br>&lt; span slot=”first”&gt;12345&lt; / span&gt;<br>为了明确作用范围，<br>&lt; span slot=”second”&gt;56789&lt; / span&gt;<br>所以使用button标签<br>&lt; / button&gt;</p>
+<h2 id="分发内容的作用域"><a href="#分发内容的作用域" class="headerlink" title="分发内容的作用域"></a>分发内容的作用域</h2><p>被分发的内容的作用域，根据其所在模板决定，以上标签，在其父组件模板中，虽然其被子组件的children标签所包括，但由于他不再子组件的template属性中，因此不属于子组件，还是受父组件的控制<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="name">children</span>&gt;</span>  </span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span> <span class="attr">slot</span>=<span class="string">"first"</span> @<span class="attr">click</span>=<span class="string">"tobeknow"</span>&gt;</span>12345<span class="tag">&lt;/<span class="name">span</span>&gt;</span>  </span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span> <span class="attr">slot</span>=<span class="string">"second"</span>&gt;</span>56789<span class="tag">&lt;/<span class="name">span</span>&gt;</span>  </span><br><span class="line">        <span class="comment">&lt;!--上面这行不会显示--&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;/<span class="name">children</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined">  </span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;  </span></span><br><span class="line"><span class="javascript">        el: <span class="string">'#app'</span>,  </span></span><br><span class="line"><span class="undefined">        methods: &#123; </span></span><br><span class="line"><span class="javascript">            tobeknow: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;  </span></span><br><span class="line"><span class="javascript">                <span class="built_in">console</span>.log(<span class="string">"It is the parent's method"</span>);  </span></span><br><span class="line"><span class="undefined">            &#125; </span></span><br><span class="line"><span class="undefined">        &#125;,  </span></span><br><span class="line"><span class="undefined">        components: &#123;  </span></span><br><span class="line"><span class="javascript">            children: &#123;    <span class="comment">//这个无返回值，不会继续派发  </span></span></span><br><span class="line"><span class="xml">                template: "<span class="tag">&lt;<span class="name">button</span>&gt;</span><span class="tag">&lt;<span class="name">slot</span> <span class="attr">name</span>=<span class="string">'first'</span>&gt;</span><span class="tag">&lt;/<span class="name">slot</span>&gt;</span>为了明确作用范围，<span class="tag">&lt;<span class="name">slot</span> <span class="attr">name</span>=<span class="string">'second'</span>&gt;</span><span class="tag">&lt;/<span class="name">slot</span>&gt;</span>所以使用button标签<span class="tag">&lt;/<span class="name">button</span>&gt;</span>"  </span></span><br><span class="line"><span class="undefined">            &#125;  </span></span><br><span class="line"><span class="undefined">        &#125;  </span></span><br><span class="line"><span class="undefined">    &#125;);  </span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>这个只有在点击文字12345时候，才会触发父组件的tobeknow<br>但是点击其他地方则没有影响</p>
+<p>父组件模板的内容在父组件作用域内编译；子组件模板的内容在子组件作用域内编译</p>
+<h2 id="当没有分发内容时的提示"><a href="#当没有分发内容时的提示" class="headerlink" title="当没有分发内容时的提示"></a>当没有分发内容时的提示</h2><p>加入父组件没有子组件中放置有标签，或者是父组件在子组件中防止标签，但是有slot属性，而子组件中没有该slot属性的标签<br>那么子组件的slot就会失效没用<br>除非该slot标签内有内容，那么在无分发内容的时候，会显示该slot标签内的内容<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="name">children</span>&gt;</span>  </span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span> <span class="attr">slot</span>=<span class="string">"first"</span>&gt;</span>【12345】<span class="tag">&lt;/<span class="name">span</span>&gt;</span>  </span><br><span class="line">        <span class="comment">&lt;!--上面这行不会显示--&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;/<span class="name">children</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined">  </span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;  </span></span><br><span class="line"><span class="javascript">        el: <span class="string">'#app'</span>,  </span></span><br><span class="line"><span class="undefined">        components: &#123;  </span></span><br><span class="line"><span class="javascript">            children: &#123;    <span class="comment">//这个无返回值，不会继续派发  </span></span></span><br><span class="line"><span class="xml">                template: "<span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;<span class="name">slot</span> <span class="attr">name</span>=<span class="string">'first'</span>&gt;</span><span class="tag">&lt;<span class="name">button</span>&gt;</span>【如果没有内容则显示我1】<span class="tag">&lt;/<span class="name">button</span>&gt;</span><span class="tag">&lt;/<span class="name">slot</span>&gt;</span>为了明确作用范围，<span class="tag">&lt;<span class="name">slot</span> <span class="attr">name</span>=<span class="string">'last'</span>&gt;</span><span class="tag">&lt;<span class="name">button</span>&gt;</span>【如果没有内容则显示我2】<span class="tag">&lt;/<span class="name">button</span>&gt;</span><span class="tag">&lt;/<span class="name">slot</span>&gt;</span>所以使用button标签<span class="tag">&lt;/<span class="name">div</span>&gt;</span>"  </span></span><br><span class="line"><span class="undefined">            &#125;  </span></span><br><span class="line"><span class="undefined">        &#125;  </span></span><br><span class="line"><span class="undefined">    &#125;);  </span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>第一个slot因为父组件有对应的标签会被替换，第二个父组件中没用对应的slot标签，会直接显示slot中的内容</p>
+<h2 id="加入想控制子组件根标签的属性"><a href="#加入想控制子组件根标签的属性" class="headerlink" title="加入想控制子组件根标签的属性"></a>加入想控制子组件根标签的属性</h2><p>1、由于模板标签是属于父组件的，因此，将子组件的指令绑定在模板标签里，是不可以的，他终归还是属于父组件<br>2、加入需要通过父组件控制子组件是否显示，比如v-if，v-show，那么这个指令显然是属于父组件的（例如放在父组件的data下面）可以将标签卸载子组件的模板上<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">"toshow"</span>&gt;</span>点击让子组件显示<span class="tag">&lt;/<span class="name">button</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="name">children</span> <span class="attr">v-if</span>=<span class="string">"abc"</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;/<span class="name">children</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined">  </span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;  </span></span><br><span class="line"><span class="javascript">        el: <span class="string">'#app'</span>,  </span></span><br><span class="line"><span class="undefined">        data: &#123;  </span></span><br><span class="line"><span class="javascript">            abc: <span class="literal">false</span>  </span></span><br><span class="line"><span class="undefined">        &#125;,  </span></span><br><span class="line"><span class="undefined">        methods: &#123;  </span></span><br><span class="line"><span class="javascript">            toshow: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;  </span></span><br><span class="line"><span class="javascript">                <span class="keyword">this</span>.abc = !<span class="keyword">this</span>.abc;  </span></span><br><span class="line"><span class="undefined">            &#125;  </span></span><br><span class="line"><span class="undefined">        &#125;,  </span></span><br><span class="line"><span class="undefined">        components: &#123;  </span></span><br><span class="line"><span class="javascript">            children: &#123;    <span class="comment">//这个无返回值，不会继续派发  </span></span></span><br><span class="line"><span class="xml">                template: "<span class="tag">&lt;<span class="name">div</span>&gt;</span>这里是子组件<span class="tag">&lt;/<span class="name">div</span>&gt;</span>"  </span></span><br><span class="line"><span class="undefined">            &#125;  </span></span><br><span class="line"><span class="undefined">        &#125;  </span></span><br><span class="line"><span class="undefined">    &#125;);  </span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>说明：通过父组件（点击按钮，切换v-if指令的值）控制子组件是否显示<br>3、假如需要通过子组件是否显示，比如是否让他隐藏，那么这个指令显然是属于子组件的，这个控制显示的值应该放在子组件的data属性下，那么就不能像上面这么写，而是必须防止在子组件的根标签中。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">"toshow"</span>&gt;</span>点击让子组件显示<span class="tag">&lt;/<span class="name">button</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="name">children</span>&gt;</span>  </span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span> <span class="attr">slot</span>=<span class="string">"first"</span>&gt;</span>【12345】<span class="tag">&lt;/<span class="name">span</span>&gt;</span>  </span><br><span class="line">        <span class="comment">&lt;!--上面这行不会显示--&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;/<span class="name">children</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined">  </span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;  </span></span><br><span class="line"><span class="javascript">        el: <span class="string">'#app'</span>,  </span></span><br><span class="line"><span class="undefined">        methods: &#123;  </span></span><br><span class="line"><span class="javascript">            toshow: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;  </span></span><br><span class="line"><span class="javascript">                <span class="keyword">this</span>.$children[<span class="number">0</span>].tohidden = <span class="literal">true</span>;  </span></span><br><span class="line"><span class="undefined">            &#125;  </span></span><br><span class="line"><span class="undefined">        &#125;,  </span></span><br><span class="line"><span class="undefined">        components: &#123;  </span></span><br><span class="line"><span class="javascript">            children: &#123;    <span class="comment">//这个无返回值，不会继续派发  </span></span></span><br><span class="line"><span class="xml">                template: "<span class="tag">&lt;<span class="name">div</span> <span class="attr">v-if</span>=<span class="string">'tohidden'</span> @<span class="attr">click</span>=<span class="string">'tohide'</span>&gt;</span>这里是子组件<span class="tag">&lt;/<span class="name">div</span>&gt;</span>",  </span></span><br><span class="line"><span class="javascript">                data: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;  </span></span><br><span class="line"><span class="javascript">                    <span class="keyword">return</span> &#123;  </span></span><br><span class="line"><span class="javascript">                        tohidden: <span class="literal">true</span>  </span></span><br><span class="line"><span class="undefined">                    &#125;  </span></span><br><span class="line"><span class="undefined">                &#125;,  </span></span><br><span class="line"><span class="undefined">                methods: &#123;  </span></span><br><span class="line"><span class="javascript">                    tohide: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;  </span></span><br><span class="line"><span class="javascript">                        <span class="keyword">this</span>.tohidden = !<span class="keyword">this</span>.tohidden;  </span></span><br><span class="line"><span class="undefined">                    &#125;  </span></span><br><span class="line"><span class="undefined">                &#125;  </span></span><br><span class="line"><span class="undefined">            &#125;  </span></span><br><span class="line"><span class="undefined">        &#125;  </span></span><br><span class="line"><span class="undefined">    &#125;);  </span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>这样，点击子组件会让子组件消失<br>点击父组件的按钮，通过更改子组件的控制隐藏的data属性，让子组件重新显示<br>子组件的指令绑定在子组件的模板之中</p>
+
+        </div>
+        <div class="post-tool">
+            <a class="btn-thumbs-up" href="javascript:void(0);" data-cid="52" title="95">
+                <i class="fa fa-thumbs-up" aria-hidden="true"></i> 打赏
+            </a>
+        </div>
+        
+        <div class="post-tags">标签：
+            
+            <a href="/tags/web/">前端</a>
+            
+        </div>
+        
+    </article>
+    
+    <p>本文代表个人观点，内容仅供参考。若有不恰当之处，望不吝赐教！么么哒~</p>
+    
+    
+</div>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        </div><!-- end #main-->
+    </div><!-- end #body -->
+    <footer class="footer">
+    <div class="footer-inner">
+        <p>
+            <a href="/about"  title="关于本站">关于本站</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <!-- 自定义链接 -->
+            <a href="/help" title="help" >帮助中心</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="http://www.tjoe18.cn/join/" title="个人链接">个人链接</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="https://xiyoumobile.com/" title="3G实验室">3G实验室</a>
+        </p>
+        <p>
+            本站点采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>，已建立<a href="/timeline" id="siteBuildingTime"></a>天<br/>
+            ©2017 QiaoDing
+        </p>
+        
+
+    </div>
+</footer>
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+<script src="/js/InsightSearch.js"></script>
+<script src="/js/SimpleCore.js"></script>
+
+</div>
+<div class="fixed-btn">
+    <a class="btn-gotop" href="javascript:"> <i class="fa fa-angle-up"></i></a>
+</div>
+<script>
+    $(function () {
+        SimpleCore.init({
+            buildingTime: '06/21/1997',
+            current: $('.post-tags').length > 0 ? 'post' : 'archive',
+            snsQRCode: '/images/sns-qrcode.png',
+            donateImg: '/images/donate-qr.png',
+        });
+    });
+</script>
+</body>
+</html>

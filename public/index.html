@@ -1,0 +1,911 @@
+<!DOCTYPE HTML>
+<html class="no-js" lang="zh-CN">
+<!--
+//                            _ooOoo_
+//                           o8888888o
+//                           88" . "88
+//                           (| -_- |)
+//                            O\ = /O
+//                        ____/`---'\____
+//                      .   ' \\| |// `.
+//                       / \\||| : |||// \
+//                     / _||||| -:- |||||- \
+//                       | | \\\ - /// | |
+//                     | \_| ''\---/'' | |
+//                      \ .-\__ `-` ___/-. /
+//                   ___`. .' /--.--\ `. . __
+//                ."" '< `.___\_<|>_/___.' >'"".
+//               | | : `- \`.;`\ _ /`;.`/ - ` : | |
+//                 \ \ `-. \_ __\ /__ _/ .-` / /
+//         ======`-.____`-.___\_____/___.-`____.-'======
+//                            `=---='
+//                 拦截插件累计拦截逗比攻击"1381438"次！
+//         .............................................
+//                  佛祖保佑             永无BUG
+//          佛曰:
+//                  写字楼里写字间，写字间里程序员；
+//                  程序人员写程序，又拿程序换酒钱。
+//                  酒醒只在网上坐，酒醉还来网下眠；
+//                  酒醉酒醒日复日，网上网下年复年。
+//                  但愿老死电脑间，不愿鞠躬老板前；
+//                  奔驰宝马贵者趣，公交自行程序员。
+//                  别人笑我忒疯癫，我笑自己命太贱；
+//                  不见满街漂亮妹，哪个归得程序员？
+-->
+<head>
+    <!--[if lte IE 9]>
+<meta http-equiv="refresh" content="0;url=https://qiaoding18.github.io/warn.html">
+<![endif]-->
+<meta charset="utf-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+<meta http-equiv="mobile-agent" content="format=html5; url=https://qiaoding18.github.io">
+<meta name="author" content="乔丁">
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/SimpleStyle.min.css">
+
+<link rel="shortcut icon" href="/images/favicon.png">
+
+
+<title>QiaoDing Blog - 前端小学生</title>
+
+<meta name="keywords" content="">
+
+<meta name="description " content="">
+</head>
+<body>
+<div id="nav">
+    <nav class="nav-menu">
+        <a class="site-name current" href="/" title="丁">丁</a>
+        <a class="site-index current" href="/"><i class="fa fa-home"></i><span> 主页</span></a>
+        <a href="/archives" title="归档"><i class="fa fa-archives"></i><span> 归档</span></a>
+        <a href="/tags" title="标签"><i class="fa fa-tags"></i><span> 标签</span></a>
+        <!-- custom single page of menus -->
+        
+        
+        <a href="/help" title="帮助">
+            <i class="fa fa-question-circle"></i>
+            <span>帮助</span>
+        </a>
+        
+    </nav>
+</div>
+
+<div class="nav-user">
+    <a class="btn-search" href="#"><i class="fa fa-search"></i></a>
+    <a class="btn-read-mode" href="#"><i class="fa fa-sun-o"></i></a>
+    <a class="btn-sns-qr" href="javascript:"><i class="fa fa-telegram"></i></a>
+</div>
+
+<div id="wrapper" class="clearfix">
+    <div id="body">
+        <div class="main" id="main">
+            <div id="cover">
+    <div class="cover-img"></div>
+    <div class="cover-info">
+        
+        <h1 class="cover-siteName">乔丁啊</h1>
+        <h3 class="cover-siteTitle">一个前端小学生</h3>
+        <p class="cover-siteDesc">在这写写博客啥了的</p>
+        <div class="cover-sns">
+            
+            <div class="btn btn-github">
+                <a href="https://github.com/QiaoDing18/" target="_blank" title="github" ref="friend">
+                    <i class="fa fa-github"></i>
+                </a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+            <div class="page-title">
+    <ul>
+        <li class="active">
+            <a href="/" data-name="最近文章">最近</a>
+        </li>
+        
+        <li class="">
+            <a href="/categories/web" data-name="前端">前端</a>
+        </li>
+        
+        <li class="">
+            <a href="/categories/net" data-name="计算机网络">计算机网络</a>
+        </li>
+        
+        <li class="">
+            <a href="/categories/chat" data-name="闲聊">闲聊</a>
+        </li>
+        
+        <li class="page-search">
+    <form id="search" class="search-form">
+        <label for="s" class="sr-only">请输入关键字</label>
+        <input class="search-field" type="text" name="s" class="text" placeholder="搜索啦" />
+        <button type="submit" class="search-form-submit" title="搜索"><i class="fa fa-search"></i></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="输入要搜的内容啦"/>
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(无标题)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+</li>
+
+    </ul>
+</div>
+<div class="main-inner">
+    
+    <!-- 首页默认取最最新文章集 -->
+    
+    
+<article class="post">
+
+    
+
+    <!-- 有配图默认渲染第一张 -->
+    <div class="post-cover">
+        <a href="/2018/10/16/校招面试QA/" target="_blank" title="校招面试QA"
+           style="background-image:url(http://p0.meituan.net/xianfu/508467c6250a747b69ad5a2eba1d7e7b38468.png)"></a>
+    </div>
+    
+    <div class="post-header">
+        <div class="post-meta">
+            <a href="" target="_blank">
+                <strong>乔丁</strong>
+            </a>
+            <em>·</em>2018-10-16
+        </div>
+        <a class="post-title" href="/2018/10/16/校招面试QA/" target="_blank" title="校招面试QA">校招面试QA</a>
+        <div class="post-meta">
+            <a href="/tags" target="_blank"><i class="fa fa-tags"></i></a>
+            
+                <em>·</em>
+                <a href="https://qiaoding18.github.io/tags/chat/" target="_blank">闲聊</a>
+            
+        </div>
+    </div>
+    <div class="post-desc">
+        面经啥了的
+    </div>
+</article>
+
+
+
+    
+    
+<article class="post">
+
+    
+
+    <!-- 有配图默认渲染第一张 -->
+    <div class="post-cover">
+        <a href="/2018/10/16/Webpack学习笔记（2）/" target="_blank" title="Webpack学习笔记（2）"
+           style="background-image:url(http://p7wm7amg2.bkt.clouddn.com/webpack.png)"></a>
+    </div>
+    
+    <div class="post-header">
+        <div class="post-meta">
+            <a href="" target="_blank">
+                <strong>乔丁</strong>
+            </a>
+            <em>·</em>2018-10-16
+        </div>
+        <a class="post-title" href="/2018/10/16/Webpack学习笔记（2）/" target="_blank" title="Webpack学习笔记（2）">Webpack学习笔记（2）</a>
+        <div class="post-meta">
+            <a href="/tags" target="_blank"><i class="fa fa-tags"></i></a>
+            
+                <em>·</em>
+                <a href="https://qiaoding18.github.io/tags/web/" target="_blank">前端</a>
+            
+        </div>
+    </div>
+    <div class="post-desc">
+        入门了解
+    </div>
+</article>
+
+
+
+    
+    
+<article class="post">
+
+    
+
+    <!-- 有配图默认渲染第一张 -->
+    <div class="post-cover">
+        <a href="/2018/10/15/Webpack学习笔记（1）/" target="_blank" title="Webpack学习笔记（1）"
+           style="background-image:url(http://p7wm7amg2.bkt.clouddn.com/webpack.png)"></a>
+    </div>
+    
+    <div class="post-header">
+        <div class="post-meta">
+            <a href="" target="_blank">
+                <strong>乔丁</strong>
+            </a>
+            <em>·</em>2018-10-15
+        </div>
+        <a class="post-title" href="/2018/10/15/Webpack学习笔记（1）/" target="_blank" title="Webpack学习笔记（1）">Webpack学习笔记（1）</a>
+        <div class="post-meta">
+            <a href="/tags" target="_blank"><i class="fa fa-tags"></i></a>
+            
+                <em>·</em>
+                <a href="https://qiaoding18.github.io/tags/web/" target="_blank">前端</a>
+            
+        </div>
+    </div>
+    <div class="post-desc">
+        入门了解
+    </div>
+</article>
+
+
+
+    
+    
+<article class="post">
+
+    
+
+    <!-- 有配图默认渲染第一张 -->
+    <div class="post-cover">
+        <a href="/2018/10/15/hexo备份/" target="_blank" title="hexo备份"
+           style="background-image:url(http://p7wm7amg2.bkt.clouddn.com/hexo.jpg)"></a>
+    </div>
+    
+    <div class="post-header">
+        <div class="post-meta">
+            <a href="" target="_blank">
+                <strong>乔丁</strong>
+            </a>
+            <em>·</em>2018-10-15
+        </div>
+        <a class="post-title" href="/2018/10/15/hexo备份/" target="_blank" title="hexo备份">hexo备份</a>
+        <div class="post-meta">
+            <a href="/tags" target="_blank"><i class="fa fa-tags"></i></a>
+            
+                <em>·</em>
+                <a href="https://qiaoding18.github.io/tags/chat/" target="_blank">闲聊</a>
+            
+        </div>
+    </div>
+    <div class="post-desc">
+        hexo备份问题小结
+    </div>
+</article>
+
+
+
+    
+    
+<article class="post">
+
+    
+
+    <!-- 有配图默认渲染第一张 -->
+    <div class="post-cover">
+        <a href="/2018/10/14/安排/" target="_blank" title="安排"
+           style="background-image:url(http://p0.meituan.net/xianfu/508467c6250a747b69ad5a2eba1d7e7b38468.png)"></a>
+    </div>
+    
+    <div class="post-header">
+        <div class="post-meta">
+            <a href="" target="_blank">
+                <strong>乔丁</strong>
+            </a>
+            <em>·</em>2018-10-14
+        </div>
+        <a class="post-title" href="/2018/10/14/安排/" target="_blank" title="安排">安排</a>
+        <div class="post-meta">
+            <a href="/tags" target="_blank"><i class="fa fa-tags"></i></a>
+            
+                <em>·</em>
+                <a href="https://qiaoding18.github.io/tags/chat/" target="_blank">闲聊</a>
+            
+        </div>
+    </div>
+    <div class="post-desc">
+        安排
+    </div>
+</article>
+
+
+
+    
+    
+<article class="post">
+
+    
+
+    <!-- 有配图默认渲染第一张 -->
+    <div class="post-cover">
+        <a href="/2018/06/20/oh-my-zsh/" target="_blank" title="oh-my-zsh"
+           style="background-image:url(http://ohmyz.sh/img/OMZLogo_BnW.png)"></a>
+    </div>
+    
+    <div class="post-header">
+        <div class="post-meta">
+            <a href="" target="_blank">
+                <strong>乔丁</strong>
+            </a>
+            <em>·</em>2018-06-20
+        </div>
+        <a class="post-title" href="/2018/06/20/oh-my-zsh/" target="_blank" title="oh-my-zsh">oh-my-zsh</a>
+        <div class="post-meta">
+            <a href="/tags" target="_blank"><i class="fa fa-tags"></i></a>
+            
+                <em>·</em>
+                <a href="https://qiaoding18.github.io/tags/chat/" target="_blank">闲聊</a>
+            
+        </div>
+    </div>
+    <div class="post-desc">
+        oh-my-zsh
+    </div>
+</article>
+
+
+
+    
+    
+<article class="post">
+
+    
+
+    <!-- 有配图默认渲染第一张 -->
+    <div class="post-cover">
+        <a href="/2018/06/20/http/" target="_blank" title="HTTP/2"
+           style="background-image:url(http://p0.meituan.net/xianfu/508467c6250a747b69ad5a2eba1d7e7b38468.png)"></a>
+    </div>
+    
+    <div class="post-header">
+        <div class="post-meta">
+            <a href="" target="_blank">
+                <strong>乔丁</strong>
+            </a>
+            <em>·</em>2018-06-20
+        </div>
+        <a class="post-title" href="/2018/06/20/http/" target="_blank" title="HTTP/2">HTTP/2</a>
+        <div class="post-meta">
+            <a href="/tags" target="_blank"><i class="fa fa-tags"></i></a>
+            
+                <em>·</em>
+                <a href="https://qiaoding18.github.io/tags/net/" target="_blank">计算机网络</a>
+            
+        </div>
+    </div>
+    <div class="post-desc">
+        啊啊啊啊啊五环
+    </div>
+</article>
+
+
+
+    
+    
+<article class="post">
+
+    
+
+    <!-- 有配图默认渲染第一张 -->
+    <div class="post-cover">
+        <a href="/2018/05/27/Vue里sync/" target="_blank" title="Vue中sync前世今生"
+           style="background-image:url(http://p7wm7amg2.bkt.clouddn.com/vue.png)"></a>
+    </div>
+    
+    <div class="post-header">
+        <div class="post-meta">
+            <a href="" target="_blank">
+                <strong>乔丁</strong>
+            </a>
+            <em>·</em>2018-05-27
+        </div>
+        <a class="post-title" href="/2018/05/27/Vue里sync/" target="_blank" title="Vue中sync前世今生">Vue中sync前世今生</a>
+        <div class="post-meta">
+            <a href="/tags" target="_blank"><i class="fa fa-tags"></i></a>
+            
+                <em>·</em>
+                <a href="https://qiaoding18.github.io/tags/web/" target="_blank">前端</a>
+            
+        </div>
+    </div>
+    <div class="post-desc">
+        Vue中sync前世今生
+    </div>
+</article>
+
+
+
+    
+    
+<article class="post">
+
+    
+
+    <!-- 有配图默认渲染第一张 -->
+    <div class="post-cover">
+        <a href="/2018/05/25/Vue1x版本升级小结/" target="_blank" title="Vue 1.x升级相关问题2.0"
+           style="background-image:url(http://p7wm7amg2.bkt.clouddn.com/vuediff.png)"></a>
+    </div>
+    
+    <div class="post-header">
+        <div class="post-meta">
+            <a href="" target="_blank">
+                <strong>乔丁</strong>
+            </a>
+            <em>·</em>2018-05-25
+        </div>
+        <a class="post-title" href="/2018/05/25/Vue1x版本升级小结/" target="_blank" title="Vue 1.x升级相关问题2.0">Vue 1.x升级相关问题2.0</a>
+        <div class="post-meta">
+            <a href="/tags" target="_blank"><i class="fa fa-tags"></i></a>
+            
+                <em>·</em>
+                <a href="https://qiaoding18.github.io/tags/web/" target="_blank">前端</a>
+            
+        </div>
+    </div>
+    <div class="post-desc">
+        Vue 1.x升级相关问题2.0
+    </div>
+</article>
+
+
+
+    
+    
+<article class="post">
+
+    
+
+    <!-- 有配图默认渲染第一张 -->
+    <div class="post-cover">
+        <a href="/2018/05/23/istanbul/" target="_blank" title="istanbul是个啥"
+           style="background-image:url(http://www.ruanyifeng.com/blogimg/asset/2015/bg2015060802.jpg)"></a>
+    </div>
+    
+    <div class="post-header">
+        <div class="post-meta">
+            <a href="" target="_blank">
+                <strong>乔丁</strong>
+            </a>
+            <em>·</em>2018-05-23
+        </div>
+        <a class="post-title" href="/2018/05/23/istanbul/" target="_blank" title="istanbul是个啥">istanbul是个啥</a>
+        <div class="post-meta">
+            <a href="/tags" target="_blank"><i class="fa fa-tags"></i></a>
+            
+                <em>·</em>
+                <a href="https://qiaoding18.github.io/tags/chat/" target="_blank">闲聊</a>
+            
+        </div>
+    </div>
+    <div class="post-desc">
+        vue源码中使用的一个测试工具，比较有意思
+    </div>
+</article>
+
+
+
+    
+    
+<article class="post">
+
+    
+
+    <!-- 有配图默认渲染第一张 -->
+    <div class="post-cover">
+        <a href="/2018/05/23/Vue的slot内容分发/" target="_blank" title="Vue的slot内容分发"
+           style="background-image:url(http://p7wm7amg2.bkt.clouddn.com/vue.png)"></a>
+    </div>
+    
+    <div class="post-header">
+        <div class="post-meta">
+            <a href="" target="_blank">
+                <strong>乔丁</strong>
+            </a>
+            <em>·</em>2018-05-23
+        </div>
+        <a class="post-title" href="/2018/05/23/Vue的slot内容分发/" target="_blank" title="Vue的slot内容分发">Vue的slot内容分发</a>
+        <div class="post-meta">
+            <a href="/tags" target="_blank"><i class="fa fa-tags"></i></a>
+            
+                <em>·</em>
+                <a href="https://qiaoding18.github.io/tags/web/" target="_blank">前端</a>
+            
+        </div>
+    </div>
+    <div class="post-desc">
+        官网上关于slot解释的很生硬
+    </div>
+</article>
+
+
+
+    
+    
+<article class="post">
+
+    
+
+    <!-- 有配图默认渲染第一张 -->
+    <div class="post-cover">
+        <a href="/2018/05/22/flowjs/" target="_blank" title="flow.js"
+           style="background-image:url(http://p7wm7amg2.bkt.clouddn.com/js.png)"></a>
+    </div>
+    
+    <div class="post-header">
+        <div class="post-meta">
+            <a href="" target="_blank">
+                <strong>乔丁</strong>
+            </a>
+            <em>·</em>2018-05-22
+        </div>
+        <a class="post-title" href="/2018/05/22/flowjs/" target="_blank" title="flow.js">flow.js</a>
+        <div class="post-meta">
+            <a href="/tags" target="_blank"><i class="fa fa-tags"></i></a>
+            
+                <em>·</em>
+                <a href="https://qiaoding18.github.io/tags/web/" target="_blank">前端</a>
+            
+        </div>
+    </div>
+    <div class="post-desc">
+        facebook出品
+    </div>
+</article>
+
+
+
+    
+    
+<article class="post">
+
+    
+
+    <!-- 有配图默认渲染第一张 -->
+    <div class="post-cover">
+        <a href="/2018/05/21/vue编译/" target="_blank" title="vue编译"
+           style="background-image:url(http://p7wm7amg2.bkt.clouddn.com/vue.png)"></a>
+    </div>
+    
+    <div class="post-header">
+        <div class="post-meta">
+            <a href="" target="_blank">
+                <strong>乔丁</strong>
+            </a>
+            <em>·</em>2018-05-21
+        </div>
+        <a class="post-title" href="/2018/05/21/vue编译/" target="_blank" title="vue编译">vue编译</a>
+        <div class="post-meta">
+            <a href="/tags" target="_blank"><i class="fa fa-tags"></i></a>
+            
+                <em>·</em>
+                <a href="https://qiaoding18.github.io/tags/web/" target="_blank">前端</a>
+            
+        </div>
+    </div>
+    <div class="post-desc">
+        vue编译
+    </div>
+</article>
+
+
+
+    
+    
+<article class="post">
+
+    
+
+    <!-- 有配图默认渲染第一张 -->
+    <div class="post-cover">
+        <a href="/2018/05/20/vue1x升级相关问题/" target="_blank" title="vue1x升级相关问题"
+           style="background-image:url(http://p7wm7amg2.bkt.clouddn.com/vue.png)"></a>
+    </div>
+    
+    <div class="post-header">
+        <div class="post-meta">
+            <a href="" target="_blank">
+                <strong>乔丁</strong>
+            </a>
+            <em>·</em>2018-05-20
+        </div>
+        <a class="post-title" href="/2018/05/20/vue1x升级相关问题/" target="_blank" title="vue1x升级相关问题">vue1x升级相关问题</a>
+        <div class="post-meta">
+            <a href="/tags" target="_blank"><i class="fa fa-tags"></i></a>
+            
+                <em>·</em>
+                <a href="https://qiaoding18.github.io/tags/web/" target="_blank">前端</a>
+            
+        </div>
+    </div>
+    <div class="post-desc">
+        尝试升级v1x遇到的一些问题，很多还没解决，后面会一一搞出来
+    </div>
+</article>
+
+
+
+    
+    
+<article class="post">
+
+    
+
+    <!-- 有配图默认渲染第一张 -->
+    <div class="post-cover">
+        <a href="/2018/05/18/部署警告A Parser-blocking/" target="_blank" title="部署警告A Parser-blocking..."
+           style="background-image:url(http://p7wm7amg2.bkt.clouddn.com/pig.png)"></a>
+    </div>
+    
+    <div class="post-header">
+        <div class="post-meta">
+            <a href="" target="_blank">
+                <strong>乔丁</strong>
+            </a>
+            <em>·</em>2018-05-18
+        </div>
+        <a class="post-title" href="/2018/05/18/部署警告A Parser-blocking/" target="_blank" title="部署警告A Parser-blocking...">部署警告A Parser-blocking...</a>
+        <div class="post-meta">
+            <a href="/tags" target="_blank"><i class="fa fa-tags"></i></a>
+            
+                <em>·</em>
+                <a href="https://qiaoding18.github.io/tags/web/" target="_blank">前端</a>
+            
+        </div>
+    </div>
+    <div class="post-desc">
+        部署警告A Parser-blocking...
+    </div>
+</article>
+
+
+
+    
+    
+<article class="post">
+
+    
+
+    <!-- 有配图默认渲染第一张 -->
+    <div class="post-cover">
+        <a href="/2018/05/02/Vue的nextTick/" target="_blank" title="vue的nextTick机制"
+           style="background-image:url(http://p7wm7amg2.bkt.clouddn.com/vue.png)"></a>
+    </div>
+    
+    <div class="post-header">
+        <div class="post-meta">
+            <a href="" target="_blank">
+                <strong>乔丁</strong>
+            </a>
+            <em>·</em>2018-05-02
+        </div>
+        <a class="post-title" href="/2018/05/02/Vue的nextTick/" target="_blank" title="vue的nextTick机制">vue的nextTick机制</a>
+        <div class="post-meta">
+            <a href="/tags" target="_blank"><i class="fa fa-tags"></i></a>
+            
+                <em>·</em>
+                <a href="https://qiaoding18.github.io/tags/web/" target="_blank">前端</a>
+            
+        </div>
+    </div>
+    <div class="post-desc">
+        vue的nextTick机制
+    </div>
+</article>
+
+
+
+    
+    
+<article class="post">
+
+    
+
+    <!-- 有配图默认渲染第一张 -->
+    <div class="post-cover">
+        <a href="/2018/05/01/硬件加速/" target="_blank" title="某讯的硬件加速"
+           style="background-image:url(http://p7wm7amg2.bkt.clouddn.com/3.png)"></a>
+    </div>
+    
+    <div class="post-header">
+        <div class="post-meta">
+            <a href="" target="_blank">
+                <strong>乔丁</strong>
+            </a>
+            <em>·</em>2018-05-01
+        </div>
+        <a class="post-title" href="/2018/05/01/硬件加速/" target="_blank" title="某讯的硬件加速">某讯的硬件加速</a>
+        <div class="post-meta">
+            <a href="/tags" target="_blank"><i class="fa fa-tags"></i></a>
+            
+                <em>·</em>
+                <a href="https://qiaoding18.github.io/tags/chat/" target="_blank">闲聊</a>
+            
+        </div>
+    </div>
+    <div class="post-desc">
+        硬件加速小结
+    </div>
+</article>
+
+
+
+    
+    
+<article class="post">
+
+    
+
+    <!-- 有配图默认渲染第一张 -->
+    <div class="post-cover">
+        <a href="/2018/04/28/聊聊Dreamweaver/" target="_blank" title="聊聊Dreamweaver"
+           style="background-image:url(http://p7wm7amg2.bkt.clouddn.com/Dreamweaver.png)"></a>
+    </div>
+    
+    <div class="post-header">
+        <div class="post-meta">
+            <a href="" target="_blank">
+                <strong>乔丁</strong>
+            </a>
+            <em>·</em>2018-04-28
+        </div>
+        <a class="post-title" href="/2018/04/28/聊聊Dreamweaver/" target="_blank" title="聊聊Dreamweaver">聊聊Dreamweaver</a>
+        <div class="post-meta">
+            <a href="/tags" target="_blank"><i class="fa fa-tags"></i></a>
+            
+                <em>·</em>
+                <a href="https://qiaoding18.github.io/tags/chat/" target="_blank">闲聊</a>
+            
+        </div>
+    </div>
+    <div class="post-desc">
+        当你看到这张图时会想起这款Adobe家族中最绿的那个Dreamweaver老弟吗
+    </div>
+</article>
+
+
+
+    
+    
+<article class="post">
+
+    
+
+    <!-- 有配图默认渲染第一张 -->
+    <div class="post-cover">
+        <a href="/2018/04/27/Token/" target="_blank" title="Token"
+           style="background-image:url(http://p7wm7amg2.bkt.clouddn.com/token.png)"></a>
+    </div>
+    
+    <div class="post-header">
+        <div class="post-meta">
+            <a href="" target="_blank">
+                <strong>乔丁</strong>
+            </a>
+            <em>·</em>2018-04-27
+        </div>
+        <a class="post-title" href="/2018/04/27/Token/" target="_blank" title="Token">Token</a>
+        <div class="post-meta">
+            <a href="/tags" target="_blank"><i class="fa fa-tags"></i></a>
+            
+                <em>·</em>
+                <a href="https://qiaoding18.github.io/tags/web/" target="_blank">前端</a>
+            
+        </div>
+    </div>
+    <div class="post-desc">
+        了解第三方认证时候用到了token，系统的总结一下
+    </div>
+</article>
+
+
+
+    
+    
+<article class="post">
+
+    
+
+    <!-- 有配图默认渲染第一张 -->
+    <div class="post-cover">
+        <a href="/2018/04/27/随想/" target="_blank" title="随想"
+           style="background-image:url(http://www.tjoe18.cn/firPage/pic/64.jpg)"></a>
+    </div>
+    
+    <div class="post-header">
+        <div class="post-meta">
+            <a href="" target="_blank">
+                <strong>乔丁</strong>
+            </a>
+            <em>·</em>2018-04-27
+        </div>
+        <a class="post-title" href="/2018/04/27/随想/" target="_blank" title="随想">随想</a>
+        <div class="post-meta">
+            <a href="/tags" target="_blank"><i class="fa fa-tags"></i></a>
+            
+                <em>·</em>
+                <a href="https://qiaoding18.github.io/tags/chat/" target="_blank">闲聊</a>
+            
+        </div>
+    </div>
+    <div class="post-desc">
+        大实话
+    </div>
+</article>
+
+
+
+    
+    
+</div>
+<!-- 分页开始 -->
+
+<div id="btn-pager">
+    
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">下一页</a>
+</div>
+
+
+        </div><!-- end #main-->
+    </div><!-- end #body -->
+    <footer class="footer">
+    <div class="footer-inner">
+        <p>
+            <a href="/about"  title="关于本站">关于本站</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <!-- 自定义链接 -->
+            <a href="/help" title="help" >帮助中心</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="http://www.tjoe18.cn/join/" title="个人链接">个人链接</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="https://xiyoumobile.com/" title="3G实验室">3G实验室</a>
+        </p>
+        <p>
+            本站点采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>，已建立<a href="/timeline" id="siteBuildingTime"></a>天<br/>
+            ©2017 QiaoDing
+        </p>
+        
+
+    </div>
+</footer>
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+<script src="/js/InsightSearch.js"></script>
+<script src="/js/SimpleCore.js"></script>
+
+</div>
+<div class="fixed-btn">
+    <a class="btn-gotop" href="javascript:"> <i class="fa fa-angle-up"></i></a>
+</div>
+<script>
+    $(function () {
+        SimpleCore.init({
+            buildingTime: '06/21/1997',
+            current: $('.post-tags').length > 0 ? 'post' : 'archive',
+            snsQRCode: '/images/sns-qrcode.png',
+            donateImg: '/images/donate-qr.png',
+        });
+    });
+</script>
+</body>
+</html>

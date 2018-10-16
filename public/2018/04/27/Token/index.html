@@ -1,0 +1,250 @@
+<!DOCTYPE HTML>
+<html class="no-js" lang="zh-CN">
+<!--
+//                            _ooOoo_
+//                           o8888888o
+//                           88" . "88
+//                           (| -_- |)
+//                            O\ = /O
+//                        ____/`---'\____
+//                      .   ' \\| |// `.
+//                       / \\||| : |||// \
+//                     / _||||| -:- |||||- \
+//                       | | \\\ - /// | |
+//                     | \_| ''\---/'' | |
+//                      \ .-\__ `-` ___/-. /
+//                   ___`. .' /--.--\ `. . __
+//                ."" '< `.___\_<|>_/___.' >'"".
+//               | | : `- \`.;`\ _ /`;.`/ - ` : | |
+//                 \ \ `-. \_ __\ /__ _/ .-` / /
+//         ======`-.____`-.___\_____/___.-`____.-'======
+//                            `=---='
+//                 拦截插件累计拦截逗比攻击"1381438"次！
+//         .............................................
+//                  佛祖保佑             永无BUG
+//          佛曰:
+//                  写字楼里写字间，写字间里程序员；
+//                  程序人员写程序，又拿程序换酒钱。
+//                  酒醒只在网上坐，酒醉还来网下眠；
+//                  酒醉酒醒日复日，网上网下年复年。
+//                  但愿老死电脑间，不愿鞠躬老板前；
+//                  奔驰宝马贵者趣，公交自行程序员。
+//                  别人笑我忒疯癫，我笑自己命太贱；
+//                  不见满街漂亮妹，哪个归得程序员？
+-->
+<head>
+    <!--[if lte IE 9]>
+<meta http-equiv="refresh" content="0;url=https://qiaoding18.github.io/warn.html">
+<![endif]-->
+<meta charset="utf-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+<meta http-equiv="mobile-agent" content="format=html5; url=https://qiaoding18.github.io">
+<meta name="author" content="乔丁">
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/SimpleStyle.min.css">
+
+<link rel="shortcut icon" href="/images/favicon.png">
+
+
+<title>token - QiaoDing Blog</title>
+
+<meta name="keywords" content="">
+
+<meta name="description " content="了解第三方认证时候用到了token，系统的总结一下">
+</head>
+<body>
+<div id="nav">
+    <nav class="nav-menu">
+        <a class="site-name current" href="/" title="丁">丁</a>
+        <a class="site-index current" href="/"><i class="fa fa-home"></i><span> 主页</span></a>
+        <a href="/archives" title="归档"><i class="fa fa-archives"></i><span> 归档</span></a>
+        <a href="/tags" title="标签"><i class="fa fa-tags"></i><span> 标签</span></a>
+        <!-- custom single page of menus -->
+        
+        
+        <a href="/help" title="帮助">
+            <i class="fa fa-question-circle"></i>
+            <span>帮助</span>
+        </a>
+        
+    </nav>
+</div>
+
+<div class="nav-user">
+    <a class="btn-search" href="#"><i class="fa fa-search"></i></a>
+    <a class="btn-read-mode" href="#"><i class="fa fa-sun-o"></i></a>
+    <a class="btn-sns-qr" href="javascript:"><i class="fa fa-telegram"></i></a>
+</div>
+
+<div id="wrapper" class="clearfix">
+    <div id="body">
+        <div class="main" id="main">
+            <div id="cover">
+    <div class="cover-img"></div>
+    <div class="cover-info">
+        
+        <h1 class="cover-siteName">乔丁啊</h1>
+        <h3 class="cover-siteTitle">一个前端小学生</h3>
+        <p class="cover-siteDesc">在这写写博客啥了的</p>
+        <div class="cover-sns">
+            
+            <div class="btn btn-github">
+                <a href="https://github.com/QiaoDing18/" target="_blank" title="github" ref="friend">
+                    <i class="fa fa-github"></i>
+                </a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+            <div class="page-title">
+    <ul>
+        <li><a href="/">最新</a></li>
+
+
+        
+            
+                <li class="">
+                    <a href="/categories/web" data-name="前端">前端</a>
+                </li>
+            
+                <li class="">
+                    <a href="/categories/net" data-name="计算机网络">计算机网络</a>
+                </li>
+            
+                <li class="">
+                    <a href="/categories/chat" data-name="闲聊">闲聊</a>
+                </li>
+            
+        
+        <li class="page-search">
+    <form id="search" class="search-form">
+        <label for="s" class="sr-only">请输入关键字</label>
+        <input class="search-field" type="text" name="s" class="text" placeholder="搜索啦" />
+        <button type="submit" class="search-form-submit" title="搜索"><i class="fa fa-search"></i></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="输入要搜的内容啦"/>
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(无标题)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+</li>
+
+    </ul>
+</div>
+<div class="main-inner">
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <div class="post-header">
+            <div class="post-author clearfix">
+                <a class="avatar fleft" href="" target="_blank">
+                    <img width="48" src="/images/favicon.png" alt="avatar"/>
+                </a>
+                <p><span class="label">作者</span>
+                    <a href="" target="_blank">乔丁</a>
+                    <span title="最后编辑于2018-04-27">2018-04-27</span>
+                </p>
+                <p>【前端小学生】</p>
+            </div>
+            <h2 class="post-title">Token</h2>
+            <div class="post-meta">
+                本文总共1268个字 | 您是第<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>位看到它们的小伙伴
+            </div>
+        </div>
+        <div class="post-content markdown-body">
+            <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>token意思是“令牌”，是服务端生成的一串字符串，作为客户端进行请求的一个标识。</p>
+<p>用户第一次登录，服务器生成一个token并将此token返回给客户端，以后客户端只需带上这个token前来请求数据即可，无需再次带上用户名和密码</p>
+<p><strong>toke组成：</strong><br>    <em>uid（用户唯一的身份标识）</em><br>    <em>time（当前时间的时间戳）</em><br>    <em>sign（签名，token的前几位以哈希算法压缩成的一定长度的十六进制字符串。为防止token泄露）</em></p>
+<p>token在服务端不需要存储用户的登录记录，流程：<br>1、客户端使用用户名和密码请求登录<br>2、服务端收到请求，验证用户名和密码<br>3、验证成功后，<em>服务端会生成一个token</em>，然后把这个token发送给客户端<br>4、<em>客户端收到token后把他存储起来</em>，可以放在cookie或者LocalStroage里<br>5、客户端每次向服务器请求时都需要带上服务器发给的token<br>6、服务端收到请求，然后去验证客户端请求里面带着token，如果验证成功，就向客户端返回请求的数据</p>
+<p>token机制认证登录方式：<br><em>1、用Mac地址作为token</em><br><em>客户端</em>：客户端在登录时获取设备的Mac地址，将其作为参数传递到服务端<br><em>服务端</em>：服务端接收到该参数后，便用一个变量来接收，同时将其作为token保存在数据库</p>
+<p><em>2、用sessionId作为token</em><br><em>客户端</em>：客户端携带用户名和密码登录<br><em>服务端</em>：接收到用户名和密码后进行校验，正确<br>就将本地获取的sessionId作为token返回给客户端，客户端以后只需带上请求的数据即可。这样不用存储数据，但是session过期客户端必须重新登录</p>
+<p>保密性高的话，两个都用上。<br>将设备的Mac地址与用户名密码同时作为token进行认证</p>
+<p>把token用在https</p>
+<h2 id="Token的优点"><a href="#Token的优点" class="headerlink" title="Token的优点"></a>Token的优点</h2><p>token相对于cookie机制的好处<br><strong>1、支持跨域访问</strong>：cookie不允许跨域访问的，这一点对token机制是不存在的，前提是传输的用户认证信息通过HTTP头传输<br><strong>2、无状态</strong>：token机制在服务端不需要存储session信息，因为token自身包含了所有登录用户的信息，只需要在客户端的cookie或本地介质存储状态信息<br><strong>3、更适用CDN</strong>：可以通过内容分发网络请求你服务端的所有资料，而你的服务端只要提供API即可</p>
+<h2 id="token过程"><a href="#token过程" class="headerlink" title="token过程"></a>token过程</h2><p>第三方认证登录过程：<br>1、用户选择使用第三方认证登录<br>2、我的服务器给客户端返回第三方的连接，在连接中带上认证的id<br>3、客户端请求第三方链接<br>4、第三方链接返回登录和授权<br>5、客户端登录第三方<br>6、第三方携带一个授权码，并返回我的服务器链接<br>7、客户端携带授权码请求我的服务器<br>8、我的服务器得到授权码<br>9、我的服务器拿着授权码去请求第三方的token<br>10、第三方拿到授权码并验证，验证后创建token<br>11、第三方把token再返回给我的服务器<br>12、得到token用于之后的验证</p>
+<p>授权码的安全：<br>1、和我的服务器申请的appid、appsecret相关，第三方只认申请过的，才给token<br>2、让授权码有时间限制<br>3、授权码只能换一次token</p>
+
+        </div>
+        <div class="post-tool">
+            <a class="btn-thumbs-up" href="javascript:void(0);" data-cid="52" title="95">
+                <i class="fa fa-thumbs-up" aria-hidden="true"></i> 打赏
+            </a>
+        </div>
+        
+        <div class="post-tags">标签：
+            
+            <a href="/tags/web/">前端</a>
+            
+        </div>
+        
+    </article>
+    
+    <p>本文代表个人观点，内容仅供参考。若有不恰当之处，望不吝赐教！么么哒~</p>
+    
+    
+</div>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        </div><!-- end #main-->
+    </div><!-- end #body -->
+    <footer class="footer">
+    <div class="footer-inner">
+        <p>
+            <a href="/about"  title="关于本站">关于本站</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <!-- 自定义链接 -->
+            <a href="/help" title="help" >帮助中心</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="http://www.tjoe18.cn/join/" title="个人链接">个人链接</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="https://xiyoumobile.com/" title="3G实验室">3G实验室</a>
+        </p>
+        <p>
+            本站点采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>，已建立<a href="/timeline" id="siteBuildingTime"></a>天<br/>
+            ©2017 QiaoDing
+        </p>
+        
+
+    </div>
+</footer>
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+<script src="/js/InsightSearch.js"></script>
+<script src="/js/SimpleCore.js"></script>
+
+</div>
+<div class="fixed-btn">
+    <a class="btn-gotop" href="javascript:"> <i class="fa fa-angle-up"></i></a>
+</div>
+<script>
+    $(function () {
+        SimpleCore.init({
+            buildingTime: '06/21/1997',
+            current: $('.post-tags').length > 0 ? 'post' : 'archive',
+            snsQRCode: '/images/sns-qrcode.png',
+            donateImg: '/images/donate-qr.png',
+        });
+    });
+</script>
+</body>
+</html>

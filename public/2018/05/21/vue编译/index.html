@@ -1,0 +1,262 @@
+<!DOCTYPE HTML>
+<html class="no-js" lang="zh-CN">
+<!--
+//                            _ooOoo_
+//                           o8888888o
+//                           88" . "88
+//                           (| -_- |)
+//                            O\ = /O
+//                        ____/`---'\____
+//                      .   ' \\| |// `.
+//                       / \\||| : |||// \
+//                     / _||||| -:- |||||- \
+//                       | | \\\ - /// | |
+//                     | \_| ''\---/'' | |
+//                      \ .-\__ `-` ___/-. /
+//                   ___`. .' /--.--\ `. . __
+//                ."" '< `.___\_<|>_/___.' >'"".
+//               | | : `- \`.;`\ _ /`;.`/ - ` : | |
+//                 \ \ `-. \_ __\ /__ _/ .-` / /
+//         ======`-.____`-.___\_____/___.-`____.-'======
+//                            `=---='
+//                 拦截插件累计拦截逗比攻击"1381438"次！
+//         .............................................
+//                  佛祖保佑             永无BUG
+//          佛曰:
+//                  写字楼里写字间，写字间里程序员；
+//                  程序人员写程序，又拿程序换酒钱。
+//                  酒醒只在网上坐，酒醉还来网下眠；
+//                  酒醉酒醒日复日，网上网下年复年。
+//                  但愿老死电脑间，不愿鞠躬老板前；
+//                  奔驰宝马贵者趣，公交自行程序员。
+//                  别人笑我忒疯癫，我笑自己命太贱；
+//                  不见满街漂亮妹，哪个归得程序员？
+-->
+<head>
+    <!--[if lte IE 9]>
+<meta http-equiv="refresh" content="0;url=https://qiaoding18.github.io/warn.html">
+<![endif]-->
+<meta charset="utf-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+<meta http-equiv="mobile-agent" content="format=html5; url=https://qiaoding18.github.io">
+<meta name="author" content="乔丁">
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/SimpleStyle.min.css">
+
+<link rel="shortcut icon" href="/images/favicon.png">
+
+
+<title>vue编译 - QiaoDing Blog</title>
+
+<meta name="keywords" content="">
+
+<meta name="description " content="">
+</head>
+<body>
+<div id="nav">
+    <nav class="nav-menu">
+        <a class="site-name current" href="/" title="丁">丁</a>
+        <a class="site-index current" href="/"><i class="fa fa-home"></i><span> 主页</span></a>
+        <a href="/archives" title="归档"><i class="fa fa-archives"></i><span> 归档</span></a>
+        <a href="/tags" title="标签"><i class="fa fa-tags"></i><span> 标签</span></a>
+        <!-- custom single page of menus -->
+        
+        
+        <a href="/help" title="帮助">
+            <i class="fa fa-question-circle"></i>
+            <span>帮助</span>
+        </a>
+        
+    </nav>
+</div>
+
+<div class="nav-user">
+    <a class="btn-search" href="#"><i class="fa fa-search"></i></a>
+    <a class="btn-read-mode" href="#"><i class="fa fa-sun-o"></i></a>
+    <a class="btn-sns-qr" href="javascript:"><i class="fa fa-telegram"></i></a>
+</div>
+
+<div id="wrapper" class="clearfix">
+    <div id="body">
+        <div class="main" id="main">
+            <div id="cover">
+    <div class="cover-img"></div>
+    <div class="cover-info">
+        
+        <h1 class="cover-siteName">乔丁啊</h1>
+        <h3 class="cover-siteTitle">一个前端小学生</h3>
+        <p class="cover-siteDesc">在这写写博客啥了的</p>
+        <div class="cover-sns">
+            
+            <div class="btn btn-github">
+                <a href="https://github.com/QiaoDing18/" target="_blank" title="github" ref="friend">
+                    <i class="fa fa-github"></i>
+                </a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+            <div class="page-title">
+    <ul>
+        <li><a href="/">最新</a></li>
+
+
+        
+            
+                <li class="">
+                    <a href="/categories/web" data-name="前端">前端</a>
+                </li>
+            
+                <li class="">
+                    <a href="/categories/net" data-name="计算机网络">计算机网络</a>
+                </li>
+            
+                <li class="">
+                    <a href="/categories/chat" data-name="闲聊">闲聊</a>
+                </li>
+            
+        
+        <li class="page-search">
+    <form id="search" class="search-form">
+        <label for="s" class="sr-only">请输入关键字</label>
+        <input class="search-field" type="text" name="s" class="text" placeholder="搜索啦" />
+        <button type="submit" class="search-form-submit" title="搜索"><i class="fa fa-search"></i></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="输入要搜的内容啦"/>
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(无标题)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+</li>
+
+    </ul>
+</div>
+<div class="main-inner">
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <div class="post-header">
+            <div class="post-author clearfix">
+                <a class="avatar fleft" href="" target="_blank">
+                    <img width="48" src="/images/favicon.png" alt="avatar"/>
+                </a>
+                <p><span class="label">作者</span>
+                    <a href="" target="_blank">乔丁</a>
+                    <span title="最后编辑于2018-05-21">2018-05-21</span>
+                </p>
+                <p>【前端小学生】</p>
+            </div>
+            <h2 class="post-title">vue编译</h2>
+            <div class="post-meta">
+                本文总共4316个字 | 您是第<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>位看到它们的小伙伴
+            </div>
+        </div>
+        <div class="post-content markdown-body">
+            <p>vue使用虚拟DOM作为view层，render方法返回一个vdom结构，compiler的作用就是将template编译成render</p>
+<h2 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h2><p>parser：将template字符串解析为html语法树，并且根据parse的平台相关的modules对语法树中的节点进行修改<br>optimizer：遍历语法树，发现static静态部分，将其变为常量(存储为静态引用)，这样在更新vdom树时，可以迅速跳过他们<br>codegen：根据语法树，生成render和staticRenderFns函数</p>
+<h3 id="parser"><a href="#parser" class="headerlink" title="parser"></a>parser</h3><p>parse调用html-parser，传入start，end，chars，comments等选项，在html-parser解析到相应位置进行处理<br>start：标签开始，传入tag，attrs，unary，执行preTransformNode，postTransformNode两个钩子函数，还对attrs进行处理，比如对于attrs中包含的v-for属性进行v-for语句验证，以及解析v-for语句中的iterator的名字<br>end：标识一个标签结果，管理堆栈状态<br>chars：标签的textContent部分，判断是否可以裁剪，解析绑定。比如hello 解析为‘hello’ + ——s(person.name)，这样在后面生成代码阶段可以直接赋予text参数(VNode(tag, data, children, text))。_s为VDom helpers，将其参数转化为字符串<br>comments：插入comment类型的节点</p>
+<h2 id="optimizer"><a href="#optimizer" class="headerlink" title="optimizer"></a>optimizer</h2><p>optimizer旨在为树的节点标上static和staticRoot属性</p>
+<p>遍历一轮，标记static属性：<br>    1、判断node是否为static<br>    2、标记node的children是否为static，若存在nonstatic子节点，父节点更改为static = false</p>
+<p>遍历二轮，标记staticRoot<br>    1、标记static活节点为staticRoot，这个节点type === 1 （一般是含有tag属性的节点）<br>    2、具有v-once指令的节点同样被标记为staticRoot<br>    3、为了避免过度优化，只有static text为子节点的节点不被标记为staticRoot<br>    4、标记节点children的staticRoot</p>
+<h2 id="codegen"><a href="#codegen" class="headerlink" title="codegen"></a>codegen</h2><p>代码生成器的逻辑没有想象中那么复杂，里面逻辑很多，但是非常清楚<br>对于v-for标记的vnode<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getFor</span>(<span class="params">el, state, altGen, altHelper</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">`<span class="subst">$&#123;altHelper || <span class="string">'_l'</span>&#125;</span>((<span class="subst">$&#123;exp&#125;</span>),`</span> +</span><br><span class="line">    <span class="string">`function(<span class="subst">$&#123;alias&#125;</span><span class="subst">$&#123;iterator1&#125;</span><span class="subst">$&#123;iterator2&#125;</span>)&#123;`</span> +</span><br><span class="line">      <span class="string">`return <span class="subst">$&#123;(altGen || genElement)(el, state)&#125;</span>`</span> +</span><br><span class="line">    <span class="string">'&#125;)'</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// core/instance/render-helpers/render-list.js</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">renderList</span>(<span class="params">val, render</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// v-for的exp可以传手写数组，字符串，number，或vm.$data数据</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 根据exp自动生成vnode数组</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>_ altHelper为ssr所用，browser端使用_l helper，但是ssr会使用<em>ssrList helper</em></p>
+<p>Vue的v-for非常灵活，使用极其方便，从这里可以看到Vue的codegen为了做了非常多的工作，让我们摆脱了许多脏活。</p>
+<p>events生成<br>codegen中对于事件代码处理同样精彩。只需要一个@click.prevent=”onClick”，Vue变为我们写出$event.stopPropagation，如果是@click = “show = !show”，Vue还会自动编写包装show = !show函数。</p>
+<p>events中有两个不熟的知识：</p>
+<p>passive标识</p>
+<p>passive event listeners，passive有助于提高滚动流畅度。touch事件默认行为是滚动页面，绑定touch事件回调可以阻止默认滚动行为，没有passive选项，浏览器需要等待touch事件回调是否调用了event.preventDefault来决定它是否应该做出滚动行为，有passive选项，浏览器则不理会有没有event.preventDefault，直接滚动。</p>
+<p>passive在parser中被解析处理，Vue支持passive的modifier</p>
+<p>event.composing</p>
+<p>出现在platforms/web/runtime/directives/model，搜索关于event.composing的资料，正好是yyx大神的博客DOM COMPOSITION EVENTS COMPATIBILITY NOTES。event.composing代表输入法输入状态，用event.composing做guarding，可以避免输入触发input事件。</p>
+<p>在渲染函数被调用的时候。一系列带下划线的VNode生成函数会调用VNode的函数，设置其属性并通过children记录其子VNode节点，从而形成一个VNode树<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">anonymous</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// this 指向当前 Vue 实例, 这样 todos, completed 才能指向 Vue 实例属性</span></span><br><span class="line">  <span class="keyword">with</span> (<span class="keyword">this</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> _c(</span><br><span class="line">      <span class="string">'div'</span>,</span><br><span class="line">      &#123;</span><br><span class="line">        attrs: &#123; <span class="string">"id"</span>: <span class="string">"root"</span> &#125;</span><br><span class="line">      &#125;, </span><br><span class="line">      [</span><br><span class="line">        _c(<span class="string">'h1'</span>,</span><br><span class="line">          &#123; <span class="attr">staticClass</span>: <span class="string">"todo-list"</span> &#125;,</span><br><span class="line">          [</span><br><span class="line">            _v(<span class="string">"Here's something to do"</span>)</span><br><span class="line">          ]),</span><br><span class="line">        _v(<span class="string">" "</span>),</span><br><span class="line">        _c(<span class="string">'ul'</span>,</span><br><span class="line">          _l((todos), <span class="function"><span class="keyword">function</span> (<span class="params">todo</span>) </span>&#123; <span class="keyword">return</span> _c(<span class="string">'li'</span>, [_v(_s(todo))]) &#125;)),</span><br><span class="line">        _v(<span class="string">" "</span>),</span><br><span class="line">        (completed) ?</span><br><span class="line">          _c(<span class="string">'p'</span>, [_v(<span class="string">"Completed!"</span>)]) :</span><br><span class="line">          _c(<span class="string">'p'</span>, [_v(<span class="string">"Not completed..."</span>)])</span><br><span class="line">      ]</span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>_ c定义在 core/instance/render中，用来构造元素节点<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vm._c = <span class="function">(<span class="params">a, b, c, d</span>) =&gt;</span> createElement(vm, a, b, c, d, <span class="literal">false</span>)</span><br></pre></td></tr></table></figure></p>
+<p>createElement 较为重要, 它最经常被调用, 还要负责维护 VNode 之间的父子关系.</p>
+<p>_ v用来构造文本节点<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">createTextVNode</span>(<span class="params">val: string | number</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> VNode(<span class="literal">undefined</span>, <span class="literal">undefined</span>, <span class="literal">undefined</span>, <span class="built_in">String</span>(val))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>_ l用来构造列表节点, 它的参数是一个数组和一个用于生成数组成员节点的回调函数.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">renderList</span>(<span class="params"></span></span></span><br><span class="line"><span class="function"><span class="params">  val: any,</span></span></span><br><span class="line"><span class="function"><span class="params">  render: (</span></span></span><br><span class="line"><span class="function"><span class="params">    val: any,</span></span></span><br><span class="line"><span class="function"><span class="params">    keyOrIndex: string | number,</span></span></span><br><span class="line"><span class="function"><span class="params">    index?: number</span></span></span><br><span class="line"><span class="function"><span class="params">  </span>) =&gt; <span class="title">VNode</span></span></span><br><span class="line"><span class="function">): ?<span class="title">Array</span>&lt;<span class="title">VNode</span>&gt; </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> ret: ?<span class="built_in">Array</span>&lt;VNode&gt;, i, l, keys, key</span><br><span class="line">  <span class="keyword">if</span> (<span class="built_in">Array</span>.isArray(val) || <span class="keyword">typeof</span> val === <span class="string">'string'</span>) &#123;</span><br><span class="line">    ret = <span class="keyword">new</span> <span class="built_in">Array</span>(val.length)</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>, l = val.length; i &lt; l; i++) &#123;</span><br><span class="line">      ret[i] = render(val[i], i)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="keyword">typeof</span> val === <span class="string">'number'</span>) &#123;</span><br><span class="line">    ret = <span class="keyword">new</span> <span class="built_in">Array</span>(val)</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; val; i++) &#123;</span><br><span class="line">      ret[i] = render(i + <span class="number">1</span>, i)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (isObject(val)) &#123;</span><br><span class="line">    keys = <span class="built_in">Object</span>.keys(val)</span><br><span class="line">    ret = <span class="keyword">new</span> <span class="built_in">Array</span>(keys.length)</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>, l = keys.length; i &lt; l; i++) &#123;</span><br><span class="line">      key = keys[i]</span><br><span class="line">      ret[i] = render(val[key], key, i)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span> (isDef(ret)) &#123;</span><br><span class="line">    ret._isVList = <span class="literal">true</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> ret</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>可以看到 v-if 并没有对应的函数, 我们可以从渲染函数中看到它是靠若干个三元组实现的.</p>
+<p>当渲染函数执行完毕之后, VNode 树就构造好了, 并被交给 _ update 方法.</p>
+
+        </div>
+        <div class="post-tool">
+            <a class="btn-thumbs-up" href="javascript:void(0);" data-cid="52" title="95">
+                <i class="fa fa-thumbs-up" aria-hidden="true"></i> 打赏
+            </a>
+        </div>
+        
+        <div class="post-tags">标签：
+            
+            <a href="/tags/web/">前端</a>
+            
+        </div>
+        
+    </article>
+    
+    <p>本文代表个人观点，内容仅供参考。若有不恰当之处，望不吝赐教！么么哒~</p>
+    
+    
+</div>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        </div><!-- end #main-->
+    </div><!-- end #body -->
+    <footer class="footer">
+    <div class="footer-inner">
+        <p>
+            <a href="/about"  title="关于本站">关于本站</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <!-- 自定义链接 -->
+            <a href="/help" title="help" >帮助中心</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="http://www.tjoe18.cn/join/" title="个人链接">个人链接</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="https://xiyoumobile.com/" title="3G实验室">3G实验室</a>
+        </p>
+        <p>
+            本站点采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>，已建立<a href="/timeline" id="siteBuildingTime"></a>天<br/>
+            ©2017 QiaoDing
+        </p>
+        
+
+    </div>
+</footer>
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+<script src="/js/InsightSearch.js"></script>
+<script src="/js/SimpleCore.js"></script>
+
+</div>
+<div class="fixed-btn">
+    <a class="btn-gotop" href="javascript:"> <i class="fa fa-angle-up"></i></a>
+</div>
+<script>
+    $(function () {
+        SimpleCore.init({
+            buildingTime: '06/21/1997',
+            current: $('.post-tags').length > 0 ? 'post' : 'archive',
+            snsQRCode: '/images/sns-qrcode.png',
+            donateImg: '/images/donate-qr.png',
+        });
+    });
+</script>
+</body>
+</html>

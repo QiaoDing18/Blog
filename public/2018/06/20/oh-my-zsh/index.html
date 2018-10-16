@@ -1,0 +1,260 @@
+<!DOCTYPE HTML>
+<html class="no-js" lang="zh-CN">
+<!--
+//                            _ooOoo_
+//                           o8888888o
+//                           88" . "88
+//                           (| -_- |)
+//                            O\ = /O
+//                        ____/`---'\____
+//                      .   ' \\| |// `.
+//                       / \\||| : |||// \
+//                     / _||||| -:- |||||- \
+//                       | | \\\ - /// | |
+//                     | \_| ''\---/'' | |
+//                      \ .-\__ `-` ___/-. /
+//                   ___`. .' /--.--\ `. . __
+//                ."" '< `.___\_<|>_/___.' >'"".
+//               | | : `- \`.;`\ _ /`;.`/ - ` : | |
+//                 \ \ `-. \_ __\ /__ _/ .-` / /
+//         ======`-.____`-.___\_____/___.-`____.-'======
+//                            `=---='
+//                 拦截插件累计拦截逗比攻击"1381438"次！
+//         .............................................
+//                  佛祖保佑             永无BUG
+//          佛曰:
+//                  写字楼里写字间，写字间里程序员；
+//                  程序人员写程序，又拿程序换酒钱。
+//                  酒醒只在网上坐，酒醉还来网下眠；
+//                  酒醉酒醒日复日，网上网下年复年。
+//                  但愿老死电脑间，不愿鞠躬老板前；
+//                  奔驰宝马贵者趣，公交自行程序员。
+//                  别人笑我忒疯癫，我笑自己命太贱；
+//                  不见满街漂亮妹，哪个归得程序员？
+-->
+<head>
+    <!--[if lte IE 9]>
+<meta http-equiv="refresh" content="0;url=https://qiaoding18.github.io/warn.html">
+<![endif]-->
+<meta charset="utf-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+<meta http-equiv="mobile-agent" content="format=html5; url=https://qiaoding18.github.io">
+<meta name="author" content="乔丁">
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/SimpleStyle.min.css">
+
+<link rel="shortcut icon" href="/images/favicon.png">
+
+
+<title>oh-my-zsh - QiaoDing Blog</title>
+
+<meta name="keywords" content="">
+
+<meta name="description " content="oh-my-zsh">
+</head>
+<body>
+<div id="nav">
+    <nav class="nav-menu">
+        <a class="site-name current" href="/" title="丁">丁</a>
+        <a class="site-index current" href="/"><i class="fa fa-home"></i><span> 主页</span></a>
+        <a href="/archives" title="归档"><i class="fa fa-archives"></i><span> 归档</span></a>
+        <a href="/tags" title="标签"><i class="fa fa-tags"></i><span> 标签</span></a>
+        <!-- custom single page of menus -->
+        
+        
+        <a href="/help" title="帮助">
+            <i class="fa fa-question-circle"></i>
+            <span>帮助</span>
+        </a>
+        
+    </nav>
+</div>
+
+<div class="nav-user">
+    <a class="btn-search" href="#"><i class="fa fa-search"></i></a>
+    <a class="btn-read-mode" href="#"><i class="fa fa-sun-o"></i></a>
+    <a class="btn-sns-qr" href="javascript:"><i class="fa fa-telegram"></i></a>
+</div>
+
+<div id="wrapper" class="clearfix">
+    <div id="body">
+        <div class="main" id="main">
+            <div id="cover">
+    <div class="cover-img"></div>
+    <div class="cover-info">
+        
+        <h1 class="cover-siteName">乔丁啊</h1>
+        <h3 class="cover-siteTitle">一个前端小学生</h3>
+        <p class="cover-siteDesc">在这写写博客啥了的</p>
+        <div class="cover-sns">
+            
+            <div class="btn btn-github">
+                <a href="https://github.com/QiaoDing18/" target="_blank" title="github" ref="friend">
+                    <i class="fa fa-github"></i>
+                </a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+            <div class="page-title">
+    <ul>
+        <li><a href="/">最新</a></li>
+
+
+        
+            
+                <li class="">
+                    <a href="/categories/web" data-name="前端">前端</a>
+                </li>
+            
+                <li class="">
+                    <a href="/categories/net" data-name="计算机网络">计算机网络</a>
+                </li>
+            
+                <li class="">
+                    <a href="/categories/chat" data-name="闲聊">闲聊</a>
+                </li>
+            
+        
+        <li class="page-search">
+    <form id="search" class="search-form">
+        <label for="s" class="sr-only">请输入关键字</label>
+        <input class="search-field" type="text" name="s" class="text" placeholder="搜索啦" />
+        <button type="submit" class="search-form-submit" title="搜索"><i class="fa fa-search"></i></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="输入要搜的内容啦"/>
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(无标题)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+</li>
+
+    </ul>
+</div>
+<div class="main-inner">
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <div class="post-header">
+            <div class="post-author clearfix">
+                <a class="avatar fleft" href="" target="_blank">
+                    <img width="48" src="/images/favicon.png" alt="avatar"/>
+                </a>
+                <p><span class="label">作者</span>
+                    <a href="" target="_blank">乔丁</a>
+                    <span title="最后编辑于2018-06-20">2018-06-20</span>
+                </p>
+                <p>【前端小学生】</p>
+            </div>
+            <h2 class="post-title">oh-my-zsh</h2>
+            <div class="post-meta">
+                本文总共4696个字 | 您是第<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>位看到它们的小伙伴
+            </div>
+        </div>
+        <div class="post-content markdown-body">
+            <p><img src="http://ohmyz.sh/img/OMZLogo_BnW.png"></p>
+<h2 id="干啥的"><a href="#干啥的" class="headerlink" title="干啥的"></a>干啥的</h2><p>工具<br>bash升级版 支持多种命令<br>这里小结一下在git命令方面的简写命令<br>脚本文件的目录在plugins/git/git.plugin.zsh</p>
+<p>alias g=’git’</p>
+<h2 id="ok常用的"><a href="#ok常用的" class="headerlink" title="ok常用的"></a>ok常用的</h2><p>alias gb=’git branch’            ————branch<br>alias gco=’git checkout’        ————checkout</p>
+<p>alias gl=’git pull’                ————pull</p>
+<p>alias gm=’git merge’            ————merge</p>
+<p>alias ga=’git add’                ————add<br>alias gcmsg=’git commit -m’        ————commit<br>alias gp=’git push’                ————push</p>
+<h3 id="git-add"><a href="#git-add" class="headerlink" title="git add"></a>git add</h3><p>alias ga=’git add’<br>alias gaa=’git add –all’<br>alias gapa=’git add –patch’<br>alias gau=’git add –update’<br>alias gap=’git apply’</p>
+<h3 id="git-branch"><a href="#git-branch" class="headerlink" title="git branch"></a>git branch</h3><p>alias gb=’git branch’<br>alias gba=’git branch -a’<br>alias gbd=’git branch -d’<br>alias gbda=’git branch –no-color –merged | command grep -vE “^(*|\s<em>(master|develop|dev)\s</em>$)” | command xargs -n 1 git branch -d’<br>alias gbl=’git blame -b -w’<br>alias gbnm=’git branch –no-merged’<br>alias gbr=’git branch –remote’<br>alias gbs=’git bisect’<br>alias gbsb=’git bisect bad’<br>alias gbsg=’git bisect good’<br>alias gbsr=’git bisect reset’<br>alias gbss=’git bisect start’</p>
+<h3 id="git-commit"><a href="#git-commit" class="headerlink" title="git commit"></a>git commit</h3><p>alias gc=’git commit -v’<br>alias gc!=’git commit -v –amend’<br>alias gcn!=’git commit -v –no-edit –amend’<br>alias gca=’git commit -v -a’<br>alias gca!=’git commit -v -a –amend’<br>alias gcan!=’git commit -v -a –no-edit –amend’<br>alias gcans!=’git commit -v -a -s –no-edit –amend’<br>alias gcam=’git commit -a -m’<br>alias gcsm=’git commit -s -m’<br>alias gcf=’git config –list’<br>alias gcl=’git clone –recursive’<br>alias gclean=’git clean -fd’<br>alias gpristine=’git reset –hard &amp;&amp; git clean -dfx’<br>alias gcmsg=’git commit -m’</p>
+<h3 id="git-checkout"><a href="#git-checkout" class="headerlink" title="git checkout"></a>git checkout</h3><p>alias gco=’git checkout’<br>alias gcb=’git checkout -b’<br>alias gcm=’git checkout master’<br>alias gcd=’git checkout develop’<br>alias gcount=’git shortlog -sn’<br>alias gcp=’git cherry-pick’<br>alias gcpa=’git cherry-pick –abort’<br>alias gcpc=’git cherry-pick –continue’<br>alias gcs=’git commit -S’</p>
+<h3 id="git-diff"><a href="#git-diff" class="headerlink" title="git diff"></a>git diff</h3><p>alias gd=’git diff’<br>alias gdca=’git diff –cached’<br>alias gdcw=’git diff –cached –word-diff’<br>alias gdct=’git describe –tags <code>git rev-list --tags --max-count=1</code>‘<br>alias gdt=’git diff-tree –no-commit-id –name-only -r’<br>alias gdw=’git diff –word-diff’</p>
+<h3 id="git-fetch"><a href="#git-fetch" class="headerlink" title="git fetch"></a>git fetch</h3><p>alias gf=’git fetch’<br>alias gfa=’git fetch –all –prune’<br>alias gfo=’git fetch origin’</p>
+<h3 id="git-gui-citool"><a href="#git-gui-citool" class="headerlink" title="git gui citool"></a>git gui citool</h3><p>alias gg=’git gui citool’<br>alias gga=’git gui citool –amend’</p>
+<h3 id="git-pull"><a href="#git-pull" class="headerlink" title="git pull"></a>git pull</h3><p>alias gl=’git pull’<br>alias gunignore=’git update-index –no-assume-unchanged’<br>alias gunwip=’git log -n 1 | grep -q -c “--wip--“ &amp;&amp; git reset HEAD~1’<br>alias gup=’git pull –rebase’<br>alias gupv=’git pull –rebase -v’<br>alias glum=’git pull upstream master’</p>
+<h3 id="git-log"><a href="#git-log" class="headerlink" title="git log"></a>git log</h3><p>alias glg=’git log –stat’<br>alias glgp=’git log –stat -p’<br>alias glgg=’git log –graph’<br>alias glgga=’git log –graph –decorate –all’<br>alias glgm=’git log –graph –max-count=10’<br>alias glo=’git log –oneline –decorate’<br>alias glol=”git log –graph –pretty=’%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset’”<br>alias glod=”git log –graph –pretty=’%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ad) %C(bold blue)&lt;%an&gt;%Creset’”<br>alias glods=”git log –graph –pretty=’%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ad) %C(bold blue)&lt;%an&gt;%Creset’ –date=short”<br>alias glola=”git log –graph –pretty=’%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset’ –all”<br>alias glog=’git log –oneline –decorate –graph’<br>alias gloga=’git log –oneline –decorate –graph –all’<br>alias glp=”_git_log_prettily”</p>
+<h3 id="git-merge"><a href="#git-merge" class="headerlink" title="git merge"></a>git merge</h3><p>alias gm=’git merge’<br>alias gmom=’git merge origin/master’<br>alias gmt=’git mergetool –no-prompt’<br>alias gmtvim=’git mergetool –no-prompt –tool=vimdiff’<br>alias gmum=’git merge upstream/master’<br>alias gma=’git merge –abort’</p>
+<h3 id="git-push"><a href="#git-push" class="headerlink" title="git push"></a>git push</h3><p>alias gp=’git push’<br>alias gpd=’git push –dry-run’<br>alias gpoat=’git push origin –all &amp;&amp; git push origin –tags’<br>compdef _git gpoat=git-push<br>alias gpu=’git push upstream’<br>alias gpv=’git push -v’</p>
+<h3 id="git-remote"><a href="#git-remote" class="headerlink" title="git remote"></a>git remote</h3><p>alias gr=’git remote’<br>alias gra=’git remote add’<br>alias grb=’git rebase’<br>alias grba=’git rebase –abort’<br>alias grbc=’git rebase –continue’<br>alias grbi=’git rebase -i’<br>alias grbm=’git rebase master’<br>alias grbs=’git rebase –skip’<br>alias grh=’git reset HEAD’<br>alias grhh=’git reset HEAD –hard’<br>alias grmv=’git remote rename’<br>alias grrm=’git remote remove’<br>alias grset=’git remote set-url’<br>alias grt=’cd $(git rev-parse –show-toplevel || echo “.”)’<br>alias gru=’git reset –’<br>alias grup=’git remote update’<br>alias grv=’git remote -v’</p>
+<h3 id="git-status"><a href="#git-status" class="headerlink" title="git status"></a>git status</h3><p>alias gsb=’git status -sb’<br>alias gsd=’git svn dcommit’<br>alias gsi=’git submodule init’<br>alias gsps=’git show –pretty=short –show-signature’<br>alias gsr=’git svn rebase’<br>alias gss=’git status -s’<br>alias gst=’git status’<br>alias gsta=’git stash save’<br>alias gstaa=’git stash apply’<br>alias gstc=’git stash clear’<br>alias gstd=’git stash drop’<br>alias gstl=’git stash list’<br>alias gstp=’git stash pop’<br>alias gsts=’git stash show –text’<br>alias gsu=’git submodule update’</p>
+<h3 id="git-tag"><a href="#git-tag" class="headerlink" title="git tag"></a>git tag</h3><p>alias gts=’git tag -s’<br>alias gtv=’git tag | sort -V’</p>
+
+        </div>
+        <div class="post-tool">
+            <a class="btn-thumbs-up" href="javascript:void(0);" data-cid="52" title="95">
+                <i class="fa fa-thumbs-up" aria-hidden="true"></i> 打赏
+            </a>
+        </div>
+        
+        <div class="post-tags">标签：
+            
+            <a href="/tags/chat/">闲聊</a>
+            
+        </div>
+        
+    </article>
+    
+    <p>本文代表个人观点，内容仅供参考。若有不恰当之处，望不吝赐教！么么哒~</p>
+    
+    
+</div>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        </div><!-- end #main-->
+    </div><!-- end #body -->
+    <footer class="footer">
+    <div class="footer-inner">
+        <p>
+            <a href="/about"  title="关于本站">关于本站</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <!-- 自定义链接 -->
+            <a href="/help" title="help" >帮助中心</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="http://www.tjoe18.cn/join/" title="个人链接">个人链接</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="https://xiyoumobile.com/" title="3G实验室">3G实验室</a>
+        </p>
+        <p>
+            本站点采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>，已建立<a href="/timeline" id="siteBuildingTime"></a>天<br/>
+            ©2017 QiaoDing
+        </p>
+        
+
+    </div>
+</footer>
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+<script src="/js/InsightSearch.js"></script>
+<script src="/js/SimpleCore.js"></script>
+
+</div>
+<div class="fixed-btn">
+    <a class="btn-gotop" href="javascript:"> <i class="fa fa-angle-up"></i></a>
+</div>
+<script>
+    $(function () {
+        SimpleCore.init({
+            buildingTime: '06/21/1997',
+            current: $('.post-tags').length > 0 ? 'post' : 'archive',
+            snsQRCode: '/images/sns-qrcode.png',
+            donateImg: '/images/donate-qr.png',
+        });
+    });
+</script>
+</body>
+</html>

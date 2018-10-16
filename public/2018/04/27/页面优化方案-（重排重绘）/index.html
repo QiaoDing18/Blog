@@ -1,0 +1,254 @@
+<!DOCTYPE HTML>
+<html class="no-js" lang="zh-CN">
+<!--
+//                            _ooOoo_
+//                           o8888888o
+//                           88" . "88
+//                           (| -_- |)
+//                            O\ = /O
+//                        ____/`---'\____
+//                      .   ' \\| |// `.
+//                       / \\||| : |||// \
+//                     / _||||| -:- |||||- \
+//                       | | \\\ - /// | |
+//                     | \_| ''\---/'' | |
+//                      \ .-\__ `-` ___/-. /
+//                   ___`. .' /--.--\ `. . __
+//                ."" '< `.___\_<|>_/___.' >'"".
+//               | | : `- \`.;`\ _ /`;.`/ - ` : | |
+//                 \ \ `-. \_ __\ /__ _/ .-` / /
+//         ======`-.____`-.___\_____/___.-`____.-'======
+//                            `=---='
+//                 拦截插件累计拦截逗比攻击"1381438"次！
+//         .............................................
+//                  佛祖保佑             永无BUG
+//          佛曰:
+//                  写字楼里写字间，写字间里程序员；
+//                  程序人员写程序，又拿程序换酒钱。
+//                  酒醒只在网上坐，酒醉还来网下眠；
+//                  酒醉酒醒日复日，网上网下年复年。
+//                  但愿老死电脑间，不愿鞠躬老板前；
+//                  奔驰宝马贵者趣，公交自行程序员。
+//                  别人笑我忒疯癫，我笑自己命太贱；
+//                  不见满街漂亮妹，哪个归得程序员？
+-->
+<head>
+    <!--[if lte IE 9]>
+<meta http-equiv="refresh" content="0;url=https://qiaoding18.github.io/warn.html">
+<![endif]-->
+<meta charset="utf-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+<meta http-equiv="mobile-agent" content="format=html5; url=https://qiaoding18.github.io">
+<meta name="author" content="乔丁">
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/SimpleStyle.min.css">
+
+<link rel="shortcut icon" href="/images/favicon.png">
+
+
+<title>页面优化方案 （重排重绘） - QiaoDing Blog</title>
+
+<meta name="keywords" content="">
+
+<meta name="description " content="">
+</head>
+<body>
+<div id="nav">
+    <nav class="nav-menu">
+        <a class="site-name current" href="/" title="丁">丁</a>
+        <a class="site-index current" href="/"><i class="fa fa-home"></i><span> 主页</span></a>
+        <a href="/archives" title="归档"><i class="fa fa-archives"></i><span> 归档</span></a>
+        <a href="/tags" title="标签"><i class="fa fa-tags"></i><span> 标签</span></a>
+        <!-- custom single page of menus -->
+        
+        
+        <a href="/help" title="帮助">
+            <i class="fa fa-question-circle"></i>
+            <span>帮助</span>
+        </a>
+        
+    </nav>
+</div>
+
+<div class="nav-user">
+    <a class="btn-search" href="#"><i class="fa fa-search"></i></a>
+    <a class="btn-read-mode" href="#"><i class="fa fa-sun-o"></i></a>
+    <a class="btn-sns-qr" href="javascript:"><i class="fa fa-telegram"></i></a>
+</div>
+
+<div id="wrapper" class="clearfix">
+    <div id="body">
+        <div class="main" id="main">
+            <div id="cover">
+    <div class="cover-img"></div>
+    <div class="cover-info">
+        
+        <h1 class="cover-siteName">乔丁啊</h1>
+        <h3 class="cover-siteTitle">一个前端小学生</h3>
+        <p class="cover-siteDesc">在这写写博客啥了的</p>
+        <div class="cover-sns">
+            
+            <div class="btn btn-github">
+                <a href="https://github.com/QiaoDing18/" target="_blank" title="github" ref="friend">
+                    <i class="fa fa-github"></i>
+                </a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+            <div class="page-title">
+    <ul>
+        <li><a href="/">最新</a></li>
+
+
+        
+            
+                <li class="">
+                    <a href="/categories/web" data-name="前端">前端</a>
+                </li>
+            
+                <li class="">
+                    <a href="/categories/net" data-name="计算机网络">计算机网络</a>
+                </li>
+            
+                <li class="">
+                    <a href="/categories/chat" data-name="闲聊">闲聊</a>
+                </li>
+            
+        
+        <li class="page-search">
+    <form id="search" class="search-form">
+        <label for="s" class="sr-only">请输入关键字</label>
+        <input class="search-field" type="text" name="s" class="text" placeholder="搜索啦" />
+        <button type="submit" class="search-form-submit" title="搜索"><i class="fa fa-search"></i></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="输入要搜的内容啦"/>
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(无标题)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+</li>
+
+    </ul>
+</div>
+<div class="main-inner">
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <div class="post-header">
+            <div class="post-author clearfix">
+                <a class="avatar fleft" href="" target="_blank">
+                    <img width="48" src="/images/favicon.png" alt="avatar"/>
+                </a>
+                <p><span class="label">作者</span>
+                    <a href="" target="_blank">乔丁</a>
+                    <span title="最后编辑于2018-04-27">2018-04-27</span>
+                </p>
+                <p>【前端小学生】</p>
+            </div>
+            <h2 class="post-title">页面优化方案 （重排重绘）</h2>
+            <div class="post-meta">
+                本文总共1830个字 | 您是第<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>位看到它们的小伙伴
+            </div>
+        </div>
+        <div class="post-content markdown-body">
+            <h2 id="重排重绘"><a href="#重排重绘" class="headerlink" title="重排重绘"></a>重排重绘</h2><p>浏览器下载完页面中的所有组件——HTML标记、JavaScript、CSS、图片之后会解析生成两个内部数据结构——DOM树和渲染树</p>
+<p>DOM树    表示  页面结构<br>渲染树   表示  DOM节点如何显示</p>
+<p>DOM树中的每一个需要显示的节点在渲染树种至少存在一个对应的节点，<em>隐藏的DOM元素disply值为none 在渲染树中没有对应的节点。</em></p>
+<p><strong>重排</strong>：当DOM的几何属性（宽高）改变，切其他元素的几何属性和位置也因此受到影响。浏览器会使渲染树中受到影响的部分失效，并重新构造渲染树。<br><strong>重绘</strong>：完成重排后，浏览器会重新绘制受影响的部分到屏幕。</p>
+<p>对渲染树的计算通常只需要遍历一次就可以完成。但table及其内部元素除外，他可能需要多次计算才能确定好其在渲染树中结点的属性，要花费更多时间。<br>注：<em>改变元素的背景色</em>并不影响元素的宽和高，<em>只发生重绘</em></p>
+<h2 id="重排发生条件"><a href="#重排发生条件" class="headerlink" title="重排发生条件"></a>重排发生条件</h2><p><strong>重排比导致重绘</strong><br>1、添加或者删除可见的DOM元素<br>2、元素位置改变<br>3、元素尺寸改变<br>4、元素内容改变<br>5、页面渲染初始化<br>6、浏览器窗口尺寸改变</p>
+<h2 id="优化方案"><a href="#优化方案" class="headerlink" title="优化方案"></a>优化方案</h2><p>一、内容层面<br>    1、DNS解析优化<br>    2、避免重定向</p>
+<p>二、网络传输阶段<br>    1、减少传输时候的内容<br>        （1）缓存<br>        （2）cookie优化<br>        （3）文件压缩<br>    2、减少请求的次数<br>        （1）文件适当的合并<br>        （2）雪碧图<br>    3、异步加载<br>    4、懒加载<br>三、渲染阶段<br>    1、js放在底部、css放顶部<br>    2、减少重排重绘<br>    3、减少DOM结点<br>四、脚本执行阶段<br>    1、尽量减少结点查找<br>    2、事件委托</p>
+<h3 id="细节"><a href="#细节" class="headerlink" title="细节"></a>细节</h3><p><em>1、缓存</em><br>    （1）浏览器第一次访问某一文件，这时候没有被缓存，直接从服务端获取文件，并且存入浏览器缓存。并且服务端设置响应头：Expires、Cache-Control，Last-Modified、ETage。<br>    （2）如果设置了Expires或者Cache-Control，，如果指定时间内在请求文件时，只要不强制刷新缓存，浏览器会直接读取缓存而不再请求服务器<br>    （3）如果没有设置Expires或者Cache-Control或者过期了，就需要再次请求服务器，发起请求时在请求头加上If-Modified-Sinse或者If-None-Match，服务器端判断最新的文件是否发生了更新，如果没有，总则返回响应状态码304，不带任何响应体</p>
+<p><em>2、按回车、浏览器刷新按钮、F5、Ctr+F5的区别</em><br>    （1）回车，浏览器会判断是否有缓存，并且根据Expires或者Cache-Control判断缓存是否过期，如果没有，就不会发起请求，直接使用缓存。否则就需要像服务器发起请求再验证。<br>    （2）浏览器刷新按钮和F5效果相同，不管是否有Expires或者Cache-Control，都会强制去请求服务器，进行再验证，根据If-Modified-Sinse或者If-None-Match判断是否要返回304，如果是，浏览器就会继续使用缓存。<br>    （3）按Ctr+F5时，也是不管是否有Expires或者Cache-Control，都会强制去请求服务器，但是并不会进行再验证，服务器会直接把最新的内容返回给浏览器，压根就不考虑缓存的存在或者是否过期。</p>
+<p><em>3、为什么用Last-Modified还不够，要用ETag实体标签验证</em><br>    （1）有些文档会被周期性的重写，但实际包含的数据是一样的，ETag是版本，就不会更新<br>    （2）有些文档可能被修改了，但是修改并不重要，没必要更新缓存<br>    （3）有些服务器无法准确判定页面的最后修改日期<br>    （4）文档在毫秒级间隙发生变化（如实时监控），以秒为颗粒度的Last-Modified就不够用了</p>
+<h2 id="图片优化"><a href="#图片优化" class="headerlink" title="图片优化"></a>图片优化</h2><p>1、base64（小图片）<br>2、cdn<br>3、懒加载<br>4、雪碧图</p>
+<h2 id="函数节流"><a href="#函数节流" class="headerlink" title="函数节流"></a>函数节流</h2><p>某些代码不可以在没有时间简短的情况连续重复执行</p>
+<p>设置timeid，给要执行的函数外套上setTimeout。每次要执行就清除一次timeid，来阻止之前的调用被执行。然后，创建一个新的定时器调用要执行的函数</p>
+<h2 id="函数防抖"><a href="#函数防抖" class="headerlink" title="函数防抖"></a>函数防抖</h2><p>如果一直触发一个事件，函数节流的方法定义的方法永远不会执行，就像一个水龙头，如果关闭了，永远不会出水；函数防抖的方法像一个关闭水龙头不好用，当关闭水龙头隔一段时间会有滴水一样。就是<strong>一个事件如果频繁触发，会隔一段时间执行一次</strong>。 </p>
+
+        </div>
+        <div class="post-tool">
+            <a class="btn-thumbs-up" href="javascript:void(0);" data-cid="52" title="95">
+                <i class="fa fa-thumbs-up" aria-hidden="true"></i> 打赏
+            </a>
+        </div>
+        
+        <div class="post-tags">标签：
+            
+            <a href="/tags/web/">前端</a>
+            
+        </div>
+        
+    </article>
+    
+    <p>本文代表个人观点，内容仅供参考。若有不恰当之处，望不吝赐教！么么哒~</p>
+    
+    
+</div>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        </div><!-- end #main-->
+    </div><!-- end #body -->
+    <footer class="footer">
+    <div class="footer-inner">
+        <p>
+            <a href="/about"  title="关于本站">关于本站</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <!-- 自定义链接 -->
+            <a href="/help" title="help" >帮助中心</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="http://www.tjoe18.cn/join/" title="个人链接">个人链接</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="https://xiyoumobile.com/" title="3G实验室">3G实验室</a>
+        </p>
+        <p>
+            本站点采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>，已建立<a href="/timeline" id="siteBuildingTime"></a>天<br/>
+            ©2017 QiaoDing
+        </p>
+        
+
+    </div>
+</footer>
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+<script src="/js/InsightSearch.js"></script>
+<script src="/js/SimpleCore.js"></script>
+
+</div>
+<div class="fixed-btn">
+    <a class="btn-gotop" href="javascript:"> <i class="fa fa-angle-up"></i></a>
+</div>
+<script>
+    $(function () {
+        SimpleCore.init({
+            buildingTime: '06/21/1997',
+            current: $('.post-tags').length > 0 ? 'post' : 'archive',
+            snsQRCode: '/images/sns-qrcode.png',
+            donateImg: '/images/donate-qr.png',
+        });
+    });
+</script>
+</body>
+</html>

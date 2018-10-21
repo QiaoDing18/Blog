@@ -190,4 +190,24 @@ module.exports = {
 
 Webpack原生提供2、3原生支持，跟官方提供的开发工具DevServer也可以很方便的做到1。DevServer会启动一个http服务器用于服务网页请求，同时会帮助启动Webpack，并接收Webpack发出的文件变更信号，通过WebSocket协议自动刷新网页做到实时预览。
 
-安装后
+安装后执行webpack-dev-server，Devserver就启动了，会看到控制台输出：
+```
+Project is running at http://localhost:8080/
+webpack output is served from /
+```
+这意味着 DevServer 启动的 HTTP 服务器监听在 http://localhost:8080/ ，DevServer 启动后会一直驻留在后台保持运行，访问这个网址就能获取项目根目录下的 index.html。 
+
+会报错./dist/bundle.js 加载404了。 同时会发现并没有文件输出到 dist 目录，原因是 DevServer 会把 Webpack 构建出的文件保存在内存中，在要访问输出的文件时，必须通过 HTTP 服务访问。 由于 DevServer 不会理会 webpack.config.js 里配置的 output.path 属性，所以要获取 bundle.js 的正确 URL 是 http://localhost:8080/bundle.js，对应的 index.html 应该修改为：
+```html
+<html>
+  <head>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <div id="app"></div>
+    <!--导入 DevServer 输出的 JavaScript 文件-->
+    <script src="bundle.js"></script>
+  </body>
+</html>
+```
+

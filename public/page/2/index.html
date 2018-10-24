@@ -60,8 +60,8 @@
     <nav class="nav-menu">
         <a class="site-name current" href="/" title="丁">丁</a>
         <a class="site-index current" href="/"><i class="fa fa-home"></i><span> 主页</span></a>
-        <a href="/archives" title="归档"><i class="fa fa-archives"></i><span> 归档</span></a>
-        <a href="/tags" title="标签"><i class="fa fa-tags"></i><span> 标签</span></a>
+        <a href="/archives" title="Archives"><i class="fa fa-archives"></i><span> 归档</span></a>
+        <a href="/tags" title="Tags"><i class="fa fa-tags"></i><span> 标签</span></a>
         <!-- custom single page of menus -->
         
         
@@ -120,9 +120,9 @@
         
         <li class="page-search">
     <form id="search" class="search-form">
-        <label for="s" class="sr-only">请输入关键字</label>
+        <label for="s" class="sr-only">Input Search key Words Here</label>
         <input class="search-field" type="text" name="s" class="text" placeholder="搜索啦" />
-        <button type="submit" class="search-form-submit" title="搜索"><i class="fa fa-search"></i></button>
+        <button type="submit" class="search-form-submit" title="Search"><i class="fa fa-search"></i></button>
     </form>
     <div class="ins-search">
     <div class="ins-search-mask"></div>
@@ -140,11 +140,11 @@
 (function (window) {
     var INSIGHT_CONFIG = {
         TRANSLATION: {
-            POSTS: '文章',
-            PAGES: '页面',
-            CATEGORIES: '分类',
-            TAGS: '标签',
-            UNTITLED: '(无标题)',
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
         },
         ROOT_URL: '/',
         CONTENT_URL: '/content.json',
@@ -159,6 +159,41 @@
 <div class="main-inner">
     
     <!-- 首页默认取最最新文章集 -->
+    
+    
+<article class="post">
+
+    
+
+    <!-- 有配图默认渲染第一张 -->
+    <div class="post-cover">
+        <a href="/2018/04/27/随想/" target="_blank" title="随想"
+           style="background-image:url(http://www.tjoe18.cn/firPage/pic/64.jpg)"></a>
+    </div>
+    
+    <div class="post-header">
+        <div class="post-meta">
+            <a href="" target="_blank">
+                <strong>乔丁</strong>
+            </a>
+            <em>·</em>2018-04-27
+        </div>
+        <a class="post-title" href="/2018/04/27/随想/" target="_blank" title="随想">随想</a>
+        <div class="post-meta">
+            <a href="/tags" target="_blank"><i class="fa fa-tags"></i></a>
+            
+                <em>·</em>
+                <a href="https://qiaoding18.github.io/tags/chat/" target="_blank">闲聊</a>
+            
+        </div>
+    </div>
+    <div class="post-desc">
+        大实话
+    </div>
+</article>
+
+
+
     
     
 <article class="post">
@@ -199,6 +234,34 @@
 <article class="post">
 
     
+    <div class="post-header">
+        <div class="post-meta">
+            <a href="" target="_blank">
+                <strong>乔丁</strong>
+            </a>
+            <em>·</em>2018-04-27
+        </div>
+        <a class="post-title" href="/2018/04/27/异步操作和async函数/" target="_blank" title="异步操作和async函数">异步操作和async函数</a>
+        <div class="post-meta">
+            <a href="/tags" target="_blank"><i class="fa fa-tags"></i></a>
+            
+                <em>·</em>
+                <a href="https://qiaoding18.github.io/tags/web/" target="_blank">前端</a>
+            
+        </div>
+    </div>
+    <div class="post-desc">
+        单线程大法好
+    </div>
+</article>
+
+
+
+    
+    
+<article class="post">
+
+    
 
     <!-- 有配图默认渲染第一张 -->
     <div class="post-cover">
@@ -224,34 +287,6 @@
     </div>
     <div class="post-desc">
         pro proto ppap popopra papa papi ....
-    </div>
-</article>
-
-
-
-    
-    
-<article class="post">
-
-    
-    <div class="post-header">
-        <div class="post-meta">
-            <a href="" target="_blank">
-                <strong>乔丁</strong>
-            </a>
-            <em>·</em>2018-04-27
-        </div>
-        <a class="post-title" href="/2018/04/27/异步操作和async函数/" target="_blank" title="异步操作和async函数">异步操作和async函数</a>
-        <div class="post-meta">
-            <a href="/tags" target="_blank"><i class="fa fa-tags"></i></a>
-            
-                <em>·</em>
-                <a href="https://qiaoding18.github.io/tags/web/" target="_blank">前端</a>
-            
-        </div>
-    </div>
-    <div class="post-desc">
-        单线程大法好
     </div>
 </article>
 
@@ -318,34 +353,6 @@
 <article class="post">
 
     
-    <div class="post-header">
-        <div class="post-meta">
-            <a href="" target="_blank">
-                <strong>乔丁</strong>
-            </a>
-            <em>·</em>2018-04-27
-        </div>
-        <a class="post-title" href="/2018/04/27/协商缓存/" target="_blank" title="协商缓存">协商缓存</a>
-        <div class="post-meta">
-            <a href="/tags" target="_blank"><i class="fa fa-tags"></i></a>
-            
-                <em>·</em>
-                <a href="https://qiaoding18.github.io/tags/net/" target="_blank">计算机网络</a>
-            
-        </div>
-    </div>
-    <div class="post-desc">
-        协商缓存
-    </div>
-</article>
-
-
-
-    
-    
-<article class="post">
-
-    
 
     <!-- 有配图默认渲染第一张 -->
     <div class="post-cover">
@@ -371,6 +378,34 @@
     </div>
     <div class="post-desc">
         页面优化方案 （重排重绘）
+    </div>
+</article>
+
+
+
+    
+    
+<article class="post">
+
+    
+    <div class="post-header">
+        <div class="post-meta">
+            <a href="" target="_blank">
+                <strong>乔丁</strong>
+            </a>
+            <em>·</em>2018-04-27
+        </div>
+        <a class="post-title" href="/2018/04/27/协商缓存/" target="_blank" title="协商缓存">协商缓存</a>
+        <div class="post-meta">
+            <a href="/tags" target="_blank"><i class="fa fa-tags"></i></a>
+            
+                <em>·</em>
+                <a href="https://qiaoding18.github.io/tags/net/" target="_blank">计算机网络</a>
+            
+        </div>
+    </div>
+    <div class="post-desc">
+        协商缓存
     </div>
 </article>
 
@@ -451,17 +486,17 @@
             </a>
             <em>·</em>2018-04-27
         </div>
-        <a class="post-title" href="/2018/04/27/浏览器渲染过程/" target="_blank" title="浏览器渲染过程">浏览器渲染过程</a>
+        <a class="post-title" href="/2018/04/27/深拷贝/" target="_blank" title="深拷贝">深拷贝</a>
         <div class="post-meta">
             <a href="/tags" target="_blank"><i class="fa fa-tags"></i></a>
             
                 <em>·</em>
-                <a href="https://qiaoding18.github.io/tags/chat/" target="_blank">闲聊</a>
+                <a href="https://qiaoding18.github.io/tags/web/" target="_blank">前端</a>
             
         </div>
     </div>
     <div class="post-desc">
-        浏览器渲染过程
+        深拷贝
     </div>
 </article>
 
@@ -479,17 +514,17 @@
             </a>
             <em>·</em>2018-04-27
         </div>
-        <a class="post-title" href="/2018/04/27/深拷贝/" target="_blank" title="深拷贝">深拷贝</a>
+        <a class="post-title" href="/2018/04/27/浏览器渲染过程/" target="_blank" title="浏览器渲染过程">浏览器渲染过程</a>
         <div class="post-meta">
             <a href="/tags" target="_blank"><i class="fa fa-tags"></i></a>
             
                 <em>·</em>
-                <a href="https://qiaoding18.github.io/tags/web/" target="_blank">前端</a>
+                <a href="https://qiaoding18.github.io/tags/chat/" target="_blank">闲聊</a>
             
         </div>
     </div>
     <div class="post-desc">
-        深拷贝
+        浏览器渲染过程
     </div>
 </article>
 
@@ -598,17 +633,17 @@
             </a>
             <em>·</em>2018-04-27
         </div>
-        <a class="post-title" href="/2018/04/27/进程线程区别/" target="_blank" title="进程线程区别">进程线程区别</a>
+        <a class="post-title" href="/2018/04/27/继承/" target="_blank" title="继承">继承</a>
         <div class="post-meta">
             <a href="/tags" target="_blank"><i class="fa fa-tags"></i></a>
             
                 <em>·</em>
-                <a href="https://qiaoding18.github.io/tags/chat/" target="_blank">闲聊</a>
+                <a href="https://qiaoding18.github.io/tags/web/" target="_blank">前端</a>
             
         </div>
     </div>
     <div class="post-desc">
-        操作系统相关
+        继承
     </div>
 </article>
 
@@ -626,17 +661,17 @@
             </a>
             <em>·</em>2018-04-27
         </div>
-        <a class="post-title" href="/2018/04/27/继承/" target="_blank" title="继承">继承</a>
+        <a class="post-title" href="/2018/04/27/进程线程区别/" target="_blank" title="进程线程区别">进程线程区别</a>
         <div class="post-meta">
             <a href="/tags" target="_blank"><i class="fa fa-tags"></i></a>
             
                 <em>·</em>
-                <a href="https://qiaoding18.github.io/tags/web/" target="_blank">前端</a>
+                <a href="https://qiaoding18.github.io/tags/chat/" target="_blank">闲聊</a>
             
         </div>
     </div>
     <div class="post-desc">
-        继承
+        操作系统相关
     </div>
 </article>
 
@@ -749,47 +784,12 @@
 
     
     
-<article class="post">
-
-    
-
-    <!-- 有配图默认渲染第一张 -->
-    <div class="post-cover">
-        <a href="/2018/04/27/Vue虚拟DOM/" target="_blank" title="Vue虚拟DOM"
-           style="background-image:url(http://p7wm7amg2.bkt.clouddn.com/vue.png)"></a>
-    </div>
-    
-    <div class="post-header">
-        <div class="post-meta">
-            <a href="" target="_blank">
-                <strong>乔丁</strong>
-            </a>
-            <em>·</em>2018-04-27
-        </div>
-        <a class="post-title" href="/2018/04/27/Vue虚拟DOM/" target="_blank" title="Vue虚拟DOM">Vue虚拟DOM</a>
-        <div class="post-meta">
-            <a href="/tags" target="_blank"><i class="fa fa-tags"></i></a>
-            
-                <em>·</em>
-                <a href="https://qiaoding18.github.io/tags/web/" target="_blank">前端</a>
-            
-        </div>
-    </div>
-    <div class="post-desc">
-        Vue虚拟DOM
-    </div>
-</article>
-
-
-
-    
-    
 </div>
 <!-- 分页开始 -->
 
 <div id="btn-pager">
     
-    <a class="extend prev" rel="prev" href="/">上一页</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">下一页</a>
+    <a class="extend prev" rel="prev" href="/">Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">Next</a>
 </div>
 
 
@@ -798,7 +798,7 @@
     <footer class="footer">
     <div class="footer-inner">
         <p>
-            <a href="/about"  title="关于本站">关于本站</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="/about"  title="About">About</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
             <!-- 自定义链接 -->
             <a href="/help" title="help" >帮助中心</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
             <a href="http://www.tjoe18.cn/join/" title="个人链接">个人链接</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp

@@ -49,11 +49,11 @@
 <link rel="shortcut icon" href="/images/favicon.png">
 
 
-<title>webpack - QiaoDing Blog</title>
+<title>nginx配置小结 - QiaoDing Blog</title>
 
 <meta name="keywords" content="">
 
-<meta name="description " content="">
+<meta name="description " content="nginx配置踩坑">
 </head>
 <body>
 <div id="nav">
@@ -167,39 +167,37 @@
                 </a>
                 <p><span class="label">作者</span>
                     <a href="" target="_blank">乔丁</a>
-                    <span title="最后编辑于2018-04-27">2018-04-27</span>
+                    <span title="最后编辑于2018-10-24">2018-10-24</span>
                 </p>
                 <p>【前端小学生】</p>
             </div>
-            <h2 class="post-title">Webpack</h2>
+            <h2 class="post-title">Nginx配置小结</h2>
             <div class="post-meta">
-                本文总共1967个字 | 您是第<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>位看到它们的小伙伴
+                本文总共1402个字 | 您是第<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>位看到它们的小伙伴
             </div>
         </div>
         <div class="post-content markdown-body">
-            <h2 id="Webpack概念"><a href="#Webpack概念" class="headerlink" title="Webpack概念"></a>Webpack概念</h2><p>WebPack可以看做是模块打包机：它做的事情是，分析你的项目结构，找到JavaScript模块以及其它的一些浏览器不能直接运行的拓展语言（Scss，TypeScript等），并将其转换和打包为合适的格式供浏览器使用。</p>
-<p>webpack可以实现 开发 和 测试 环境</p>
-<p>四个核心：入口（entry）、出口（output）、module（模块加载器）、插件（plugins）</p>
-<h2 id="entry入口"><a href="#entry入口" class="headerlink" title="entry入口"></a>entry入口</h2><p>入口，指示webpack应该使用哪个模块 来作为构建内部依赖图的开始。进入入口起点后，webpack会找出哪些模块和库是入口起点（直接和间接）依赖的<br>在entry中可以设置一个或多个入口，多个入口时在entry对象里添加多个入口属性<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">entry: &#123;</span><br><span class="line">  app: <span class="string">'./src/app.js'</span>,</span><br><span class="line">  vendors: <span class="string">'./src/vendors.js'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h2 id="output出口"><a href="#output出口" class="headerlink" title="output出口"></a>output出口</h2><p>output属性告诉webpack在哪里输出它所创建的bundles，以及如何命名这些文件。<br>可以设置path、filename属性<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">output: &#123;</span><br><span class="line">  path: path.resolve(__dirname, <span class="string">'dist'</span>),</span><br><span class="line">  filename: <span class="string">'my-first-webpack.bundle.js'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h2 id="loader-module"><a href="#loader-module" class="headerlink" title="loader(module)"></a>loader(module)</h2><p>loader让webpack能够去处理那些非js文件（webpack本身只理解js）。loader可以将所有类型的文件转换为webpack能够处理的有效模块<br>本质上，webpack loader将所有类型的文件，转换为应用程序的依赖图可以直接引用的模块<br>在更高层面，webpack的配置中loader有两个目标</p>
-<blockquote>
-<p>1、识别出应该被对应的 loader 进行转换的那些文件。(使用 test 属性)<br>2、转换这些文件，从而使其能够被添加到依赖图中（并且最终添加到 bundle 中）(use 属性)</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>: &#123;</span><br><span class="line">  rules: [</span><br><span class="line">    &#123; <span class="attr">test</span>: <span class="regexp">/\.txt$/</span>, <span class="attr">use</span>: <span class="string">'raw-loader'</span> &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>在rule中必须包括test和use，告诉编译器：“嘿，webpack 编译器，当你碰到「在 require()/import 语句中被解析为 ‘.txt’ 的路径」时，在你对它打包之前，先使用 raw-loader 转换一下。</p>
-<h2 id="插件-plugins"><a href="#插件-plugins" class="headerlink" title="插件 plugins"></a>插件 plugins</h2><p>loader被用于转换某些类型的模块，而插件则可以用于执行范围更广的任务。插件的范围包括，从打包优化和压缩，一直到重新定义环境中的变量。<br>想要使用一个插件，需要require它，然后把它添加到plugins数组中。多数插件可以通过选项（option）自定义。你也可以在一个配置文件中因为不同的目的而多次使用同一个插件，这时需要使用new操作符来创建它的一个实例<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">plugins: [</span><br><span class="line">  <span class="keyword">new</span> webpack.optimize.UglifyJsPlugin(),</span><br><span class="line">  <span class="keyword">new</span> HtmlWebpackPlugin(&#123;<span class="attr">template</span>: <span class="string">'./src/index.html'</span>&#125;)</span><br><span class="line">]</span><br></pre></td></tr></table></figure></p>
-<h3 id="实时预览"><a href="#实时预览" class="headerlink" title="实时预览"></a>实时预览</h3><p>webpack的监听模式，当文件变化时重新执行，执行完后通知DevServer。devserver会让webpack在构建出的JS代码里注入一个代理客户端用于控制网页，网页和DevServer之间通过Websocket协议通信，以方便DevServer主动向客户端发送命令。DevServer在收到来自webpack的文件变化通知时通过注入的客户端控制网页刷新</p>
-<h3 id="模块热替换"><a href="#模块热替换" class="headerlink" title="模块热替换"></a>模块热替换</h3><p>模块热替换能做到在不重新加载整个网页的情况下，通过将被更新过的模块替换老的模块，再重新执行一次来实现实时预览。</p>
-<h3 id="核心概念"><a href="#核心概念" class="headerlink" title="核心概念"></a>核心概念</h3><ul>
-<li><em>Entry：入口</em>，Webpack 执行构建的第一步将从 Entry 开始，可抽象成输入。</li>
-<li><em>Module：模块</em>，在 Webpack 里一切皆模块，一个模块对应着一个文件。Webpack 会从配置的 Entry 开始递归找出所有依赖的模块。</li>
-<li><em>Chunk：代码块</em>，一个 Chunk 由多个模块组合而成，用于代码合并与分割。</li>
-<li><em>Loader：模块转换器</em>，用于把模块原内容按照需求转换成新内容。</li>
-<li><em>Plugin：扩展插件</em>，在 Webpack 构建流程中的特定时机注入扩展逻辑来改变构建结果或做你想要的事情。</li>
-<li><em>Output：输出结果</em>，在 Webpack 经过一系列处理并得出最终想要的代码后输出结果。</li>
+            <h2 id="Balabal"><a href="#Balabal" class="headerlink" title="Balabal"></a>Balabal</h2><p>想配置一下https，发现问题很多，小结一下</p>
+<h2 id="配置HTTPS遇到的问题"><a href="#配置HTTPS遇到的问题" class="headerlink" title="配置HTTPS遇到的问题"></a>配置HTTPS遇到的问题</h2><h3 id="Q1：nginx-emerg-socket-80-failed-97-Address-family-not-supported-by-protocol"><a href="#Q1：nginx-emerg-socket-80-failed-97-Address-family-not-supported-by-protocol" class="headerlink" title="Q1：nginx: [emerg] socket() [::]:80 failed (97: Address family not supported by protocol)"></a>Q1：nginx: [emerg] socket() [::]:80 failed (97: Address family not supported by protocol)</h3><p>其实网上解决办法写的很明确了，将一个文件中的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">listen       80 default_server;</span><br><span class="line">listen       [::]:80 default_server;</span><br><span class="line"></span><br><span class="line">修改为:</span><br><span class="line">listen       80;</span><br><span class="line">#listen       [::]:80 default_server;</span><br></pre></td></tr></table></figure></p>
+<p>问题是这修改的是哪个文件？</p>
+<p>出现这个问题后的nginx配置文件根目录下的nginx.conf是没有这个问题的，但是修改了/conf.d/default.conf文件中的这个就好了。</p>
+<p>这里需要留意一下nginx装好后初始的配置中引入了哪些文件，有这么一句<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">include /etc/nginx/conf.d/*.conf;</span><br></pre></td></tr></table></figure></p>
+<p>这句之后开始配置的server{}，在conf.d目录下有这些文件：default.conf、ssl.conf、virtual.conf（其他俩分别是443端口、8000端口的默认配置，一般被直接注释掉了）</p>
+<p>首先说明一下nginx根目录下的nginx.conf、conf.d文件夹、default.d文件夹的优先级：nginx.conf&gt;conf.d 文件夹&gt;default.d 文件夹。 default文件夹是备份文件，一般没啥用。但是如果在conf.d文件夹下设置了和根目录下相同的东西，比如这个问题里，有一个default_server在listen着80端口了，再次配置就会报错。</p>
+<p>还有呢，nginx编写的指令顺序一般情况下没那么重要，要取决于nginx内部的解析阶段、机制。这里主要体现在跳转location上：</p>
+<ul>
+<li>普通前端匹配的路径，例如 location / {}</li>
+<li>抢占式前缀匹配的路径，例如 location ^~ / {}</li>
+<li>精确匹配的路径，例如 location = / {}</li>
+<li>命名路径，比如 location @a {}</li>
+<li>无名路径，比如 if {}或者 limit_except {}生成的路径</li>
 </ul>
-<h3 id="Entry"><a href="#Entry" class="headerlink" title="Entry"></a>Entry</h3><h4 id="context"><a href="#context" class="headerlink" title="context"></a>context</h4><p>webpack在寻找相对路径的文件时会以context为根目录，context默认会执行启动webpack时所在的当前工作目录。</p>
+<p>值得一提的是，可以把每一个站点作为一个单独的配置文件会更方便维护。</p>
+<h3 id="Q2：nginx-emerg-a-duplicate-default-server-for-0-0-0-0-80-in-etc-nginx"><a href="#Q2：nginx-emerg-a-duplicate-default-server-for-0-0-0-0-80-in-etc-nginx" class="headerlink" title="Q2：nginx: [emerg] a duplicate default server for 0.0.0.0:80 in /etc/nginx/"></a>Q2：nginx: [emerg] a duplicate default server for 0.0.0.0:80 in /etc/nginx/</h3><p>这个问题同上</p>
+<h3 id="Q3：nginx-warn-conflicting-server-name-“tjoe18-cn”-on-0-0-0-0-80-ignore"><a href="#Q3：nginx-warn-conflicting-server-name-“tjoe18-cn”-on-0-0-0-0-80-ignore" class="headerlink" title="Q3：nginx: [warn] conflicting server name “tjoe18.cn” on 0.0.0.0:80, ignore.."></a>Q3：nginx: [warn] conflicting server name “tjoe18.cn” on 0.0.0.0:80, ignore..</h3><p>这个问题是server_name写域名的时候没写www，我写的tjoe18.cn，改成<a href="http://www.tjoe18.cn就好了。那么这有啥区别呢：" target="_blank" rel="noopener">www.tjoe18.cn就好了。那么这有啥区别呢：</a></p>
+<p>tjoe18是域名，.cn是域名后缀，完整的域名是tjoe18.cn，也就是我花钱买的那个。</p>
+<p><strong>说法一：</strong><br>www二级域名，tjoe18是一级域名。或者说就像join.xiyoumoble.com一样，这里的join就如同www了。<br><strong>说法二：</strong><br>www是主机名，cn是顶级域名，tjoe18.cn是二级域名，在二级域名下找名为www的主机</p>
+<p>有两种说法我确认一下吧。暂时这么多</p>
 
         </div>
         <div class="post-tool">
@@ -210,7 +208,7 @@
         
         <div class="post-tags">Tags：
             
-            <a href="/tags/web/">前端</a>
+            <a href="/tags/net/">计算机网络</a>
             
         </div>
         

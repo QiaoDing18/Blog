@@ -60,8 +60,8 @@
     <nav class="nav-menu">
         <a class="site-name current" href="/" title="丁">丁</a>
         <a class="site-index current" href="/"><i class="fa fa-home"></i><span> 主页</span></a>
-        <a href="/archives" title="归档"><i class="fa fa-archives"></i><span> 归档</span></a>
-        <a href="/tags" title="标签"><i class="fa fa-tags"></i><span> 标签</span></a>
+        <a href="/archives" title="Archives"><i class="fa fa-archives"></i><span> 归档</span></a>
+        <a href="/tags" title="Tags"><i class="fa fa-tags"></i><span> 标签</span></a>
         <!-- custom single page of menus -->
         
         
@@ -120,9 +120,9 @@
         
         <li class="page-search">
     <form id="search" class="search-form">
-        <label for="s" class="sr-only">请输入关键字</label>
+        <label for="s" class="sr-only">Input Search key Words Here</label>
         <input class="search-field" type="text" name="s" class="text" placeholder="搜索啦" />
-        <button type="submit" class="search-form-submit" title="搜索"><i class="fa fa-search"></i></button>
+        <button type="submit" class="search-form-submit" title="Search"><i class="fa fa-search"></i></button>
     </form>
     <div class="ins-search">
     <div class="ins-search-mask"></div>
@@ -140,11 +140,11 @@
 (function (window) {
     var INSIGHT_CONFIG = {
         TRANSLATION: {
-            POSTS: '文章',
-            PAGES: '页面',
-            CATEGORIES: '分类',
-            TAGS: '标签',
-            UNTITLED: '(无标题)',
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
         },
         ROOT_URL: '/',
         CONTENT_URL: '/content.json',
@@ -159,6 +159,41 @@
 <div class="main-inner">
     
     <!-- 首页默认取最最新文章集 -->
+    
+    
+<article class="post">
+
+    
+
+    <!-- 有配图默认渲染第一张 -->
+    <div class="post-cover">
+        <a href="/2018/10/24/Nginx配置小结/" target="_blank" title="Nginx配置小结"
+           style="background-image:url(https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1540380251097&amp;di=3e3041dade1c342d383b361f1f0aca40&amp;imgtype=0&amp;src=http%3A%2F%2Fww2.sinaimg.cn%2Forj360%2F795bf814gw1f5qyfy82ayj208c08cgm1.jpg)"></a>
+    </div>
+    
+    <div class="post-header">
+        <div class="post-meta">
+            <a href="" target="_blank">
+                <strong>乔丁</strong>
+            </a>
+            <em>·</em>2018-10-24
+        </div>
+        <a class="post-title" href="/2018/10/24/Nginx配置小结/" target="_blank" title="Nginx配置小结">Nginx配置小结</a>
+        <div class="post-meta">
+            <a href="/tags" target="_blank"><i class="fa fa-tags"></i></a>
+            
+                <em>·</em>
+                <a href="https://qiaoding18.github.io/tags/net/" target="_blank">计算机网络</a>
+            
+        </div>
+    </div>
+    <div class="post-desc">
+        nginx配置踩坑
+    </div>
+</article>
+
+
+
     
     
 <article class="post">
@@ -342,41 +377,6 @@
 
     <!-- 有配图默认渲染第一张 -->
     <div class="post-cover">
-        <a href="/2018/06/20/oh-my-zsh/" target="_blank" title="oh-my-zsh"
-           style="background-image:url(http://ohmyz.sh/img/OMZLogo_BnW.png)"></a>
-    </div>
-    
-    <div class="post-header">
-        <div class="post-meta">
-            <a href="" target="_blank">
-                <strong>乔丁</strong>
-            </a>
-            <em>·</em>2018-06-20
-        </div>
-        <a class="post-title" href="/2018/06/20/oh-my-zsh/" target="_blank" title="oh-my-zsh">oh-my-zsh</a>
-        <div class="post-meta">
-            <a href="/tags" target="_blank"><i class="fa fa-tags"></i></a>
-            
-                <em>·</em>
-                <a href="https://qiaoding18.github.io/tags/chat/" target="_blank">闲聊</a>
-            
-        </div>
-    </div>
-    <div class="post-desc">
-        oh-my-zsh
-    </div>
-</article>
-
-
-
-    
-    
-<article class="post">
-
-    
-
-    <!-- 有配图默认渲染第一张 -->
-    <div class="post-cover">
         <a href="/2018/06/20/http/" target="_blank" title="HTTP/2"
            style="background-image:url(http://p0.meituan.net/xianfu/508467c6250a747b69ad5a2eba1d7e7b38468.png)"></a>
     </div>
@@ -399,6 +399,41 @@
     </div>
     <div class="post-desc">
         啊啊啊啊啊五环
+    </div>
+</article>
+
+
+
+    
+    
+<article class="post">
+
+    
+
+    <!-- 有配图默认渲染第一张 -->
+    <div class="post-cover">
+        <a href="/2018/06/20/oh-my-zsh/" target="_blank" title="oh-my-zsh"
+           style="background-image:url(http://ohmyz.sh/img/OMZLogo_BnW.png)"></a>
+    </div>
+    
+    <div class="post-header">
+        <div class="post-meta">
+            <a href="" target="_blank">
+                <strong>乔丁</strong>
+            </a>
+            <em>·</em>2018-06-20
+        </div>
+        <a class="post-title" href="/2018/06/20/oh-my-zsh/" target="_blank" title="oh-my-zsh">oh-my-zsh</a>
+        <div class="post-meta">
+            <a href="/tags" target="_blank"><i class="fa fa-tags"></i></a>
+            
+                <em>·</em>
+                <a href="https://qiaoding18.github.io/tags/chat/" target="_blank">闲聊</a>
+            
+        </div>
+    </div>
+    <div class="post-desc">
+        oh-my-zsh
     </div>
 </article>
 
@@ -826,47 +861,12 @@
 
     
     
-<article class="post">
-
-    
-
-    <!-- 有配图默认渲染第一张 -->
-    <div class="post-cover">
-        <a href="/2018/04/27/随想/" target="_blank" title="随想"
-           style="background-image:url(http://www.tjoe18.cn/firPage/pic/64.jpg)"></a>
-    </div>
-    
-    <div class="post-header">
-        <div class="post-meta">
-            <a href="" target="_blank">
-                <strong>乔丁</strong>
-            </a>
-            <em>·</em>2018-04-27
-        </div>
-        <a class="post-title" href="/2018/04/27/随想/" target="_blank" title="随想">随想</a>
-        <div class="post-meta">
-            <a href="/tags" target="_blank"><i class="fa fa-tags"></i></a>
-            
-                <em>·</em>
-                <a href="https://qiaoding18.github.io/tags/chat/" target="_blank">闲聊</a>
-            
-        </div>
-    </div>
-    <div class="post-desc">
-        大实话
-    </div>
-</article>
-
-
-
-    
-    
 </div>
 <!-- 分页开始 -->
 
 <div id="btn-pager">
     
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">下一页</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next</a>
 </div>
 
 
@@ -875,7 +875,7 @@
     <footer class="footer">
     <div class="footer-inner">
         <p>
-            <a href="/about"  title="关于本站">关于本站</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="/about"  title="About">About</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
             <!-- 自定义链接 -->
             <a href="/help" title="help" >帮助中心</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
             <a href="http://www.tjoe18.cn/join/" title="个人链接">个人链接</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp

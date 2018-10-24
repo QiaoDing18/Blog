@@ -60,8 +60,8 @@
     <nav class="nav-menu">
         <a class="site-name current" href="/" title="丁">丁</a>
         <a class="site-index current" href="/"><i class="fa fa-home"></i><span> 主页</span></a>
-        <a href="/archives" title="归档"><i class="fa fa-archives"></i><span> 归档</span></a>
-        <a href="/tags" title="标签"><i class="fa fa-tags"></i><span> 标签</span></a>
+        <a href="/archives" title="Archives"><i class="fa fa-archives"></i><span> 归档</span></a>
+        <a href="/tags" title="Tags"><i class="fa fa-tags"></i><span> 标签</span></a>
         <!-- custom single page of menus -->
         
         
@@ -122,9 +122,9 @@
         
         <li class="page-search">
     <form id="search" class="search-form">
-        <label for="s" class="sr-only">请输入关键字</label>
+        <label for="s" class="sr-only">Input Search key Words Here</label>
         <input class="search-field" type="text" name="s" class="text" placeholder="搜索啦" />
-        <button type="submit" class="search-form-submit" title="搜索"><i class="fa fa-search"></i></button>
+        <button type="submit" class="search-form-submit" title="Search"><i class="fa fa-search"></i></button>
     </form>
     <div class="ins-search">
     <div class="ins-search-mask"></div>
@@ -142,11 +142,11 @@
 (function (window) {
     var INSIGHT_CONFIG = {
         TRANSLATION: {
-            POSTS: '文章',
-            PAGES: '页面',
-            CATEGORIES: '分类',
-            TAGS: '标签',
-            UNTITLED: '(无标题)',
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
         },
         ROOT_URL: '/',
         CONTENT_URL: '/content.json',
@@ -173,7 +173,7 @@
             </div>
             <h2 class="post-title">Webpack学习笔记（2）</h2>
             <div class="post-meta">
-                本文总共2331个字 | 您是第<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>位看到它们的小伙伴
+                本文总共5219个字 | 您是第<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>位看到它们的小伙伴
             </div>
         </div>
         <div class="post-content markdown-body">
@@ -190,8 +190,27 @@
 <p>loader可以看做具有文件转换作用的翻译员，配置里的module.rule数组配置了一组规则，告诉webpack在遇到哪些文件时使用哪些loader去加载和转换。如上配置告诉webpack在遇到以.css结尾的文件时先使用css-loader读取css文件，仔给style-loader把css内容注入到js里。在配置loader时需要注意</p>
 <ul>
 <li>use属性的值需要一个由loader名称组成的数组，loader的执行顺序是由后到前</li>
-<li>每一个loader都可以通过URL querystring的方式传入参数     </li>
+<li>每一个loader都可以通过URL querystring的方式传入参数，例如css-loader?minimize中的minimize告诉css-loader要开启css压缩</li>
 </ul>
+<p>在安装了style-loader后，bundle.js文件被更新了，里面注入了在main.css中写的css代码，而不是额外生成一个css文件。但刷新index.html会发现样式生效了。这是style-loader的功劳，他的工作原理大概是把css内容用js里的字符串储存起来，在网页执行js时通过DOM操作动态地往html head标签里面插入htnl style标签。其实可以使用webpack的Plugin机制来实现。</p>
+<p>给loader传入属性的方式除了querystring外，还可以通过Object传入，以上的Loader配置可以修改如下:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">use: [</span><br><span class="line">  <span class="string">'style-loader'</span>, </span><br><span class="line">  &#123;</span><br><span class="line">    loader:<span class="string">'css-loader'</span>,</span><br><span class="line">    options:&#123;</span><br><span class="line">      minimize:<span class="literal">true</span>,</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure></p>
+<p>这样比?minimize可读性高一些</p>
+<p>还可以在源码中指定用什么loader去处理文件：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">require</span>(<span class="string">'style-loader!css-loader?minimize!./main.css'</span>);</span><br></pre></td></tr></table></figure></p>
+<p>这样就能指定对./main.css这个文件先采用css-loader再采用style-loader转换</p>
+<h2 id="使用Plugin"><a href="#使用Plugin" class="headerlink" title="使用Plugin"></a>使用Plugin</h2><p>Plugin是用来扩展webpack功能的，通过在构建流程里注入钩子实现，它给webpack带来了很大的灵活性。</p>
+<p>使用loader加载了css文件，本节将通过Plugin把注入到bundle.js文件里的css提取到单独的文件中，配置修改如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</span><br><span class="line"><span class="keyword">const</span> ExtractTextPlugin = <span class="built_in">require</span>(<span class="string">'extract-text-webpack-plugin'</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  <span class="comment">// JavaScript 执行入口文件</span></span><br><span class="line">  entry: <span class="string">'./main.js'</span>,</span><br><span class="line">  output: &#123;</span><br><span class="line">    <span class="comment">// 把所有依赖的模块合并输出到一个 bundle.js 文件</span></span><br><span class="line">    filename: <span class="string">'bundle.js'</span>,</span><br><span class="line">    <span class="comment">// 把输出文件都放到 dist 目录下</span></span><br><span class="line">    path: path.resolve(__dirname, <span class="string">'./dist'</span>),</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="built_in">module</span>: &#123;</span><br><span class="line">    rules: [</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="comment">// 用正则去匹配要用该 loader 转换的 CSS 文件</span></span><br><span class="line">        test: <span class="regexp">/\.css$/</span>,</span><br><span class="line">        use: ExtractTextPlugin.extract(&#123;</span><br><span class="line">          <span class="comment">// 转换 .css 文件需要使用的 Loader</span></span><br><span class="line">          use: [<span class="string">'css-loader'</span>],</span><br><span class="line">        &#125;),</span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br><span class="line">  plugins: [</span><br><span class="line">    <span class="keyword">new</span> ExtractTextPlugin(&#123;</span><br><span class="line">      <span class="comment">// 从 .js 文件中提取出来的 .css 文件的名称</span></span><br><span class="line">      filename: <span class="string">`[name]_[contenthash:8].css`</span>,</span><br><span class="line">    &#125;),</span><br><span class="line">  ]</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>安装新引入的插件需要安装新的插件： extract-text-webpack-plugin.</p>
+<p>重新构建项目，会生成一个main_1a87a56a.css 文件，bundle.js里也没有css代码了，再把该css文件引入到index.html里就完成了。</p>
+<p>从以上的配置中可以看出，webpack是通过plugin属性来配置需要使用的插件列表的。plugins属性是一个数组，里面的每一项都是插件的一个实例，在实例化一个组件时可以通过构造函数传入这个组件支持的配置属性。</p>
+<p>例如ExtractTextPlugin插件的作用是提取出js代码里的css到一个单独的文件。对此可以通过插件的filename属性，告诉插件输出的css文件名称是通过[name]_[contenthash:8].css字符串模板生成的，里面的[name]代表文件名称，[contenthash:8]代表根据文件内容算出的8位hash值</p>
+<h2 id="使用DevServer"><a href="#使用DevServer" class="headerlink" title="使用DevServer"></a>使用DevServer</h2><p>现在可以让webpack运行起来了，但在实际开发中还可以：</p>
+<blockquote>
+<p>1、提供http服务而不是使用本地文件预览<br>2、监听文件的变化并自动刷新网页，实时预览<br>3、支持Source Map，方便调试</p>
+</blockquote>
+<p>Webpack原生提供2、3原生支持，跟官方提供的开发工具DevServer也可以很方便的做到1。DevServer会启动一个http服务器用于服务网页请求，同时会帮助启动Webpack，并接收Webpack发出的文件变更信号，通过WebSocket协议自动刷新网页做到实时预览。</p>
+<p>安装后执行webpack-dev-server，Devserver就启动了，会看到控制台输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Project is running at http://localhost:8080/</span><br><span class="line">webpack output is served from /</span><br></pre></td></tr></table></figure></p>
+<p>这意味着 DevServer 启动的 HTTP 服务器监听在 <a href="http://localhost:8080/" target="_blank" rel="noopener">http://localhost:8080/</a> ，DevServer 启动后会一直驻留在后台保持运行，访问这个网址就能获取项目根目录下的 index.html。 </p>
+<p>会报错./dist/bundle.js 加载404了。 同时会发现并没有文件输出到 dist 目录，原因是 DevServer 会把 Webpack 构建出的文件保存在内存中，在要访问输出的文件时，必须通过 HTTP 服务访问。 由于 DevServer 不会理会 webpack.config.js 里配置的 output.path 属性，所以要获取 bundle.js 的正确 URL 是 <a href="http://localhost:8080/bundle.js，对应的" target="_blank" rel="noopener">http://localhost:8080/bundle.js，对应的</a> index.html 应该修改为：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--导入 DevServer 输出的 JavaScript 文件--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"bundle.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
 
         </div>
         <div class="post-tool">
@@ -200,7 +219,7 @@
             </a>
         </div>
         
-        <div class="post-tags">标签：
+        <div class="post-tags">Tags：
             
             <a href="/tags/web/">前端</a>
             
@@ -218,7 +237,7 @@
     <footer class="footer">
     <div class="footer-inner">
         <p>
-            <a href="/about"  title="关于本站">关于本站</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="/about"  title="About">About</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
             <!-- 自定义链接 -->
             <a href="/help" title="help" >帮助中心</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
             <a href="http://www.tjoe18.cn/join/" title="个人链接">个人链接</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp

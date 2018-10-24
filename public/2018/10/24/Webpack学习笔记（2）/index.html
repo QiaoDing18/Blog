@@ -167,13 +167,13 @@
                 </a>
                 <p><span class="label">作者</span>
                     <a href="" target="_blank">乔丁</a>
-                    <span title="最后编辑于2018-10-16">2018-10-16</span>
+                    <span title="最后编辑于2018-10-24">2018-10-24</span>
                 </p>
                 <p>【前端小学生】</p>
             </div>
             <h2 class="post-title">Webpack学习笔记（2）</h2>
             <div class="post-meta">
-                本文总共5219个字 | 您是第<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>位看到它们的小伙伴
+                本文总共6181个字 | 您是第<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>位看到它们的小伙伴
             </div>
         </div>
         <div class="post-content markdown-body">
@@ -211,6 +211,11 @@
 <p>安装后执行webpack-dev-server，Devserver就启动了，会看到控制台输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Project is running at http://localhost:8080/</span><br><span class="line">webpack output is served from /</span><br></pre></td></tr></table></figure></p>
 <p>这意味着 DevServer 启动的 HTTP 服务器监听在 <a href="http://localhost:8080/" target="_blank" rel="noopener">http://localhost:8080/</a> ，DevServer 启动后会一直驻留在后台保持运行，访问这个网址就能获取项目根目录下的 index.html。 </p>
 <p>会报错./dist/bundle.js 加载404了。 同时会发现并没有文件输出到 dist 目录，原因是 DevServer 会把 Webpack 构建出的文件保存在内存中，在要访问输出的文件时，必须通过 HTTP 服务访问。 由于 DevServer 不会理会 webpack.config.js 里配置的 output.path 属性，所以要获取 bundle.js 的正确 URL 是 <a href="http://localhost:8080/bundle.js，对应的" target="_blank" rel="noopener">http://localhost:8080/bundle.js，对应的</a> index.html 应该修改为：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--导入 DevServer 输出的 JavaScript 文件--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"bundle.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="实时预览"><a href="#实时预览" class="headerlink" title="实时预览"></a>实时预览</h3><p>如果修改了上面文件中除了html的一个，保存后浏览器会被自动刷新，运行出新的结果</p>
+<p>webpack在启动时可以开启监听模式，开启监听模式后weback会监听本地文件系统的变化，发生变化时重新构建出新的结果。webpack默认是关闭监听模式的，可以在启动webpack时通过webpack –watch来开启监听模式。当发生变化时重新执行完构建后通知DevServer。DevServer会让webpack在构建出的js代码里注入一个代理客户端用于控制网页，网页和DevServer之间通过WebSocket协议通信，以方便DevServer主动向客户端发送命令。DevServer在收到来自webpack的文件变化通知时注入的客户端控制网页刷新。</p>
+<p>html文件修改不会触发，因为webpack在启动时会以配置里的entry为入口去递归解析出entry所依赖的文件，只有entry本身和依赖的文件才会被webpack添加到监听列表里。而index.html文件脱离了js模块化系统的，webpack不知道他的存在</p>
+<h3 id="模块热替换"><a href="#模块热替换" class="headerlink" title="模块热替换"></a>模块热替换</h3><p>除了通过重新刷新整个网页来实现实时预览，DevServer 还有一种被称作模块热替换的刷新技术。 模块热替换能做到在不重新加载整个网页的情况下，通过将被更新过的模块替换老的模块，再重新执行一次来实现实时预览。 模块热替换相对于默认的刷新机制能提供更快的响应和更好的开发体验。 模块热替换默认是关闭的，要开启模块热替换，需在启动 DevServer 时带上 –hot 参数，重启 DevServer 后再去更新文件就可以看到模块热替换了。</p>
+<h3 id="支持Source-Map"><a href="#支持Source-Map" class="headerlink" title="支持Source Map"></a>支持Source Map</h3><p>在浏览器中运行的js代码都是编译器输出的代码，这些代码的可读性很差。如果在开发工程中遇到一个不知道原因的bug，会很难通过断电找到问题原因。在编译器输出的代码上进行断点调试是一件辛苦和不优雅的事情， 调试工具可以通过 Source Map 映射代码，这样可以在源代码上断点调试。 Webpack 支持生成 Source Map，只需在启动时带上 –devtool source-map 参数。 加上参数重启 DevServer 后刷新页面，再打开 Chrome 浏览器的开发者工具，就可在 Sources 栏中看到可调试的源代码了。</p>
 
         </div>
         <div class="post-tool">

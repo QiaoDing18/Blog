@@ -4,7 +4,7 @@ tags:
 categories:
   - web
 author: 乔丁
-date: 2018-10-16 01:09:09
+date: 2018-10-24 23:11:09
 description: 入门了解
 photos: http://p7wm7amg2.bkt.clouddn.com/webpack.png
 ---
@@ -210,4 +210,17 @@ webpack output is served from /
   </body>
 </html>
 ```
+
+### 实时预览
+如果修改了上面文件中除了html的一个，保存后浏览器会被自动刷新，运行出新的结果
+
+webpack在启动时可以开启监听模式，开启监听模式后weback会监听本地文件系统的变化，发生变化时重新构建出新的结果。webpack默认是关闭监听模式的，可以在启动webpack时通过webpack --watch来开启监听模式。当发生变化时重新执行完构建后通知DevServer。DevServer会让webpack在构建出的js代码里注入一个代理客户端用于控制网页，网页和DevServer之间通过WebSocket协议通信，以方便DevServer主动向客户端发送命令。DevServer在收到来自webpack的文件变化通知时注入的客户端控制网页刷新。
+
+html文件修改不会触发，因为webpack在启动时会以配置里的entry为入口去递归解析出entry所依赖的文件，只有entry本身和依赖的文件才会被webpack添加到监听列表里。而index.html文件脱离了js模块化系统的，webpack不知道他的存在
+
+### 模块热替换
+除了通过重新刷新整个网页来实现实时预览，DevServer 还有一种被称作模块热替换的刷新技术。 模块热替换能做到在不重新加载整个网页的情况下，通过将被更新过的模块替换老的模块，再重新执行一次来实现实时预览。 模块热替换相对于默认的刷新机制能提供更快的响应和更好的开发体验。 模块热替换默认是关闭的，要开启模块热替换，需在启动 DevServer 时带上 --hot 参数，重启 DevServer 后再去更新文件就可以看到模块热替换了。
+
+### 支持Source Map
+在浏览器中运行的js代码都是编译器输出的代码，这些代码的可读性很差。如果在开发工程中遇到一个不知道原因的bug，会很难通过断电找到问题原因。在编译器输出的代码上进行断点调试是一件辛苦和不优雅的事情， 调试工具可以通过 Source Map 映射代码，这样可以在源代码上断点调试。 Webpack 支持生成 Source Map，只需在启动时带上 --devtool source-map 参数。 加上参数重启 DevServer 后刷新页面，再打开 Chrome 浏览器的开发者工具，就可在 Sources 栏中看到可调试的源代码了。
 

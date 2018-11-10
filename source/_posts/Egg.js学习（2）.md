@@ -117,4 +117,27 @@ example-framework
 把原来的egg-ua的依赖删掉，配置到框架的package.json和config/plugin.js里
 
 然后改造原有应用：
-- 移除
+- 移除config/plugin.js中对egg-ua的依赖
+- package.json中移除对egg-ua的依赖
+- package.json中声明对example-framework的依赖，并配置eg.framework
+
+```
+{
+  "name": "progressive",
+  "version": "1.0.0",
+  "private": true,
+  "egg": {
+    "framework": "example-framework"
+  },
+  "dependencies": {
+    "example-framework": "*"
+  }
+}
+```
+
+### 小结
+- 当应用中有可能会复用到的代码时，直接放到lib/plugin目录中，如egg-ua
+- 当该插件功能稳定后，即可独立出来作为一个node module
+- 应用中相对复用性较强的代码都会逐渐独立为单独的插件
+- 应用逐渐进化到针对某业务场景时，将其抽象为独立的framework进行发布
+- 当新项目中抽象出的插件，下沉集成到框架后，其他项目只需要简单的重新npm install下就可以使用

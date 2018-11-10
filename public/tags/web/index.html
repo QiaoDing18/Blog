@@ -60,8 +60,8 @@
     <nav class="nav-menu">
         <a class="site-name current" href="/" title="丁">丁</a>
         <a class="site-index current" href="/"><i class="fa fa-home"></i><span> 主页</span></a>
-        <a href="/archives" title="归档"><i class="fa fa-archives"></i><span> 归档</span></a>
-        <a href="/tags" title="标签"><i class="fa fa-tags"></i><span> 标签</span></a>
+        <a href="/archives" title="Archives"><i class="fa fa-archives"></i><span> 归档</span></a>
+        <a href="/tags" title="Tags"><i class="fa fa-tags"></i><span> 标签</span></a>
         <!-- custom single page of menus -->
         
         
@@ -120,9 +120,9 @@
         
         <li class="page-search">
     <form id="search" class="search-form">
-        <label for="s" class="sr-only">请输入关键字</label>
+        <label for="s" class="sr-only">Input Search key Words Here</label>
         <input class="search-field" type="text" name="s" class="text" placeholder="搜索啦" />
-        <button type="submit" class="search-form-submit" title="搜索"><i class="fa fa-search"></i></button>
+        <button type="submit" class="search-form-submit" title="Search"><i class="fa fa-search"></i></button>
     </form>
     <div class="ins-search">
     <div class="ins-search-mask"></div>
@@ -140,11 +140,11 @@
 (function (window) {
     var INSIGHT_CONFIG = {
         TRANSLATION: {
-            POSTS: '文章',
-            PAGES: '页面',
-            CATEGORIES: '分类',
-            TAGS: '标签',
-            UNTITLED: '(无标题)',
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
         },
         ROOT_URL: '/',
         CONTENT_URL: '/content.json',
@@ -158,6 +158,41 @@
 </div>
 <div class="main-inner">
     
+    
+    
+<article class="post">
+
+    
+
+    <!-- 有配图默认渲染第一张 -->
+    <div class="post-cover">
+        <a href="/2018/10/26/Egg.js学习（2）/" target="_blank" title="Egg.js学习（2）"
+           style="background-image:url(http://img.bimg.126.net/photo/TNw-QmJvMUKKh8ozLku4xQ==/332703422488837224.jpg)"></a>
+    </div>
+    
+    <div class="post-header">
+        <div class="post-meta">
+            <a href="" target="_blank">
+                <strong>乔丁</strong>
+            </a>
+            <em>·</em>2018-10-26
+        </div>
+        <a class="post-title" href="/2018/10/26/Egg.js学习（2）/" target="_blank" title="Egg.js学习（2）">Egg.js学习（2）</a>
+        <div class="post-meta">
+            <a href="/tags" target="_blank"><i class="fa fa-tags"></i></a>
+            
+                <em>·</em>
+                <a href="https://qiaoding18.github.io/tags/web/" target="_blank">前端</a>
+            
+        </div>
+    </div>
+    <div class="post-desc">
+        毕设打算那这玩意弄后台
+    </div>
+</article>
+
+
+
     
     
 <article class="post">
@@ -653,7 +688,7 @@
             </a>
             <em>·</em>2018-04-27
         </div>
-        <a class="post-title" href="/2018/04/27/移动端touch和click/" target="_blank" title="移动端touch和click">移动端touch和click</a>
+        <a class="post-title" href="/2018/04/27/移动端适配（像素）/" target="_blank" title="移动端适配（像素）">移动端适配（像素）</a>
         <div class="post-meta">
             <a href="/tags" target="_blank"><i class="fa fa-tags"></i></a>
             
@@ -663,7 +698,7 @@
         </div>
     </div>
     <div class="post-desc">
-        移动端touch和click
+        移动端适配（像素）
     </div>
 </article>
 
@@ -681,7 +716,7 @@
             </a>
             <em>·</em>2018-04-27
         </div>
-        <a class="post-title" href="/2018/04/27/移动端适配（像素）/" target="_blank" title="移动端适配（像素）">移动端适配（像素）</a>
+        <a class="post-title" href="/2018/04/27/移动端touch和click/" target="_blank" title="移动端touch和click">移动端touch和click</a>
         <div class="post-meta">
             <a href="/tags" target="_blank"><i class="fa fa-tags"></i></a>
             
@@ -691,7 +726,7 @@
         </div>
     </div>
     <div class="post-desc">
-        移动端适配（像素）
+        移动端touch和click
     </div>
 </article>
 
@@ -796,40 +831,12 @@
 
 
     
-    
-<article class="post">
-
-    
-    <div class="post-header">
-        <div class="post-meta">
-            <a href="" target="_blank">
-                <strong>乔丁</strong>
-            </a>
-            <em>·</em>2018-04-27
-        </div>
-        <a class="post-title" href="/2018/04/27/深拷贝/" target="_blank" title="深拷贝">深拷贝</a>
-        <div class="post-meta">
-            <a href="/tags" target="_blank"><i class="fa fa-tags"></i></a>
-            
-                <em>·</em>
-                <a href="https://qiaoding18.github.io/tags/web/" target="_blank">前端</a>
-            
-        </div>
-    </div>
-    <div class="post-desc">
-        深拷贝
-    </div>
-</article>
-
-
-
-    
 </div>
 <!-- 分页开始 -->
 
 <div id="btn-pager">
     
-    <span class="page-number current">1</span><a class="page-number" href="/tags/web/page/2/">2</a><a class="page-number" href="/tags/web/page/3/">3</a><a class="extend next" rel="next" href="/tags/web/page/2/">下一页</a>
+    <span class="page-number current">1</span><a class="page-number" href="/tags/web/page/2/">2</a><a class="page-number" href="/tags/web/page/3/">3</a><a class="extend next" rel="next" href="/tags/web/page/2/">Next</a>
 </div>
 
 
@@ -838,7 +845,7 @@
     <footer class="footer">
     <div class="footer-inner">
         <p>
-            <a href="/about"  title="关于本站">关于本站</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="/about"  title="About">About</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
             <!-- 自定义链接 -->
             <a href="/help" title="help" >帮助中心</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
             <a href="http://www.tjoe18.cn/join/" title="个人链接">个人链接</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp

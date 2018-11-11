@@ -54,4 +54,57 @@ egg-project
 ```
 
 ## 内置对象
-首先是基础对象：Application、Context、Request、Response，以及矿建扩展的一些对象
+首先是基础对象：Application、Context、Request、Response，以及矿建扩展的一些对象：Controller，Service，Helper，Config，Logger
+
+### Application
+Application是一个全局对象，在一个应用中，只会实例化一个，继承自Koa.Application，在它上面可以挂载一些全局的方法和对象。可以在插件或应用中扩展Application对象。
+
+#### 事件
+在框架运行时，会在Application实例上出发一些事件，应用开发者或插件开发者可以监听这些事件做一些操作，一般会在启动自定义脚本中进行监听：
+- server：该事件一个worker进程只会触发一次，在HTTP服务完成启动后，会将HTTP server通过这个事件暴露出来给开发者
+- error：运行时有任何的异常被onerror插件捕获后，都会触发error事件，将错误对象和关联的上下文暴露给开发者，可以自定义的日志记录上报等处理
+- request和response：应用受到请求和响应请求时，分别会触发request和Response事件，并将当前请求上下文暴露出老，开发者可以监听这两个事件来进行日志记录。
+
+```javascript
+// app.js
+
+module.exports = app => {
+  app.once('server', server => {
+    // websocket
+  });
+  app.on('error', (err, ctx) => {
+    // report error
+  });
+  app.on('request', ctx => {
+    // log receive request
+  });
+  app.on('response', ctx => {
+    // ctx.starttime is set by framework
+    const used = Date.now() - ctx.starttime;
+    // log total cost
+  });
+};
+```
+
+#### 获取方式
+Application对象可以在编写应用时任何一个地方获取到，几个经常用到的方式：
+几乎所有被框架Loader加载的文件，都可以export一个函数，这个函数会被Loader调用，并使用app作为参数：
+- 启动自定义脚本
+```javascript
+// app.js
+module.exports = app => {
+  app.cache = new Cache();
+};
+```
+- Controller文件
+```javascript
+// app/contraller/user.js
+class UserController extends Controller {
+  async fetch() {
+    this.ctx.body = this.ap.cache.get(this.ctx.query.id);
+  }
+}
+```
+
+
+和Koa一样，在Content对象上，可以通过ctx.app访问到Application对象。以上的Controller为例：

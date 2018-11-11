@@ -1,0 +1,259 @@
+<!DOCTYPE HTML>
+<html class="no-js" lang="zh-CN">
+<!--
+//                            _ooOoo_
+//                           o8888888o
+//                           88" . "88
+//                           (| -_- |)
+//                            O\ = /O
+//                        ____/`---'\____
+//                      .   ' \\| |// `.
+//                       / \\||| : |||// \
+//                     / _||||| -:- |||||- \
+//                       | | \\\ - /// | |
+//                     | \_| ''\---/'' | |
+//                      \ .-\__ `-` ___/-. /
+//                   ___`. .' /--.--\ `. . __
+//                ."" '< `.___\_<|>_/___.' >'"".
+//               | | : `- \`.;`\ _ /`;.`/ - ` : | |
+//                 \ \ `-. \_ __\ /__ _/ .-` / /
+//         ======`-.____`-.___\_____/___.-`____.-'======
+//                            `=---='
+//                 拦截插件累计拦截逗比攻击"1381438"次！
+//         .............................................
+//                  佛祖保佑             永无BUG
+//          佛曰:
+//                  写字楼里写字间，写字间里程序员；
+//                  程序人员写程序，又拿程序换酒钱。
+//                  酒醒只在网上坐，酒醉还来网下眠；
+//                  酒醉酒醒日复日，网上网下年复年。
+//                  但愿老死电脑间，不愿鞠躬老板前；
+//                  奔驰宝马贵者趣，公交自行程序员。
+//                  别人笑我忒疯癫，我笑自己命太贱；
+//                  不见满街漂亮妹，哪个归得程序员？
+-->
+<head>
+    <!--[if lte IE 9]>
+<meta http-equiv="refresh" content="0;url=https://qiaoding18.github.io/warn.html">
+<![endif]-->
+<meta charset="utf-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+<meta http-equiv="mobile-agent" content="format=html5; url=https://qiaoding18.github.io">
+<meta name="author" content="乔丁">
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/SimpleStyle.min.css">
+
+<link rel="shortcut icon" href="/images/favicon.png">
+
+
+<title>egg.js学习（3） - QiaoDing Blog</title>
+
+<meta name="keywords" content="">
+
+<meta name="description " content="毕设打算那这玩意弄后台">
+</head>
+<body>
+<div id="nav">
+    <nav class="nav-menu">
+        <a class="site-name current" href="/" title="丁">丁</a>
+        <a class="site-index current" href="/"><i class="fa fa-home"></i><span> 主页</span></a>
+        <a href="/archives" title="Archives"><i class="fa fa-archives"></i><span> 归档</span></a>
+        <a href="/tags" title="Tags"><i class="fa fa-tags"></i><span> 标签</span></a>
+        <!-- custom single page of menus -->
+        
+        
+        <a href="/help" title="帮助">
+            <i class="fa fa-question-circle"></i>
+            <span>帮助</span>
+        </a>
+        
+    </nav>
+</div>
+
+<div class="nav-user">
+    <a class="btn-search" href="#"><i class="fa fa-search"></i></a>
+    <a class="btn-read-mode" href="#"><i class="fa fa-sun-o"></i></a>
+    <a class="btn-sns-qr" href="javascript:"><i class="fa fa-telegram"></i></a>
+</div>
+
+<div id="wrapper" class="clearfix">
+    <div id="body">
+        <div class="main" id="main">
+            <div id="cover">
+    <div class="cover-img"></div>
+    <div class="cover-info">
+        
+        <h1 class="cover-siteName">乔丁啊</h1>
+        <h3 class="cover-siteTitle">一个前端小学生</h3>
+        <p class="cover-siteDesc">在这写写博客啥了的</p>
+        <div class="cover-sns">
+            
+            <div class="btn btn-github">
+                <a href="https://github.com/QiaoDing18/" target="_blank" title="github" ref="friend">
+                    <i class="fa fa-github"></i>
+                </a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+            <div class="page-title">
+    <ul>
+        <li><a href="/">最新</a></li>
+
+
+        
+            
+                <li class="">
+                    <a href="/categories/web" data-name="前端">前端</a>
+                </li>
+            
+                <li class="">
+                    <a href="/categories/net" data-name="计算机网络">计算机网络</a>
+                </li>
+            
+                <li class="">
+                    <a href="/categories/chat" data-name="闲聊">闲聊</a>
+                </li>
+            
+        
+        <li class="page-search">
+    <form id="search" class="search-form">
+        <label for="s" class="sr-only">Input Search key Words Here</label>
+        <input class="search-field" type="text" name="s" class="text" placeholder="搜索啦" />
+        <button type="submit" class="search-form-submit" title="Search"><i class="fa fa-search"></i></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="输入要搜的内容啦"/>
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+</li>
+
+    </ul>
+</div>
+<div class="main-inner">
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <div class="post-header">
+            <div class="post-author clearfix">
+                <a class="avatar fleft" href="" target="_blank">
+                    <img width="48" src="/images/favicon.png" alt="avatar"/>
+                </a>
+                <p><span class="label">作者</span>
+                    <a href="" target="_blank">乔丁</a>
+                    <span title="最后编辑于2018-11-10">2018-11-10</span>
+                </p>
+                <p>【前端小学生】</p>
+            </div>
+            <h2 class="post-title">Egg.js学习（3）</h2>
+            <div class="post-meta">
+                本文总共2472个字 | 您是第<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>位看到它们的小伙伴
+            </div>
+        </div>
+        <div class="post-content markdown-body">
+            <h2 id="从目录结构开始入门"><a href="#从目录结构开始入门" class="headerlink" title="从目录结构开始入门"></a>从目录结构开始入门</h2><p>先了解下目录：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">egg-project</span><br><span class="line">├── package.json</span><br><span class="line">├── app.js (可选) -- 用于自定义启动时的初始化工作</span><br><span class="line">├── agent.js (可选) -- 同app.js</span><br><span class="line">├── app</span><br><span class="line">|   ├── router.js -- 用于配置URL路由规则</span><br><span class="line">│   ├── controller -- 用于解析用户的输入，处理后返回相应的结果</span><br><span class="line">│   |   └── home.js</span><br><span class="line">│   ├── service (可选) -- 用于编写业务逻辑层</span><br><span class="line">│   |   └── user.js</span><br><span class="line">│   ├── middleware (可选) -- 用于编写中间件</span><br><span class="line">│   |   └── response_time.js</span><br><span class="line">│   ├── schedule (可选) -- 用于定时任务</span><br><span class="line">│   |   └── my_task.js</span><br><span class="line">│   ├── public (可选)  -- 用于放置静态资源</span><br><span class="line">│   |   └── reset.css</span><br><span class="line">│   ├── view (可选) -- 用于放置模板文件</span><br><span class="line">│   |   └── home.tpl</span><br><span class="line">│   ├── model (可选) -- 用于放置领域模型</span><br><span class="line">│   |   └── home.tpl</span><br><span class="line">│   └── extend (可选) -- 用于框架的扩展</span><br><span class="line">│       ├── helper.js (可选)</span><br><span class="line">│       ├── request.js (可选)</span><br><span class="line">│       ├── response.js (可选)</span><br><span class="line">│       ├── context.js (可选)</span><br><span class="line">│       ├── application.js (可选)</span><br><span class="line">│       └── agent.js (可选)</span><br><span class="line">├── config -- 用于编写配置文件</span><br><span class="line">|   ├── plugin.js</span><br><span class="line">|   ├── config.default.js</span><br><span class="line">│   ├── config.prod.js</span><br><span class="line">|   ├── config.test.js (可选)</span><br><span class="line">|   ├── config.local.js (可选)</span><br><span class="line">|   └── config.unittest.js (可选)</span><br><span class="line">└── test -- 用于单元测试</span><br><span class="line">    ├── middleware</span><br><span class="line">    |   └── response_time.test.js</span><br><span class="line">    └── controller</span><br><span class="line">        └── home.test.js</span><br></pre></td></tr></table></figure></p>
+<h2 id="内置对象"><a href="#内置对象" class="headerlink" title="内置对象"></a>内置对象</h2><p>首先是基础对象：Application、Context、Request、Response，以及矿建扩展的一些对象：Controller，Service，Helper，Config，Logger</p>
+<h3 id="Application"><a href="#Application" class="headerlink" title="Application"></a>Application</h3><p>Application是一个全局对象，在一个应用中，只会实例化一个，继承自Koa.Application，在它上面可以挂载一些全局的方法和对象。可以在插件或应用中扩展Application对象。</p>
+<h4 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h4><p>在框架运行时，会在Application实例上出发一些事件，应用开发者或插件开发者可以监听这些事件做一些操作，一般会在启动自定义脚本中进行监听：</p>
+<ul>
+<li>server：该事件一个worker进程只会触发一次，在HTTP服务完成启动后，会将HTTP server通过这个事件暴露出来给开发者</li>
+<li>error：运行时有任何的异常被onerror插件捕获后，都会触发error事件，将错误对象和关联的上下文暴露给开发者，可以自定义的日志记录上报等处理</li>
+<li>request和response：应用受到请求和响应请求时，分别会触发request和Response事件，并将当前请求上下文暴露出老，开发者可以监听这两个事件来进行日志记录。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// app.js</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = <span class="function"><span class="params">app</span> =&gt;</span> &#123;</span><br><span class="line">  app.once(<span class="string">'server'</span>, server =&gt; &#123;</span><br><span class="line">    <span class="comment">// websocket</span></span><br><span class="line">  &#125;);</span><br><span class="line">  app.on(<span class="string">'error'</span>, (err, ctx) =&gt; &#123;</span><br><span class="line">    <span class="comment">// report error</span></span><br><span class="line">  &#125;);</span><br><span class="line">  app.on(<span class="string">'request'</span>, ctx =&gt; &#123;</span><br><span class="line">    <span class="comment">// log receive request</span></span><br><span class="line">  &#125;);</span><br><span class="line">  app.on(<span class="string">'response'</span>, ctx =&gt; &#123;</span><br><span class="line">    <span class="comment">// ctx.starttime is set by framework</span></span><br><span class="line">    <span class="keyword">const</span> used = <span class="built_in">Date</span>.now() - ctx.starttime;</span><br><span class="line">    <span class="comment">// log total cost</span></span><br><span class="line">  &#125;);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h4 id="获取方式"><a href="#获取方式" class="headerlink" title="获取方式"></a>获取方式</h4><p>Application对象可以在编写应用时任何一个地方获取到，几个经常用到的方式：<br>几乎所有被框架Loader加载的文件，都可以export一个函数，这个函数会被Loader调用，并使用app作为参数：</p>
+<ul>
+<li><p>启动自定义脚本</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// app.js</span></span><br><span class="line"><span class="built_in">module</span>.exports = <span class="function"><span class="params">app</span> =&gt;</span> &#123;</span><br><span class="line">  app.cache = <span class="keyword">new</span> Cache();</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Controller文件</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// app/contraller/user.js</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">UserController</span> <span class="keyword">extends</span> <span class="title">Controller</span> </span>&#123;</span><br><span class="line">  <span class="keyword">async</span> fetch() &#123;</span><br><span class="line">    <span class="keyword">this</span>.ctx.body = <span class="keyword">this</span>.ap.cache.get(<span class="keyword">this</span>.ctx.query.id);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>和Koa一样，在Content对象上，可以通过ctx.app访问到Application对象。以上的Controller为例：</p>
+
+        </div>
+        <div class="post-tool">
+            <a class="btn-thumbs-up" href="javascript:void(0);" data-cid="52" title="95">
+                <i class="fa fa-thumbs-up" aria-hidden="true"></i> 打赏
+            </a>
+        </div>
+        
+        <div class="post-tags">Tags：
+            
+            <a href="/tags/web/">前端</a>
+            
+        </div>
+        
+    </article>
+    
+    <p>本文代表个人观点，内容仅供参考。若有不恰当之处，望不吝赐教！么么哒~</p>
+    
+    
+</div>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        </div><!-- end #main-->
+    </div><!-- end #body -->
+    <footer class="footer">
+    <div class="footer-inner">
+        <p>
+            <a href="/about"  title="About">About</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <!-- 自定义链接 -->
+            <a href="/help" title="help" >帮助中心</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="http://www.tjoe18.cn/join/" title="个人链接">个人链接</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="https://xiyoumobile.com/" title="3G实验室">3G实验室</a>
+        </p>
+        <p>
+            本站点采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>，已建立<a href="/timeline" id="siteBuildingTime"></a>天<br/>
+            ©2017 QiaoDing
+        </p>
+        
+
+    </div>
+</footer>
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+<script src="/js/InsightSearch.js"></script>
+<script src="/js/SimpleCore.js"></script>
+
+</div>
+<div class="fixed-btn">
+    <a class="btn-gotop" href="javascript:"> <i class="fa fa-angle-up"></i></a>
+</div>
+<script>
+    $(function () {
+        SimpleCore.init({
+            buildingTime: '06/21/1997',
+            current: $('.post-tags').length > 0 ? 'post' : 'archive',
+            snsQRCode: '/images/sns-qrcode.png',
+            donateImg: '/images/donate-qr.png',
+        });
+    });
+</script>
+</body>
+</html>
